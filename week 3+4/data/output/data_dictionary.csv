@@ -1,0 +1,36 @@
+﻿Tên thuộc tính,Kiểu dữ liệu,Bảng nguồn,Công thức tính toán,Ý nghĩa nghiệp vụ,Nhóm đặc trưng,Vai trò trong Smart LMS
+code_module,VARCHAR(10),studentInfo,Dữ liệu gốc,Mã định danh môn học (ví dụ FFF),Định danh,Phân loại môn học (không dùng dự đoán)
+code_presentation,VARCHAR(10),studentInfo,Dữ liệu gốc,Mã định danh học kỳ (ví dụ 2013J),Định danh,Phân loại kỳ học (không dùng dự đoán)
+id_student,INT,studentInfo,Dữ liệu gốc,Mã định danh sinh viên,Định danh,Khóa chính bảng (bị loại bỏ khỏi tập dự đoán để tránh Overfitting)
+final_result,VARCHAR(20),studentInfo,Dữ liệu gốc,"Kết quả học tập cuối cùng (Pass, Distinction, Fail, Withdrawn)",Target gốc,Biến mục tiêu gốc (Ground Truth)
+is_at_risk,INT (Binary),studentInfo,"1 nếu final_result in [Fail, Withdrawn] else 0",Cờ chỉ báo sinh viên có nguy cơ trượt/bỏ học hay không,Target dự đoán,Biến mục tiêu cho bài toán phân loại nhị phân Random Forest
+num_assessments,INT,studentAssessment,COUNT(id_assessment) với date <= cutoff,Số lượng bài kiểm tra quá trình sinh viên đã nộp,Nhóm Điểm số,Đặc trưng cốt lõi phản ánh mức độ cam kết và tham gia đánh giá
+assessment_completion_rate,FLOAT,studentAssessment,num_assessments / tổng số bài của môn học,Tỷ lệ hoàn thành bài kiểm tra theo kế hoạch,Nhóm Điểm số,Đặc trưng dự đoán rủi ro hàng đầu (tương quan âm rất mạnh)
+avg_score,FLOAT,studentAssessment,MEAN(score) các bài đã nộp,Điểm trung bình cộng các bài đánh giá quá trình đã nộp,Nhóm Điểm số,Thước đo năng lực học tập và tiếp thu kiến thức
+weighted_score,FLOAT,studentAssessment + assessments,SUM(score * weight / 100),Điểm trung bình có trọng số tích lũy từ các bài tập,Nhóm Điểm số,Phản ánh tiến độ điểm số tích lũy thực tế so với chuẩn qua môn
+min_score,FLOAT,studentAssessment,MIN(score) các bài đã nộp,Điểm số thấp nhất trong các bài đã làm,Nhóm Điểm số,Chỉ báo điểm rơi phong độ hoặc bài làm yếu kém nhất
+max_score,FLOAT,studentAssessment,MAX(score) các bài đã nộp,Điểm số cao nhất đạt được,Nhóm Điểm số,Thước đo tiềm năng học lực đỉnh cao của sinh viên
+score_std,FLOAT,studentAssessment,STD(score) các bài đã làm,Độ lệch chuẩn điểm số của sinh viên,Nhóm Điểm số,Đo lường tính ổn định hay thất thường trong kết quả học tập
+tma_avg_score,FLOAT,studentAssessment + assessments,MEAN(score) cho assessment_type = TMA,Điểm trung bình bài tập tự luận giảng viên chấm (TMA),Nhóm Điểm số,"Đánh giá năng lực tự luận, hiểu sâu kiến thức"
+cma_avg_score,FLOAT,studentAssessment + assessments,MEAN(score) cho assessment_type = CMA,Điểm trung bình trắc nghiệm trực tuyến máy chấm (CMA),Nhóm Điểm số,Đánh giá mức độ tự giác làm bài trắc nghiệm củng cố
+late_submission_count,INT,studentAssessment + assessments,COUNT(date_submitted > date),Số lần nộp bài muộn hơn so với hạn chót quy định,Nhóm Điểm số,Chỉ báo thói quen trì hoãn và rủi ro quản lý thời gian kém
+avg_submission_delay,FLOAT,studentAssessment + assessments,MEAN(date_submitted - date),Số ngày nộp sớm (âm) hoặc trễ (dương) trung bình,Nhóm Điểm số,Tương quan dương mạnh với nguy cơ trượt môn (nộp trễ nhiều ngày)
+total_clicks,INT,studentVle,SUM(sum_click),Tổng số lượt tương tác/nhấp chuột trên toàn bộ hệ thống VLE,Nhóm Hành vi VLE,Thước đo tổng thể mức độ nỗ lực và thời gian đầu tư học tập
+active_days,INT,studentVle,COUNT(DISTINCT date),Tổng số ngày có đăng nhập và hoạt động trên hệ thống VLE,Nhóm Hành vi VLE,"Đo lường tính đều đặn, kỷ luật và thói quen học tập hàng ngày"
+average_clicks_per_day,FLOAT,studentVle,total_clicks / active_days,Số lượt click trung bình trên mỗi ngày đăng nhập hoạt động,Nhóm Hành vi VLE,Đo lường cường độ học tập trong mỗi phiên làm việc
+unique_learning_resources,INT,studentVle,COUNT(DISTINCT id_site),Số tài nguyên học tập riêng biệt mà sinh viên đã truy cập,Nhóm Hành vi VLE,Phản ánh độ bao phủ tài liệu và sự tò mò khám phá học liệu
+early_clicks_pre_course,INT,studentVle,SUM(sum_click) với date < 0,Số lượt tương tác trước ngày khóa học chính thức khai giảng,Nhóm Hành vi VLE,Chỉ báo tính chủ động chuẩn bị bài và tinh thần học hỏi sớm
+clicks_first_half,INT,studentVle,SUM(sum_click) với 0 <= date <= 100,Số lượt tương tác trong giai đoạn nửa đầu kỳ học,Nhóm Hành vi VLE,Đặc trưng phục vụ cảnh báo sớm trước khi kỳ học kết thúc
+clicks_oucontent,INT,studentVle + vle,SUM(sum_click) với activity_type = oucontent,Lượt tương tác trực tiếp với nội dung bài giảng chính khóa,Nhóm Hành vi VLE,Phản ánh việc tự đọc học liệu bài giảng điện tử
+clicks_forumng,INT,studentVle + vle,SUM(sum_click) với activity_type = forumng,"Lượt tương tác, thảo luận trên diễn đàn môn học",Nhóm Hành vi VLE,Đo lường tính tương tác xã hội và học tập cộng tác
+clicks_quiz,INT,studentVle + vle,"SUM(sum_click) với activity_type in [quiz, externalquiz]",Lượt tương tác với các bài tập trắc nghiệm tự luyện VLE,Nhóm Hành vi VLE,Tương quan âm mạnh với rủi ro (chăm luyện quiz sẽ ít trượt)
+clicks_resource_url,INT,studentVle + vle,"SUM(sum_click) với activity_type in [resource, url, subpage]",Lượt tải tài liệu tham khảo và truy cập liên kết ngoài,Nhóm Hành vi VLE,Mức độ khai thác tài liệu mở rộng
+num_of_prev_attempts,INT,studentInfo,Dữ liệu gốc,Số lần sinh viên đã từng học và thi lại môn này,Nhóm Học tập & Nhân khẩu,Sinh viên học lại có xu hướng rủi ro trượt cao hơn
+studied_credits,INT,studentInfo,Dữ liệu gốc,Tổng số tín chỉ sinh viên đang đồng thời theo học trong kỳ,Nhóm Học tập & Nhân khẩu,Đo lường áp lực quá tải tín chỉ trong kỳ học
+date_registration,INT,studentRegistration,date_registration (điền median nếu thiếu),Số ngày đăng ký môn học trước ngày khai giảng (thường âm),Nhóm Học tập & Nhân khẩu,Đăng ký quá sát ngày khai giảng có thể là rủi ro bị động
+has_unregistered,INT (Binary),studentRegistration,1 nếu date_unregistration NOT NULL else 0,Cờ ghi nhận sinh viên đã rút môn trong học kỳ,Nhóm Học tập & Nhân khẩu,Chỉ báo rút môn trực tiếp (Withdrawn)
+gender,VARCHAR(5),studentInfo,Dữ liệu gốc (M/F),Giới tính sinh viên,Nhân khẩu học,Thông tin bối cảnh (mã hóa One-Hot/Label)
+highest_education,VARCHAR(50),studentInfo,Dữ liệu gốc,Trình độ học vấn cao nhất trước khi nhập học,Nhân khẩu học,"Trình độ đầu vào (Post Graduate, HE, A Level, No Formal)"
+imd_band,VARCHAR(20),studentInfo,Dữ liệu gốc (điền Missing nếu thiếu),Chỉ số nghèo đa chiều khu vực sinh sống (kinh tế - xã hội),Nhân khẩu học,Bối cảnh điều kiện kinh tế xã hội
+age_band,VARCHAR(20),studentInfo,"Dữ liệu gốc (0-35, 35-55, 55<=)",Nhóm tuổi của sinh viên,Nhân khẩu học,Phân tầng độ tuổi người học
+disability,VARCHAR(5),studentInfo,Dữ liệu gốc (Y/N),Tình trạng khuyết tật của sinh viên,Nhân khẩu học,Hỗ trợ cá nhân hóa theo hoàn cảnh đặc biệt

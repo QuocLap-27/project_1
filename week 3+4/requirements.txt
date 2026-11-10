@@ -1,0 +1,11 @@
+# Smart LMS & Generative AI - Project Requirements
+pandas>=2.0.0
+numpy>=1.24.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+scikit-learn>=1.3.0
+python-docx>=0.8.11
+pyodbc>=4.0.39
+SQLAlchemy>=2.0.0
+pypdfium2>=4.18.0
+jupyter>=1.0.0
