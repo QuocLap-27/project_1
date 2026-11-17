@@ -1,0 +1,109 @@
+================================================================================
+BÁO CÁO PHÂN LOẠI CHI TIẾT (CLASSIFICATION REPORT) - TUẦN 5 & TUẦN 6
+Dự án: SMART LMS & GENERATIVE AI | Môn học: FFF - Học kỳ: 2013J (N = 2.283)
+Phân chia: Stratified Train/Test 80/20 (Train = 1.826, Test = 457, random_state = 42)
+================================================================================
+
+### CHẾ ĐỘ 1: BỘ 24 ĐẶC TRƯNG KẾ THỪA TUẦN 4 (student_features.csv - Đã loại Exam, id_student, final_result, has_unregistered) ###
+
+--- Mô hình: Logistic Regression (Decision Threshold mặc định = 0.50) ---
+                      precision     recall   f1-score    support
+
+        Non-Risk (0)     0.9430     0.9817     0.9620        219
+         At-Risk (1)     0.9825     0.9454     0.9636        238
+
+            accuracy                           0.9628        457
+           macro avg     0.9628     0.9636     0.9628        457
+        weighted avg     0.9636     0.9628     0.9628        457
+Confusion Matrix: TN=215, FP=4, FN=13, TP=225
+ROC-AUC: 0.9912 | PR-AUC: 0.9937 | Balanced Accuracy: 0.9636
+
+--- Mô hình: Random Forest (Decision Threshold mặc định = 0.50) ---
+                      precision     recall   f1-score    support
+
+        Non-Risk (0)     0.9425     0.9726     0.9573        219
+         At-Risk (1)     0.9740     0.9454     0.9595        238
+
+            accuracy                           0.9584        457
+           macro avg     0.9583     0.9590     0.9584        457
+        weighted avg     0.9589     0.9584     0.9584        457
+Confusion Matrix: TN=213, FP=6, FN=13, TP=225
+ROC-AUC: 0.9903 | PR-AUC: 0.9930 | Balanced Accuracy: 0.9590
+
+--- Mô hình: Decision Tree (Decision Threshold mặc định = 0.50) ---
+                      precision     recall   f1-score    support
+
+        Non-Risk (0)     0.9455     0.9498     0.9476        219
+         At-Risk (1)     0.9536     0.9496     0.9516        238
+
+            accuracy                           0.9497        457
+           macro avg     0.9495     0.9497     0.9496        457
+        weighted avg     0.9497     0.9497     0.9497        457
+Confusion Matrix: TN=208, FP=11, FN=12, TP=226
+ROC-AUC: 0.9768 | PR-AUC: 0.9739 | Balanced Accuracy: 0.9497
+
+--- Mô hình: Random Forest (Decision Threshold tối ưu = 0.35 - Ưu tiên Recall lớp At-Risk) ---
+                      precision     recall   f1-score    support
+
+        Non-Risk (0)     0.9583     0.9452     0.9517        219
+         At-Risk (1)     0.9502     0.9622     0.9562        238
+
+            accuracy                           0.9540        457
+           macro avg     0.9543     0.9537     0.9539        457
+        weighted avg     0.9541     0.9540     0.9540        457
+Confusion Matrix: TN=207, FP=12, FN=9, TP=229
+ROC-AUC: 0.9903 | PR-AUC: 0.9930 | Balanced Accuracy: 0.9537
+
+--------------------------------------------------------------------------------
+
+### CHẾ ĐỘ 2: BỘ 24 ĐẶC TRƯNG CẢNH BÁO SỚM NGHIÊM NGẶT TẠI NGÀY 100 (student_features_early_d100.csv - Strict Cutoff date <= 100) ###
+
+--- Mô hình: Logistic Regression (Decision Threshold mặc định = 0.50) ---
+                      precision     recall   f1-score    support
+
+        Non-Risk (0)     0.8412     0.8950     0.8673        219
+         At-Risk (1)     0.8973     0.8445     0.8701        238
+
+            accuracy                           0.8687        457
+           macro avg     0.8693     0.8698     0.8687        457
+        weighted avg     0.8704     0.8687     0.8688        457
+Confusion Matrix: TN=196, FP=23, FN=37, TP=201
+ROC-AUC: 0.9393 | PR-AUC: 0.9498 | Balanced Accuracy: 0.8698
+
+--- Mô hình: Random Forest (Decision Threshold mặc định = 0.50) ---
+                      precision     recall   f1-score    support
+
+        Non-Risk (0)     0.8143     0.8813     0.8465        219
+         At-Risk (1)     0.8818     0.8151     0.8472        238
+
+            accuracy                           0.8468        457
+           macro avg     0.8481     0.8482     0.8468        457
+        weighted avg     0.8495     0.8468     0.8468        457
+Confusion Matrix: TN=193, FP=26, FN=44, TP=194
+ROC-AUC: 0.9364 | PR-AUC: 0.9477 | Balanced Accuracy: 0.8482
+
+--- Mô hình: Decision Tree (Decision Threshold mặc định = 0.50) ---
+                      precision     recall   f1-score    support
+
+        Non-Risk (0)     0.7686     0.8950     0.8270        219
+         At-Risk (1)     0.8861     0.7521     0.8136        238
+
+            accuracy                           0.8206        457
+           macro avg     0.8274     0.8235     0.8203        457
+        weighted avg     0.8298     0.8206     0.8200        457
+Confusion Matrix: TN=196, FP=23, FN=59, TP=179
+ROC-AUC: 0.9030 | PR-AUC: 0.9216 | Balanced Accuracy: 0.8235
+
+--- Mô hình: Random Forest (Decision Threshold tối ưu = 0.35 - Ưu tiên Recall lớp At-Risk) ---
+                      precision     recall   f1-score    support
+
+        Non-Risk (0)     0.8725     0.8128     0.8416        219
+         At-Risk (1)     0.8379     0.8908     0.8635        238
+
+            accuracy                           0.8534        457
+           macro avg     0.8552     0.8518     0.8526        457
+        weighted avg     0.8545     0.8534     0.8530        457
+Confusion Matrix: TN=178, FP=41, FN=26, TP=212
+ROC-AUC: 0.9364 | PR-AUC: 0.9477 | Balanced Accuracy: 0.8518
+
+--------------------------------------------------------------------------------
