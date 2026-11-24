@@ -1,0 +1,4 @@
+﻿scenario_type,data_source,is_simulated,total_cases,successful_cases,json_valid_pct,schema_valid_pct,nfr01_within_20s_pct,avg_latency_ms,avg_topic_relevance_pct,avg_four_options_pct,avg_single_answer_pct,avg_explanation_fit_pct,avg_difficulty_fit_pct,no_duplication_rate_pct,avg_max_similarity,avg_explanation_chars,avg_overall_quality_score
+baseline,LIVE_GEMINI_API,False,3,2,66.67,66.67,33.33,31738.82,100.0,100.0,100.0,100.0,92.0,100.0,0.49,114.9,65.6
+risk_level,LIVE_GEMINI_API,False,3,1,33.33,33.33,33.33,20146.31,100.0,100.0,100.0,100.0,100.0,100.0,0.22,123.0,33.33
+detailed_profile,LIVE_GEMINI_API,False,3,2,66.67,66.67,66.67,17743.64,100.0,100.0,100.0,100.0,100.0,100.0,0.48,124.1,66.67

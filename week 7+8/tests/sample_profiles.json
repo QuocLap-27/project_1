@@ -1,0 +1,105 @@
+{
+  "description": "Bộ hồ sơ học tập mô phỏng (hoàn toàn ẩn danh, không chứa thông tin cá nhân thật hay dữ liệu nhạy cảm) dùng kiểm thử GenAI Tuần 7+8 theo cấu trúc đầu ra Stored Procedure usp_GetStudentWeakTopicsForGemini.",
+  "profiles": [
+    {
+      "profile_id": "profile_01_high_mixed",
+      "simulated_profile_code": "SIM_PROFILE_01",
+      "title": "Hồ sơ mô phỏng 1: Nguy cơ CAO (0.72) – Kết hợp Chưa nộp bài (KB03) & Điểm thấp dù đã nộp (KB04)",
+      "description": "Kịch bản minh họa Báo cáo Tuần 5–6: chưa nộp Khối 3 (thấp hơn 85% lớp) và điểm thấp 42/100 dù đã nộp Khối 4.",
+      "risk_level": "HIGH",
+      "risk_probability": 0.72,
+      "submission_behavior": "PARTIAL_SUBMISSION_LOW_SCORE",
+      "weak_blocks": [
+        {
+          "it1108_block_code": "IT1108_KB03",
+          "it1108_block_name": "Khối 3: Cấu trúc điều khiển rẽ nhánh & Vòng lặp",
+          "lower_than_class_pct": 85.0,
+          "avg_submitted_score": 0.0,
+          "submission_vs_score_status": "MISSING_SUBMISSION"
+        },
+        {
+          "it1108_block_code": "IT1108_KB04",
+          "it1108_block_name": "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)",
+          "lower_than_class_pct": 68.0,
+          "avg_submitted_score": 42.0,
+          "submission_vs_score_status": "LOW_SCORE_DESPITE_SUBMISSION"
+        }
+      ]
+    },
+    {
+      "profile_id": "profile_02_high_no_submission",
+      "simulated_profile_code": "SIM_PROFILE_02",
+      "title": "Hồ sơ mô phỏng 2: Nguy cơ CAO (0.88) – Chưa nộp bài giai đoạn đầu (KB01, KB02)",
+      "description": "Hồ sơ mô phỏng chưa có bài nộp ở 2 khối đầu kỳ (MISSING_SUBMISSION), ưu tiên câu hỏi khởi động mức easy kèm gợi ý từng bước.",
+      "risk_level": "HIGH",
+      "risk_probability": 0.88,
+      "submission_behavior": "NO_SUBMISSION",
+      "weak_blocks": [
+        {
+          "it1108_block_code": "IT1108_KB01",
+          "it1108_block_name": "Khối 1: Giải quyết bài toán, Thuật toán & Tổng quan lập trình",
+          "lower_than_class_pct": 92.0,
+          "avg_submitted_score": 0.0,
+          "submission_vs_score_status": "MISSING_SUBMISSION"
+        },
+        {
+          "it1108_block_code": "IT1108_KB02",
+          "it1108_block_name": "Khối 2: Ngôn ngữ C cơ bản, Hệ đếm, Kiểu dữ liệu, Vào/ra & Biểu thức",
+          "lower_than_class_pct": 90.0,
+          "avg_submitted_score": 0.0,
+          "submission_vs_score_status": "MISSING_SUBMISSION"
+        }
+      ]
+    },
+    {
+      "profile_id": "profile_03_medium_low_score",
+      "simulated_profile_code": "SIM_PROFILE_03",
+      "title": "Hồ sơ mô phỏng 3: Nguy cơ TRUNG BÌNH (0.54) – Nộp bài đầy đủ nhưng điểm thấp (KB04, KB05)",
+      "description": "Hồ sơ mô phỏng đã nộp đầy đủ bài tập nhưng điểm dưới ngưỡng (LOW_SCORE_DESPITE_SUBMISSION), cần câu hỏi lần vết & phân tích lỗi code C.",
+      "risk_level": "MEDIUM",
+      "risk_probability": 0.54,
+      "submission_behavior": "SUBMITTED_LOW_SCORE",
+      "weak_blocks": [
+        {
+          "it1108_block_code": "IT1108_KB04",
+          "it1108_block_name": "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)",
+          "lower_than_class_pct": 62.0,
+          "avg_submitted_score": 46.0,
+          "submission_vs_score_status": "LOW_SCORE_DESPITE_SUBMISSION"
+        },
+        {
+          "it1108_block_code": "IT1108_KB05",
+          "it1108_block_name": "Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự",
+          "lower_than_class_pct": 65.0,
+          "avg_submitted_score": 44.0,
+          "submission_vs_score_status": "LOW_SCORE_DESPITE_SUBMISSION"
+        }
+      ]
+    },
+    {
+      "profile_id": "profile_04_low_consolidation",
+      "simulated_profile_code": "SIM_PROFILE_04",
+      "title": "Hồ sơ mô phỏng 4: Nguy cơ THẤP (0.18) – Nhóm đối chứng ôn tập nâng cao (KB05, KB06)",
+      "description": "Hồ sơ mô phỏng đạt yêu cầu (NORMAL), ôn tập củng cố Con trỏ, Struct và Tệp dữ liệu ở mức medium/hard.",
+      "risk_level": "LOW",
+      "risk_probability": 0.18,
+      "submission_behavior": "NORMAL",
+      "weak_blocks": [
+        {
+          "it1108_block_code": "IT1108_KB05",
+          "it1108_block_name": "Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự",
+          "lower_than_class_pct": 20.0,
+          "avg_submitted_score": 78.0,
+          "submission_vs_score_status": "NORMAL"
+        },
+        {
+          "it1108_block_code": "IT1108_KB06",
+          "it1108_block_name": "Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ",
+          "lower_than_class_pct": 15.0,
+          "avg_submitted_score": 82.0,
+          "submission_vs_score_status": "NORMAL"
+        }
+      ]
+    }
+  ]
+}

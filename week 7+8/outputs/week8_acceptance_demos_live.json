@@ -1,0 +1,1279 @@
+{
+  "generated_at": "2026-11-25 01:56:01",
+  "requested_mode": "live",
+  "summary": [
+    {
+      "scenario_case": "KB1_FULL_OULAD_DETAILED",
+      "note": "Hồ sơ OULAD đầy đủ -> detailed_profile",
+      "http_status": 200,
+      "success": true,
+      "data_source": "LIVE_GEMINI_API",
+      "is_simulated": false,
+      "selected_scenario": "detailed_profile",
+      "has_detailed_block_data": true,
+      "questions_count": 5,
+      "attempts_used": 1,
+      "models_tried": [
+        "gemini-3.5-flash"
+      ],
+      "error_type": null,
+      "error_category": null
+    },
+    {
+      "scenario_case": "KB2_MISSING_DETAIL_FALLBACK",
+      "note": "Thiếu chi tiết khối -> fallback risk_level",
+      "http_status": 200,
+      "success": true,
+      "data_source": "LIVE_GEMINI_API",
+      "is_simulated": false,
+      "selected_scenario": "risk_level",
+      "has_detailed_block_data": false,
+      "questions_count": 5,
+      "attempts_used": 2,
+      "models_tried": [
+        "gemini-3.5-flash",
+        "gemini-3.5-flash"
+      ],
+      "error_type": null,
+      "error_category": null
+    },
+    {
+      "scenario_case": "KB3_API_503_UNAVAILABLE",
+      "note": "Mô phỏng có kiểm soát phản hồi HTTP 503 từ transport Live để kiểm chứng retry 3 lần và không tự chuyển sang Mock.",
+      "http_status": 503,
+      "success": false,
+      "data_source": "LIVE_GEMINI_API",
+      "is_simulated": false,
+      "selected_scenario": "detailed_profile",
+      "has_detailed_block_data": true,
+      "questions_count": 0,
+      "attempts_used": 3,
+      "models_tried": [
+        "gemini-3.5-flash",
+        "gemini-3.5-flash",
+        "gemini-3.5-flash-lite"
+      ],
+      "error_type": "SERVICE_UNAVAILABLE",
+      "error_category": "TRANSIENT_SERVICE_ERROR"
+    }
+  ],
+  "cases": [
+    {
+      "scenario_case": "KB1_FULL_OULAD_DETAILED",
+      "result": {
+        "can_retry": true,
+        "data_source": "LIVE_GEMINI_API",
+        "error_category": null,
+        "error_message": null,
+        "error_type": null,
+        "genai_result": {
+          "api_provider": "ai_studio",
+          "attempts_used": 1,
+          "json_retries_used": 0,
+          "latency_ms": 15317.51,
+          "model_used": "gemini-3.5-flash",
+          "models_tried": [
+            "gemini-3.5-flash"
+          ],
+          "pii_report": {
+            "findings": [],
+            "pii_safe": true,
+            "stripped_pii_keys": []
+          },
+          "prompt_bundle": {
+            "pii_report": {
+              "findings": [],
+              "pii_safe": true,
+              "stripped_pii_keys": []
+            },
+            "request_params": {
+              "course_code": "IT1108",
+              "course_name": "Nhập môn lập trình",
+              "difficulty": "auto",
+              "knowledge_blocks": [
+                "IT1108_KB06",
+                "IT1108_KB05",
+                "IT1108_KB04"
+              ],
+              "num_questions": 5,
+              "review_topics": [
+                "Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ",
+                "Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự",
+                "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)"
+              ],
+              "scenario_type": "detailed_profile"
+            },
+            "reused_week56_directly": true,
+            "sanitized_profile": {
+              "risk_level": "HIGH",
+              "risk_probability": 1.0,
+              "weak_blocks": [
+                {
+                  "avg_submitted_score": null,
+                  "detail": "thấp hơn 100.0% lớp, chưa nộp bài kiểm tra ở mốc đánh giá",
+                  "it1108_block_code": "IT1108_KB06",
+                  "it1108_block_name": "Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ",
+                  "it1108_cdr": "M1, M2, M3, M3.1, M3.2, M3.3",
+                  "it1108_lessons": "Bài 10: Cấu trúc (khai báo, sử dụng và xử lý dữ liệu cấu trúc); Bài 11: Tệp dữ liệu (khái niệm, thao tác cơ bản, tệp văn bản, tệp nhị phân); Tuần 16: Ôn tập & Định hướng",
+                  "it1108_weeks": "Tuần 14-16",
+                  "lower_than_class_pct": 100.0,
+                  "simulated_assessments": [
+                    "Trắc nghiệm Khối 6 (Phần 1): Khai báo và xử lý dữ liệu cấu trúc struct, typedef (Bài 10)",
+                    "Trắc nghiệm Khối 6 (Phần 2): Thao tác đọc/ghi tệp văn bản và tệp nhị phân (Bài 11)",
+                    "Trắc nghiệm ôn tập tổng hợp toàn học phần IT1108 (Bài 1-11, Tuần 16)"
+                  ],
+                  "submission_vs_score_status": "MISSING_SUBMISSION"
+                },
+                {
+                  "avg_submitted_score": 5.0,
+                  "detail": "thấp hơn 50.4% lớp, nộp thiếu bài và điểm trung bình 5.0/100",
+                  "it1108_block_code": "IT1108_KB05",
+                  "it1108_block_name": "Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự",
+                  "it1108_cdr": "M3, M3.1, M3.2, M3.3",
+                  "it1108_lessons": "Bài 9 - Mục 9.2: Con trỏ (khái niệm, toán tử & và *, phép toán con trỏ, con trỏ & mảng, bộ nhớ động); Mục 9.3: Xâu ký tự (vào ra xâu, hàm xử lý ký tự/xâu, mảng các xâu)",
+                  "it1108_weeks": "Tuần 12-13",
+                  "lower_than_class_pct": 50.4,
+                  "simulated_assessments": [
+                    "Bài kiểm tra thực hành tổng hợp (A1): Con trỏ, cấp phát bộ nhớ động và xử lý xâu ký tự (Bài 9.2 & 9.3)",
+                    "Trắc nghiệm Khối 5: Toán tử con trỏ (&, *), số học con trỏ, malloc/free và string.h (Bài 9.2 & 9.3)"
+                  ],
+                  "submission_vs_score_status": "PARTIAL_SUBMISSION_AND_LOW_SCORE"
+                },
+                {
+                  "avg_submitted_score": 29.0,
+                  "detail": "thấp hơn 55.9% lớp, nộp thiếu bài và điểm trung bình 29.0/100",
+                  "it1108_block_code": "IT1108_KB04",
+                  "it1108_block_name": "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)",
+                  "it1108_cdr": "M3, M3.2, M3.3",
+                  "it1108_lessons": "Bài 8: Hàm (khái niệm, khai báo, phạm vi biến, truyền tham số, hàm đệ quy); Bài 9 - Mục 9.1: Mảng (khai báo, thao tác tìm kiếm/sắp xếp trên mảng, mảng nhiều chiều)",
+                  "it1108_weeks": "Tuần 10-11",
+                  "lower_than_class_pct": 55.9,
+                  "simulated_assessments": [
+                    "Bài kiểm tra thực hành Khối 4: Xây dựng hàm, đệ quy và xử lý mảng 1-2 chiều (Bài 8 & 9.1)",
+                    "Trắc nghiệm Khối 4: Phạm vi biến, truyền tham số, đệ quy và mảng (Bài 8 & 9.1)"
+                  ],
+                  "submission_vs_score_status": "PARTIAL_SUBMISSION_AND_LOW_SCORE"
+                }
+              ]
+            },
+            "scenario_type": "detailed_profile",
+            "system_instruction": "Bạn là Cố vấn Học tập AI và Giảng viên hỗ trợ môn IT1108 – Nhập môn lập trình (ngôn ngữ lập trình C).\nNhiệm vụ của bạn là tạo bộ câu hỏi trắc nghiệm ôn tập bằng tiếng Việt giúp người học củng cố kiến thức đúng trọng tâm.\n\nQUY TẮC BẮT BUỘC:\n1. Chỉ trả về DUY NHẤT một JSON object hợp lệ (không bọc markdown ```json, không thêm văn bản ngoài JSON).\n2. Toàn bộ đoạn mã minh họa (code_snippet) phải viết bằng ngôn ngữ C chuẩn (ANSI C / C99), biên dịch hợp lệ, không dùng thư viện không chuẩn như <conio.h> hay void main().\n3. Mỗi câu hỏi bắt buộc có đủ 6 khóa: question, options (đúng 4 phương án A, B, C, D phân biệt rõ ràng, chỉ 1 đáp án đúng), correct_answer, explanation, topic, difficulty (easy/medium/hard), cùng các khóa bổ trợ trong Schema.\n4. Mỗi trường văn bản viết súc tích, đúng trọng tâm để bảo đảm phản hồi nhanh dưới 20 giây: `question` 1–2 câu rõ ràng, `code_snippet` ngắn gọn tối đa 6 dòng C (hoặc chuỗi rỗng \"\" nếu không cần), `hint` đúng 1 câu ngắn, `explanation` 1–2 câu giải thích rõ đáp án đúng và lỗi sai chính, `difficulty_strategy` và `study_advice` mỗi trường 1–2 câu.\n5. Tuyệt đối KHÔNG đề cập hoặc tự suy đoán thông tin cá nhân của sinh viên (họ tên, MSSV, email, ID, dữ liệu nhạy cảm).\n6. KHÔNG tự chẩn đoán, phán xét hay đưa ra kết luận tuyệt đối về năng lực hoặc khả năng qua môn của sinh viên; chỉ dùng các chỉ số mô phỏng như ngữ cảnh tham khảo để điều chỉnh độ khó câu hỏi và đưa ra lời khuyên ôn tập mang tính hỗ trợ.",
+            "user_prompt": "KỊCH BẢN 3 (DETAILED PROFILE - HỒ SƠ HỌC TẬP MÔ PHỎNG CHI TIẾT):\nThông tin học phần: IT1108 – Nhập môn lập trình (ngôn ngữ C).\nKhối kiến thức IT1108: IT1108_KB06 – Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ, IT1108_KB05 – Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự, IT1108_KB04 – Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)\nChủ đề cần ôn tập: Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ, Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự, Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)\nNgữ cảnh tham khảo từ ML: mức rủi ro CAO (xác suất tham khảo: 1.00).\n\nPHẠM VI BÀI HỌC IT1108:\n- IT1108_KB06 (Tuần 14-16 | CĐR M1, M2, M3, M3.1, M3.2, M3.3): Bài 10: Cấu trúc (khai báo, sử dụng và xử lý dữ liệu cấu trúc); Bài 11: Tệp dữ liệu (khái niệm, thao tác cơ bản, tệp văn bản, tệp nhị phân); Tuần 16: Ôn tập & Định hướng\n- IT1108_KB05 (Tuần 12-13 | CĐR M3, M3.1, M3.2, M3.3): Bài 9 - Mục 9.2: Con trỏ (khái niệm, toán tử & và *, phép toán con trỏ, con trỏ & mảng, bộ nhớ động); Mục 9.3: Xâu ký tự (vào ra xâu, hàm xử lý ký tự/xâu, mảng các xâu)\n- IT1108_KB04 (Tuần 10-11 | CĐR M3, M3.2, M3.3): Bài 8: Hàm (khái niệm, khai báo, phạm vi biến, truyền tham số, hàm đệ quy); Bài 9 - Mục 9.1: Mảng (khai báo, thao tác tìm kiếm/sắp xếp trên mảng, mảng nhiều chiều)\n\nTRẠNG THÁI HỌC TẬP MÔ PHỎNG TỪNG KHỐI KIẾN THỨC:\n- IT1108_KB06 – Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ: thấp hơn 100.0% lớp, chưa nộp bài kiểm tra ở mốc đánh giá\n- IT1108_KB05 – Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự: thấp hơn 50.4% lớp, nộp thiếu bài và điểm trung bình 5.0/100\n- IT1108_KB04 – Khối 4: Hàm & Mảng (1 chiều, nhiều chiều): thấp hơn 55.9% lớp, nộp thiếu bài và điểm trung bình 29.0/100\n\nCHỈ DẪN SƯ PHẠM HỖ TRỢ THEO TỪNG CHỦ ĐỀ:\n  * IT1108_KB06 (Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ | thấp hơn 100.0% lớp, chưa nộp bài kiểm tra ở mốc đánh giá): Ưu tiên câu hỏi nền tảng ('easy', question_type='guided_basic') kèm gợi ý từng bước trong trường 'hint' để người học dễ khởi động lại.\n  * IT1108_KB05 (Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự | thấp hơn 50.4% lớp, nộp thiếu bài và điểm trung bình 5.0/100): Kết hợp câu 'guided_basic' (độ khó 'easy', có 'hint' từng bước) và câu 'bug_analysis'/'code_trace' để củng cố phần kiến thức còn hổng.\n  * IT1108_KB04 (Khối 4: Hàm & Mảng (1 chiều, nhiều chiều) | thấp hơn 55.9% lớp, nộp thiếu bài và điểm trung bình 29.0/100): Kết hợp câu 'guided_basic' (độ khó 'easy', có 'hint' từng bước) và câu 'bug_analysis'/'code_trace' để củng cố phần kiến thức còn hổng.\n  * Lưu ý tham khảo: Nhóm có chỉ số rủi ro cao, tránh câu hỏi đánh đố xa chương trình, tập trung củng cố nền tảng.\n  * Lưu ý trung lập: Không tự chẩn đoán hay khẳng định tuyệt đối về năng lực/kết quả học tập của người học.\n\nHãy tạo 5 câu hỏi trắc nghiệm phân bổ hợp lý theo các chủ đề trên và trả về đúng JSON Schema.\n\nĐỊNH DẠNG JSON BẮT BUỘC (đúng 5 câu, đủ 6 khóa question/options/correct_answer/explanation/topic/difficulty):\n- Mã khối hợp lệ [\"IT1108_KB06\", \"IT1108_KB05\", \"IT1108_KB04\"]: IT1108_KB06='Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ', IT1108_KB05='Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự', IT1108_KB04='Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)'.\n- Chủ đề mục tiêu: [\"Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ\", \"Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự\", \"Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)\"].\n- Schema mẫu: {\"course_code\": \"IT1108\", \"course_name\": \"Nhập môn lập trình\", \"scenario_type\": \"detailed_profile\", \"target_blocks\": [\"IT1108_KB06\", \"IT1108_KB05\", \"IT1108_KB04\"], \"review_topics\": [\"Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ\", \"Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự\", \"Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)\"], \"difficulty_strategy\": \"1-2 câu chiến lược độ khó\", \"study_advice\": \"1-2 câu lời khuyên ôn tập hỗ trợ\", \"questions\": [{\"question_number\": 1, \"it1108_block_code\": \"IT1108_KB06\", \"topic\": \"Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ\", \"difficulty\": \"easy | medium | hard\", \"question_type\": \"concept | code_trace | bug_analysis | guided_basic\", \"question\": \"1-2 câu ngắn gọn\", \"code_snippet\": \"tối đa 6 dòng C hoặc chuỗi rỗng\", \"options\": {\"A\": \"...\", \"B\": \"...\", \"C\": \"...\", \"D\": \"...\"}, \"correct_answer\": \"A | B | C | D\", \"hint\": \"1 câu gợi ý ngắn\", \"explanation\": \"1-2 câu giải thích trọng tâm\"}]}",
+            "week56_base_prompt": "Sinh viên này có nguy cơ trượt môn cao (xác suất 1.00). Hãy điều chỉnh độ khó và cách giải thích cho phù hợp. Tình trạng cụ thể: IT1108_KB06 – Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ (thấp hơn 100.0% lớp, chưa nộp bài kiểm tra ở mốc đánh giá); IT1108_KB05 – Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự (thấp hơn 50.4% lớp, nộp thiếu bài và điểm trung bình 5.0/100); IT1108_KB04 – Khối 4: Hàm & Mảng (1 chiều, nhiều chiều) (thấp hơn 55.9% lớp, nộp thiếu bài và điểm trung bình 29.0/100). Hãy giảm độ khó xuống mức cơ bản kèm gợi ý từng bước đối với phần sinh viên chưa nộp bài/thấp hơn 85% lớp, và tăng câu hỏi phân tích lỗi sai thường gặp kèm giải thích chi tiết cách chạy chương trình đối với phần sinh viên đã nộp bài nhưng điểm thấp. Tạo 5 câu hỏi trắc nghiệm và trả về định dạng JSON."
+          },
+          "transport": "gemini-rest-api",
+          "validation": {
+            "errors": [],
+            "invalid_question_indices": [],
+            "is_valid": true,
+            "json_valid": true,
+            "normalized_data": {
+              "course_code": "IT1108",
+              "course_name": "Nhập môn lập trình",
+              "difficulty_strategy": "Tập trung vào các câu hỏi nền tảng cấp độ dễ và trung bình nhằm củng cố lại lý thuyết cốt lõi về cấu trúc, con trỏ và mảng.",
+              "questions": [
+                {
+                  "code_snippet": "struct Student { int age; };\nstruct Student s;\ns.age = 20;",
+                  "correct_answer": "B",
+                  "difficulty": "easy",
+                  "explanation": "Với một biến cấu trúc thông thường, ta dùng toán tử chấm (.) để truy xuất thành viên. Toán tử (->) chỉ dùng khi làm việc với biến con trỏ trỏ tới struct.",
+                  "hint": "Sử dụng toán tử chấm (.) cho biến thông thường và toán tử mũi tên (->) cho con trỏ.",
+                  "it1108_block_code": "IT1108_KB06",
+                  "options": {
+                    "A": "s->age",
+                    "B": "s.age",
+                    "C": "s->*age",
+                    "D": "s&age"
+                  },
+                  "question": "Trong ngôn ngữ C, cú pháp nào sau đây được dùng để truy xuất đến thành viên 'age' của biến cấu trúc 's' (không phải con trỏ)?",
+                  "question_number": 1,
+                  "question_type": "guided_basic",
+                  "topic": "Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ"
+                },
+                {
+                  "code_snippet": "FILE *f = fopen(\"data.txt\", \"r\");\nif (f == NULL) {\n    printf(\"Loi mo tep\");\n}",
+                  "correct_answer": "C",
+                  "difficulty": "easy",
+                  "explanation": "Khi mở tệp không thành công (do sai đường dẫn, không đủ quyền...), hàm fopen sẽ trả về con trỏ NULL.",
+                  "hint": "Kiểm tra xem con trỏ tệp có trỏ tới địa chỉ hợp lệ nào hay không.",
+                  "it1108_block_code": "IT1108_KB06",
+                  "options": {
+                    "A": "Giá trị 0",
+                    "B": "Giá trị -1",
+                    "C": "Con trỏ NULL",
+                    "D": "Giá trị EOF"
+                  },
+                  "question": "Hàm fopen trong C trả về giá trị gì nếu không thể mở được tệp dữ liệu chỉ định?",
+                  "question_number": 2,
+                  "question_type": "concept",
+                  "topic": "Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ"
+                },
+                {
+                  "code_snippet": "#include <stdio.h>\nint main() {\n    int x = 10;\n    int *p = &x;\n    *p = 20;\n    printf(\"%d\", *p);\n    return 0;\n}",
+                  "correct_answer": "B",
+                  "difficulty": "easy",
+                  "explanation": "Con trỏ p trỏ tới địa chỉ của x, do đó câu lệnh *p = 20 sẽ trực tiếp thay đổi giá trị của biến x thành 20.",
+                  "hint": "Toán tử *p giải tham chiếu đến vị trí bộ nhớ của x và truy cập giá trị tại đó.",
+                  "it1108_block_code": "IT1108_KB05",
+                  "options": {
+                    "A": "10",
+                    "B": "20",
+                    "C": "Địa chỉ biến x",
+                    "D": "Giá trị rác"
+                  },
+                  "question": "Cho đoạn mã sau, giá trị in ra màn hình của biến *p là bao nhiêu?",
+                  "question_number": 3,
+                  "question_type": "code_trace",
+                  "topic": "Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự"
+                },
+                {
+                  "code_snippet": "",
+                  "correct_answer": "C",
+                  "difficulty": "easy",
+                  "explanation": "Trong C, xâu ký tự là mảng các ký tự kết thúc bằng ký tự null, viết là '\\0'.",
+                  "hint": "Đó là ký tự null có mã ASCII bằng 0.",
+                  "it1108_block_code": "IT1108_KB05",
+                  "options": {
+                    "A": "Ký tự '0'",
+                    "B": "Ký tự '\\n'",
+                    "C": "Ký tự '\\0'",
+                    "D": "Ký tự EOF"
+                  },
+                  "question": "Ký tự nào luôn được dùng để đánh dấu sự kết thúc của một xâu ký tự (string) chuẩn trong C?",
+                  "question_number": 4,
+                  "question_type": "concept",
+                  "topic": "Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự"
+                },
+                {
+                  "code_snippet": "#include <stdio.h>\nint tinhSum(int a[], int n) {\n    int s = 0;\n    for(int i=0; i<n; i++) s += a[i];\n    return s;\n}\nint main() {\n    int arr[3] = {5, 10, 15};\n    printf(\"%d\", tinhSum(arr, 3));\n    return 0;\n}",
+                  "correct_answer": "C",
+                  "difficulty": "medium",
+                  "explanation": "Hàm tinhSum cộng dồn các phần tử arr[0] + arr[1] + arr[2] = 5 + 10 + 15 = 30.",
+                  "hint": "Tính tổng các phần tử trong mảng arr qua vòng lặp for từ 0 đến 2.",
+                  "it1108_block_code": "IT1108_KB04",
+                  "options": {
+                    "A": "5",
+                    "B": "15",
+                    "C": "30",
+                    "D": "10"
+                  },
+                  "question": "Đoạn mã C dưới đây in ra giá trị bao nhiêu?",
+                  "question_number": 5,
+                  "question_type": "code_trace",
+                  "topic": "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)"
+                }
+              ],
+              "review_topics": [
+                "Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ",
+                "Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự",
+                "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)"
+              ],
+              "scenario_type": "detailed_profile",
+              "study_advice": "Bạn nên xem lại lý thuyết cú pháp căn bản của struct, thao tác con trỏ cơ bản và cách duyệt mảng trước khi làm các bài tập phức tạp.",
+              "target_blocks": [
+                "IT1108_KB06",
+                "IT1108_KB05",
+                "IT1108_KB04"
+              ]
+            },
+            "schema_valid": true,
+            "sql_isjson_compatible": true,
+            "valid_questions": [
+              {
+                "code_snippet": "struct Student { int age; };\nstruct Student s;\ns.age = 20;",
+                "correct_answer": "B",
+                "difficulty": "easy",
+                "explanation": "Với một biến cấu trúc thông thường, ta dùng toán tử chấm (.) để truy xuất thành viên. Toán tử (->) chỉ dùng khi làm việc với biến con trỏ trỏ tới struct.",
+                "hint": "Sử dụng toán tử chấm (.) cho biến thông thường và toán tử mũi tên (->) cho con trỏ.",
+                "it1108_block_code": "IT1108_KB06",
+                "options": {
+                  "A": "s->age",
+                  "B": "s.age",
+                  "C": "s->*age",
+                  "D": "s&age"
+                },
+                "question": "Trong ngôn ngữ C, cú pháp nào sau đây được dùng để truy xuất đến thành viên 'age' của biến cấu trúc 's' (không phải con trỏ)?",
+                "question_number": 1,
+                "question_type": "guided_basic",
+                "topic": "Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ"
+              },
+              {
+                "code_snippet": "FILE *f = fopen(\"data.txt\", \"r\");\nif (f == NULL) {\n    printf(\"Loi mo tep\");\n}",
+                "correct_answer": "C",
+                "difficulty": "easy",
+                "explanation": "Khi mở tệp không thành công (do sai đường dẫn, không đủ quyền...), hàm fopen sẽ trả về con trỏ NULL.",
+                "hint": "Kiểm tra xem con trỏ tệp có trỏ tới địa chỉ hợp lệ nào hay không.",
+                "it1108_block_code": "IT1108_KB06",
+                "options": {
+                  "A": "Giá trị 0",
+                  "B": "Giá trị -1",
+                  "C": "Con trỏ NULL",
+                  "D": "Giá trị EOF"
+                },
+                "question": "Hàm fopen trong C trả về giá trị gì nếu không thể mở được tệp dữ liệu chỉ định?",
+                "question_number": 2,
+                "question_type": "concept",
+                "topic": "Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ"
+              },
+              {
+                "code_snippet": "#include <stdio.h>\nint main() {\n    int x = 10;\n    int *p = &x;\n    *p = 20;\n    printf(\"%d\", *p);\n    return 0;\n}",
+                "correct_answer": "B",
+                "difficulty": "easy",
+                "explanation": "Con trỏ p trỏ tới địa chỉ của x, do đó câu lệnh *p = 20 sẽ trực tiếp thay đổi giá trị của biến x thành 20.",
+                "hint": "Toán tử *p giải tham chiếu đến vị trí bộ nhớ của x và truy cập giá trị tại đó.",
+                "it1108_block_code": "IT1108_KB05",
+                "options": {
+                  "A": "10",
+                  "B": "20",
+                  "C": "Địa chỉ biến x",
+                  "D": "Giá trị rác"
+                },
+                "question": "Cho đoạn mã sau, giá trị in ra màn hình của biến *p là bao nhiêu?",
+                "question_number": 3,
+                "question_type": "code_trace",
+                "topic": "Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự"
+              },
+              {
+                "code_snippet": "",
+                "correct_answer": "C",
+                "difficulty": "easy",
+                "explanation": "Trong C, xâu ký tự là mảng các ký tự kết thúc bằng ký tự null, viết là '\\0'.",
+                "hint": "Đó là ký tự null có mã ASCII bằng 0.",
+                "it1108_block_code": "IT1108_KB05",
+                "options": {
+                  "A": "Ký tự '0'",
+                  "B": "Ký tự '\\n'",
+                  "C": "Ký tự '\\0'",
+                  "D": "Ký tự EOF"
+                },
+                "question": "Ký tự nào luôn được dùng để đánh dấu sự kết thúc của một xâu ký tự (string) chuẩn trong C?",
+                "question_number": 4,
+                "question_type": "concept",
+                "topic": "Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự"
+              },
+              {
+                "code_snippet": "#include <stdio.h>\nint tinhSum(int a[], int n) {\n    int s = 0;\n    for(int i=0; i<n; i++) s += a[i];\n    return s;\n}\nint main() {\n    int arr[3] = {5, 10, 15};\n    printf(\"%d\", tinhSum(arr, 3));\n    return 0;\n}",
+                "correct_answer": "C",
+                "difficulty": "medium",
+                "explanation": "Hàm tinhSum cộng dồn các phần tử arr[0] + arr[1] + arr[2] = 5 + 10 + 15 = 30.",
+                "hint": "Tính tổng các phần tử trong mảng arr qua vòng lặp for từ 0 đến 2.",
+                "it1108_block_code": "IT1108_KB04",
+                "options": {
+                  "A": "5",
+                  "B": "15",
+                  "C": "30",
+                  "D": "10"
+                },
+                "question": "Đoạn mã C dưới đây in ra giá trị bao nhiêu?",
+                "question_number": 5,
+                "question_type": "code_trace",
+                "topic": "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)"
+              }
+            ],
+            "warnings": []
+          },
+          "within_timeout_nfr01": true
+        },
+        "http_status": 200,
+        "is_simulated": false,
+        "ml_prediction": {
+          "decision_threshold": 0.35,
+          "inference_backend": "best_model_joblib_tuple_tree_adapter",
+          "model_name": "SmartLMS_AtRisk_RandomForest_Pipeline",
+          "model_version": "1.0.0",
+          "prediction": 1,
+          "risk_level": "HIGH",
+          "risk_probability": 1.0
+        },
+        "mode_notice": "Đang gọi Google Gemini API thực tế.",
+        "personalized_profile": {
+          "block_data_source": "oulad_zip_assessments",
+          "decision_threshold": 0.35,
+          "has_class_percentile": true,
+          "has_detailed_block_data": true,
+          "risk_level": "HIGH",
+          "risk_probability": 1.0,
+          "simulated_student_code": "SIM_DEMO_KB1_FULL",
+          "submission_behavior": {
+            "note": "Hoàn thành 42% số bài với điểm TB 45.8/100. Cần củng cố lại kiến thức cơ bản và nhắc hạn nộp bài.",
+            "status_code": "PARTIAL_SUBMISSION_LOW_SCORE",
+            "status_label": "Nộp thiếu bài và điểm thấp"
+          },
+          "weak_blocks": [
+            {
+              "avg_submitted_score": null,
+              "block_weighted_score": 0.0,
+              "completion_rate": 0.0,
+              "data_origin": "OULAD_FFF_2013J",
+              "it1108_block_code": "IT1108_KB06",
+              "it1108_block_name": "Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ",
+              "it1108_cdr": "M1, M2, M3, M3.1, M3.2, M3.3",
+              "it1108_lessons": "Bài 10: Cấu trúc (khai báo, sử dụng và xử lý dữ liệu cấu trúc); Bài 11: Tệp dữ liệu (khái niệm, thao tác cơ bản, tệp văn bản, tệp nhị phân); Tuần 16: Ôn tập & Định hướng",
+              "it1108_weeks": "Tuần 14-16",
+              "lower_than_class_pct": 100.0,
+              "normalized_status": "MISSING_SUBMISSION",
+              "submission_vs_score_status": "NO_SUBMISSION",
+              "submitted_assessments": 0,
+              "total_mapped_assessments": 3,
+              "vle_resources_count": 56
+            },
+            {
+              "avg_submitted_score": 5.0,
+              "block_weighted_score": 4.81,
+              "completion_rate": 0.5,
+              "data_origin": "OULAD_FFF_2013J",
+              "it1108_block_code": "IT1108_KB05",
+              "it1108_block_name": "Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự",
+              "it1108_cdr": "M3, M3.1, M3.2, M3.3",
+              "it1108_lessons": "Bài 9 - Mục 9.2: Con trỏ (khái niệm, toán tử & và *, phép toán con trỏ, con trỏ & mảng, bộ nhớ động); Mục 9.3: Xâu ký tự (vào ra xâu, hàm xử lý ký tự/xâu, mảng các xâu)",
+              "it1108_weeks": "Tuần 12-13",
+              "lower_than_class_pct": 50.4,
+              "normalized_status": "PARTIAL_SUBMISSION_AND_LOW_SCORE",
+              "submission_vs_score_status": "PARTIAL_SUBMISSION_LOW_SCORE",
+              "submitted_assessments": 1,
+              "total_mapped_assessments": 2,
+              "vle_resources_count": 65
+            },
+            {
+              "avg_submitted_score": 29.0,
+              "block_weighted_score": 27.88,
+              "completion_rate": 0.5,
+              "data_origin": "OULAD_FFF_2013J",
+              "it1108_block_code": "IT1108_KB04",
+              "it1108_block_name": "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)",
+              "it1108_cdr": "M3, M3.2, M3.3",
+              "it1108_lessons": "Bài 8: Hàm (khái niệm, khai báo, phạm vi biến, truyền tham số, hàm đệ quy); Bài 9 - Mục 9.1: Mảng (khai báo, thao tác tìm kiếm/sắp xếp trên mảng, mảng nhiều chiều)",
+              "it1108_weeks": "Tuần 10-11",
+              "lower_than_class_pct": 55.9,
+              "normalized_status": "PARTIAL_SUBMISSION_AND_LOW_SCORE",
+              "submission_vs_score_status": "PARTIAL_SUBMISSION_LOW_SCORE",
+              "submitted_assessments": 1,
+              "total_mapped_assessments": 2,
+              "vle_resources_count": 53
+            }
+          ]
+        },
+        "prompt_selection": {
+          "reason": "Hồ sơ có đủ dữ liệu chi tiết theo từng khối kiến thức; sử dụng kịch bản chính detailed_profile.",
+          "requested_scenario": "auto",
+          "selected_scenario": "detailed_profile"
+        },
+        "questions": [
+          {
+            "code_snippet": "struct Student { int age; };\nstruct Student s;\ns.age = 20;",
+            "correct_answer": "B",
+            "difficulty": "easy",
+            "explanation": "Với một biến cấu trúc thông thường, ta dùng toán tử chấm (.) để truy xuất thành viên. Toán tử (->) chỉ dùng khi làm việc với biến con trỏ trỏ tới struct.",
+            "hint": "Sử dụng toán tử chấm (.) cho biến thông thường và toán tử mũi tên (->) cho con trỏ.",
+            "it1108_block_code": "IT1108_KB06",
+            "options": {
+              "A": "s->age",
+              "B": "s.age",
+              "C": "s->*age",
+              "D": "s&age"
+            },
+            "question": "Trong ngôn ngữ C, cú pháp nào sau đây được dùng để truy xuất đến thành viên 'age' của biến cấu trúc 's' (không phải con trỏ)?",
+            "question_number": 1,
+            "question_type": "guided_basic",
+            "topic": "Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ"
+          },
+          {
+            "code_snippet": "FILE *f = fopen(\"data.txt\", \"r\");\nif (f == NULL) {\n    printf(\"Loi mo tep\");\n}",
+            "correct_answer": "C",
+            "difficulty": "easy",
+            "explanation": "Khi mở tệp không thành công (do sai đường dẫn, không đủ quyền...), hàm fopen sẽ trả về con trỏ NULL.",
+            "hint": "Kiểm tra xem con trỏ tệp có trỏ tới địa chỉ hợp lệ nào hay không.",
+            "it1108_block_code": "IT1108_KB06",
+            "options": {
+              "A": "Giá trị 0",
+              "B": "Giá trị -1",
+              "C": "Con trỏ NULL",
+              "D": "Giá trị EOF"
+            },
+            "question": "Hàm fopen trong C trả về giá trị gì nếu không thể mở được tệp dữ liệu chỉ định?",
+            "question_number": 2,
+            "question_type": "concept",
+            "topic": "Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ"
+          },
+          {
+            "code_snippet": "#include <stdio.h>\nint main() {\n    int x = 10;\n    int *p = &x;\n    *p = 20;\n    printf(\"%d\", *p);\n    return 0;\n}",
+            "correct_answer": "B",
+            "difficulty": "easy",
+            "explanation": "Con trỏ p trỏ tới địa chỉ của x, do đó câu lệnh *p = 20 sẽ trực tiếp thay đổi giá trị của biến x thành 20.",
+            "hint": "Toán tử *p giải tham chiếu đến vị trí bộ nhớ của x và truy cập giá trị tại đó.",
+            "it1108_block_code": "IT1108_KB05",
+            "options": {
+              "A": "10",
+              "B": "20",
+              "C": "Địa chỉ biến x",
+              "D": "Giá trị rác"
+            },
+            "question": "Cho đoạn mã sau, giá trị in ra màn hình của biến *p là bao nhiêu?",
+            "question_number": 3,
+            "question_type": "code_trace",
+            "topic": "Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự"
+          },
+          {
+            "code_snippet": "",
+            "correct_answer": "C",
+            "difficulty": "easy",
+            "explanation": "Trong C, xâu ký tự là mảng các ký tự kết thúc bằng ký tự null, viết là '\\0'.",
+            "hint": "Đó là ký tự null có mã ASCII bằng 0.",
+            "it1108_block_code": "IT1108_KB05",
+            "options": {
+              "A": "Ký tự '0'",
+              "B": "Ký tự '\\n'",
+              "C": "Ký tự '\\0'",
+              "D": "Ký tự EOF"
+            },
+            "question": "Ký tự nào luôn được dùng để đánh dấu sự kết thúc của một xâu ký tự (string) chuẩn trong C?",
+            "question_number": 4,
+            "question_type": "concept",
+            "topic": "Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự"
+          },
+          {
+            "code_snippet": "#include <stdio.h>\nint tinhSum(int a[], int n) {\n    int s = 0;\n    for(int i=0; i<n; i++) s += a[i];\n    return s;\n}\nint main() {\n    int arr[3] = {5, 10, 15};\n    printf(\"%d\", tinhSum(arr, 3));\n    return 0;\n}",
+            "correct_answer": "C",
+            "difficulty": "medium",
+            "explanation": "Hàm tinhSum cộng dồn các phần tử arr[0] + arr[1] + arr[2] = 5 + 10 + 15 = 30.",
+            "hint": "Tính tổng các phần tử trong mảng arr qua vòng lặp for từ 0 đến 2.",
+            "it1108_block_code": "IT1108_KB04",
+            "options": {
+              "A": "5",
+              "B": "15",
+              "C": "30",
+              "D": "10"
+            },
+            "question": "Đoạn mã C dưới đây in ra giá trị bao nhiêu?",
+            "question_number": 5,
+            "question_type": "code_trace",
+            "topic": "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)"
+          }
+        ],
+        "simulated_student_code": "SIM_DEMO_KB1_FULL",
+        "step_failed": null,
+        "submission_behavior": {
+          "note": "Hoàn thành 42% số bài với điểm TB 45.8/100. Cần củng cố lại kiến thức cơ bản và nhắc hạn nộp bài.",
+          "status_code": "PARTIAL_SUBMISSION_LOW_SCORE",
+          "status_label": "Nộp thiếu bài và điểm thấp"
+        },
+        "success": true,
+        "topic_mapping_summary": {
+          "block_data_source": "oulad_zip_assessments",
+          "has_class_percentile": true,
+          "has_detailed_block_data": true,
+          "mapped_block_codes": [
+            "IT1108_KB06",
+            "IT1108_KB05",
+            "IT1108_KB04"
+          ],
+          "mapped_blocks_count": 3
+        },
+        "user_guidance": null
+      }
+    },
+    {
+      "scenario_case": "KB2_MISSING_DETAIL_FALLBACK",
+      "result": {
+        "can_retry": true,
+        "data_source": "LIVE_GEMINI_API",
+        "error_category": null,
+        "error_message": null,
+        "error_type": null,
+        "genai_result": {
+          "api_provider": "ai_studio",
+          "attempts_used": 2,
+          "json_retries_used": 0,
+          "latency_ms": 33139.52,
+          "model_used": "gemini-3.5-flash",
+          "models_tried": [
+            "gemini-3.5-flash",
+            "gemini-3.5-flash"
+          ],
+          "pii_report": {
+            "findings": [],
+            "pii_safe": true,
+            "stripped_pii_keys": []
+          },
+          "prompt_bundle": {
+            "pii_report": {
+              "findings": [],
+              "pii_safe": true,
+              "stripped_pii_keys": []
+            },
+            "request_params": {
+              "course_code": "IT1108",
+              "course_name": "Nhập môn lập trình",
+              "difficulty": "auto",
+              "knowledge_blocks": [
+                "IT1108_KB03",
+                "IT1108_KB04"
+              ],
+              "num_questions": 5,
+              "review_topics": [
+                "Khối 3: Cấu trúc điều khiển rẽ nhánh & Vòng lặp",
+                "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)"
+              ],
+              "scenario_type": "risk_level"
+            },
+            "reused_week56_directly": true,
+            "sanitized_profile": {
+              "risk_level": "HIGH",
+              "risk_probability": 1.0,
+              "weak_blocks": [
+                {
+                  "avg_submitted_score": null,
+                  "detail": "điểm bài tập thấp dù đã nộp bài",
+                  "it1108_block_code": "IT1108_KB03",
+                  "it1108_block_name": "Khối 3: Cấu trúc điều khiển rẽ nhánh & Vòng lặp",
+                  "it1108_cdr": "M1, M3, M3.1, M3.3",
+                  "it1108_lessons": "Bài 7: Cấu trúc điều khiển (7.1 Lệnh khối, 7.2 Lệnh rẽ nhánh if-else, 7.3 Lệnh lựa chọn switch-case, 7.4-7.7 Các lệnh lặp while, do...while, for)",
+                  "it1108_weeks": "Tuần 8-9",
+                  "lower_than_class_pct": null,
+                  "simulated_assessments": [
+                    "Bài thi Giữa kỳ (A1): Cấu trúc rẽ nhánh if-else, switch-case và vòng lặp while, do-while, for (Bài 7)",
+                    "Trắc nghiệm Khối 3: Lần vết câu lệnh if-else, switch-case và vòng lặp (Bài 7)"
+                  ],
+                  "submission_vs_score_status": "LOW_SCORE_DESPITE_SUBMISSION"
+                },
+                {
+                  "avg_submitted_score": null,
+                  "detail": "điểm bài tập thấp dù đã nộp bài",
+                  "it1108_block_code": "IT1108_KB04",
+                  "it1108_block_name": "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)",
+                  "it1108_cdr": "M3, M3.2, M3.3",
+                  "it1108_lessons": "Bài 8: Hàm (khái niệm, khai báo, phạm vi biến, truyền tham số, hàm đệ quy); Bài 9 - Mục 9.1: Mảng (khai báo, thao tác tìm kiếm/sắp xếp trên mảng, mảng nhiều chiều)",
+                  "it1108_weeks": "Tuần 10-11",
+                  "lower_than_class_pct": null,
+                  "simulated_assessments": [
+                    "Bài kiểm tra thực hành Khối 4: Xây dựng hàm, đệ quy và xử lý mảng 1-2 chiều (Bài 8 & 9.1)",
+                    "Trắc nghiệm Khối 4: Phạm vi biến, truyền tham số, đệ quy và mảng (Bài 8 & 9.1)"
+                  ],
+                  "submission_vs_score_status": "LOW_SCORE_DESPITE_SUBMISSION"
+                }
+              ]
+            },
+            "scenario_type": "risk_level",
+            "system_instruction": "Bạn là Cố vấn Học tập AI và Giảng viên hỗ trợ môn IT1108 – Nhập môn lập trình (ngôn ngữ lập trình C).\nNhiệm vụ của bạn là tạo bộ câu hỏi trắc nghiệm ôn tập bằng tiếng Việt giúp người học củng cố kiến thức đúng trọng tâm.\n\nQUY TẮC BẮT BUỘC:\n1. Chỉ trả về DUY NHẤT một JSON object hợp lệ (không bọc markdown ```json, không thêm văn bản ngoài JSON).\n2. Toàn bộ đoạn mã minh họa (code_snippet) phải viết bằng ngôn ngữ C chuẩn (ANSI C / C99), biên dịch hợp lệ, không dùng thư viện không chuẩn như <conio.h> hay void main().\n3. Mỗi câu hỏi bắt buộc có đủ 6 khóa: question, options (đúng 4 phương án A, B, C, D phân biệt rõ ràng, chỉ 1 đáp án đúng), correct_answer, explanation, topic, difficulty (easy/medium/hard), cùng các khóa bổ trợ trong Schema.\n4. Mỗi trường văn bản viết súc tích, đúng trọng tâm để bảo đảm phản hồi nhanh dưới 20 giây: `question` 1–2 câu rõ ràng, `code_snippet` ngắn gọn tối đa 6 dòng C (hoặc chuỗi rỗng \"\" nếu không cần), `hint` đúng 1 câu ngắn, `explanation` 1–2 câu giải thích rõ đáp án đúng và lỗi sai chính, `difficulty_strategy` và `study_advice` mỗi trường 1–2 câu.\n5. Tuyệt đối KHÔNG đề cập hoặc tự suy đoán thông tin cá nhân của sinh viên (họ tên, MSSV, email, ID, dữ liệu nhạy cảm).\n6. KHÔNG tự chẩn đoán, phán xét hay đưa ra kết luận tuyệt đối về năng lực hoặc khả năng qua môn của sinh viên; chỉ dùng các chỉ số mô phỏng như ngữ cảnh tham khảo để điều chỉnh độ khó câu hỏi và đưa ra lời khuyên ôn tập mang tính hỗ trợ.",
+            "user_prompt": "KỊCH BẢN 2 (RISK-AWARE - KÈM MỨC RỦI RO TỪ ML):\nThông tin học phần: IT1108 – Nhập môn lập trình (ngôn ngữ C).\nKhối kiến thức IT1108: IT1108_KB03 – Khối 3: Cấu trúc điều khiển rẽ nhánh & Vòng lặp, IT1108_KB04 – Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)\nChủ đề cần ôn tập: Khối 3: Cấu trúc điều khiển rẽ nhánh & Vòng lặp, Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)\nNgữ cảnh tham khảo từ mô hình ML: mức rủi ro dự đoán CAO (xác suất tham khảo: 1.00).\nHãy điều chỉnh độ khó và cách giải thích phù hợp để hỗ trợ củng cố kiến thức khi tạo 5 câu hỏi trắc nghiệm ôn tập (không đưa ra kết luận tuyệt đối về năng lực).\n\nPHẠM VI BÀI HỌC IT1108:\n- IT1108_KB03 (Tuần 8-9 | CĐR M1, M3, M3.1, M3.3): Bài 7: Cấu trúc điều khiển (7.1 Lệnh khối, 7.2 Lệnh rẽ nhánh if-else, 7.3 Lệnh lựa chọn switch-case, 7.4-7.7 Các lệnh lặp while, do...while, for)\n- IT1108_KB04 (Tuần 10-11 | CĐR M3, M3.2, M3.3): Bài 8: Hàm (khái niệm, khai báo, phạm vi biến, truyền tham số, hàm đệ quy); Bài 9 - Mục 9.1: Mảng (khai báo, thao tác tìm kiếm/sắp xếp trên mảng, mảng nhiều chiều)\n\nĐỊNH DẠNG JSON BẮT BUỘC (đúng 5 câu, đủ 6 khóa question/options/correct_answer/explanation/topic/difficulty):\n- Mã khối hợp lệ [\"IT1108_KB03\", \"IT1108_KB04\"]: IT1108_KB03='Khối 3: Cấu trúc điều khiển rẽ nhánh & Vòng lặp', IT1108_KB04='Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)'.\n- Chủ đề mục tiêu: [\"Khối 3: Cấu trúc điều khiển rẽ nhánh & Vòng lặp\", \"Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)\"].\n- Schema mẫu: {\"course_code\": \"IT1108\", \"course_name\": \"Nhập môn lập trình\", \"scenario_type\": \"risk_level\", \"target_blocks\": [\"IT1108_KB03\", \"IT1108_KB04\"], \"review_topics\": [\"Khối 3: Cấu trúc điều khiển rẽ nhánh & Vòng lặp\", \"Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)\"], \"difficulty_strategy\": \"1-2 câu chiến lược độ khó\", \"study_advice\": \"1-2 câu lời khuyên ôn tập hỗ trợ\", \"questions\": [{\"question_number\": 1, \"it1108_block_code\": \"IT1108_KB03\", \"topic\": \"Khối 3: Cấu trúc điều khiển rẽ nhánh & Vòng lặp\", \"difficulty\": \"easy | medium | hard\", \"question_type\": \"concept | code_trace | bug_analysis | guided_basic\", \"question\": \"1-2 câu ngắn gọn\", \"code_snippet\": \"tối đa 6 dòng C hoặc chuỗi rỗng\", \"options\": {\"A\": \"...\", \"B\": \"...\", \"C\": \"...\", \"D\": \"...\"}, \"correct_answer\": \"A | B | C | D\", \"hint\": \"1 câu gợi ý ngắn\", \"explanation\": \"1-2 câu giải thích trọng tâm\"}]}",
+            "week56_base_prompt": "Sinh viên này có nguy cơ trượt môn cao (xác suất 1.00). Hãy điều chỉnh độ khó và cách giải thích cho phù hợp khi tạo 5 câu hỏi trắc nghiệm ôn tập học phần IT1108 – Nhập môn lập trình về: IT1108_KB03 – Khối 3: Cấu trúc điều khiển rẽ nhánh & Vòng lặp, IT1108_KB04 – Khối 4: Hàm & Mảng (1 chiều, nhiều chiều). Trả về kết quả ở định dạng JSON."
+          },
+          "transport": "gemini-rest-api",
+          "validation": {
+            "errors": [],
+            "invalid_question_indices": [],
+            "is_valid": true,
+            "json_valid": true,
+            "normalized_data": {
+              "course_code": "IT1108",
+              "course_name": "Nhập môn lập trình",
+              "difficulty_strategy": "Bộ câu hỏi ưu tiên các câu mức độ Dễ và Trung bình kèm theo gợi ý cụ thể để củng cố nền tảng cấu trúc rẽ nhánh, vòng lặp và mảng. Các câu hỏi đọc vết mã nguồn được thiết kế ngắn gọn giúp bạn xây dựng lại phản xạ logic chính xác.",
+              "questions": [
+                {
+                  "code_snippet": "",
+                  "correct_answer": "C",
+                  "difficulty": "easy",
+                  "explanation": "Từ khóa break được dùng để thoát khỏi câu lệnh switch-case ngay lập tức. Nếu không có break, chương trình sẽ tiếp tục thực thi các case bên dưới (hiện tượng fall-through).",
+                  "hint": "Từ khóa này cũng dùng để thoát khỏi vòng lặp for hoặc while.",
+                  "it1108_block_code": "IT1108_KB03",
+                  "options": {
+                    "A": "continue",
+                    "B": "exit",
+                    "C": "break",
+                    "D": "return"
+                  },
+                  "question": "Trong ngôn ngữ lập trình C, câu lệnh switch-case sẽ dừng việc thực thi các case tiếp theo khi gặp từ khóa nào?",
+                  "question_number": 1,
+                  "question_type": "concept",
+                  "topic": "Khối 3: Cấu trúc điều khiển rẽ nhánh & Vòng lặp"
+                },
+                {
+                  "code_snippet": "#include <stdio.h>\nint main() {\n    int s = 0;\n    for(int i = 1; i <= 3; i++) s += i;\n    printf(\"%d\", s);\n    return 0;\n}",
+                  "correct_answer": "B",
+                  "difficulty": "easy",
+                  "explanation": "Vòng lặp chạy i từ 1 đến 3. Các giá trị s cộng dồn lần lượt là: 0+1=1, 1+2=3, 3+3=6. Do đó kết quả in ra là 6.",
+                  "hint": "Tính tổng tích lũy các giá trị i = 1, 2, 3.",
+                  "it1108_block_code": "IT1108_KB03",
+                  "options": {
+                    "A": "3",
+                    "B": "6",
+                    "C": "10",
+                    "D": "0"
+                  },
+                  "question": "Giá trị của biến s sau khi đoạn mã sau thực thi xong là bao nhiêu?",
+                  "question_number": 2,
+                  "question_type": "code_trace",
+                  "topic": "Khối 3: Cấu trúc điều khiển rẽ nhánh & Vòng lặp"
+                },
+                {
+                  "code_snippet": "",
+                  "correct_answer": "D",
+                  "difficulty": "medium",
+                  "explanation": "Khi khởi tạo một phần số phần tử của mảng, các phần tử còn lại (ở đây là arr[3] và arr[4]) sẽ tự động nhận giá trị mặc định là 0.",
+                  "hint": "Các phần tử không được liệt kê trong danh sách khởi tạo mảng cục bộ sẽ có giá trị mặc định nào?",
+                  "it1108_block_code": "IT1108_KB04",
+                  "options": {
+                    "A": "Rác (không xác định)",
+                    "B": "10",
+                    "C": "30",
+                    "D": "0"
+                  },
+                  "question": "Mảng arr được khai báo `int arr[5] = {10, 20, 30};`. Phân tử `arr[3]` có giá trị là bao nhiêu?",
+                  "question_number": 3,
+                  "question_type": "concept",
+                  "topic": "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)"
+                },
+                {
+                  "code_snippet": "#include <stdio.h>\nvoid tangVal(int a) { a += 5; }\nint main() {\n    int x = 5;\n    tangVal(x);\n    printf(\"%d\", x);\n    return 0;\n}",
+                  "correct_answer": "A",
+                  "difficulty": "medium",
+                  "explanation": "Trong C, biến được truyền vào hàm theo dạng truyền giá trị (pass-by-value). Hàm tangVal nhận bản sao của x nên biến x trong main không bị thay đổi.",
+                  "hint": "Hãy chú ý đến cơ chế truyền tham số theo giá trị (pass-by-value) trong ngôn ngữ C.",
+                  "it1108_block_code": "IT1108_KB04",
+                  "options": {
+                    "A": "5",
+                    "B": "10",
+                    "C": "15",
+                    "D": "0"
+                  },
+                  "question": "Giá trị in ra màn hình khi chạy đoạn mã dưới đây là bao nhiêu?",
+                  "question_number": 4,
+                  "question_type": "code_trace",
+                  "topic": "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)"
+                },
+                {
+                  "code_snippet": "#include <stdio.h>\nint tong(int n) {\n    // ???\n    return n + tong(n - 1);\n}\nint main() { printf(\"%d\", tong(3)); return 0; }",
+                  "correct_answer": "A",
+                  "difficulty": "medium",
+                  "explanation": "Để dừng chuỗi gọi đệ quy khi n giảm về 0, ta cần kiểm tra `if (n == 0) return 0;` làm điểm dừng cơ sở.",
+                  "hint": "Hàm đệ quy cần một trường hợp cơ sở để trả về kết quả cụ thể mà không gọi lại chính nó.",
+                  "it1108_block_code": "IT1108_KB04",
+                  "options": {
+                    "A": "if (n == 0) return 0;",
+                    "B": "if (n > 0) return 1;",
+                    "C": "if (n == 1) return 0;",
+                    "D": "if (n < 0) return -1;"
+                  },
+                  "question": "Đoạn mã tính tổng bằng đệ quy sau đây thiếu điều kiện dừng, gây ra lỗi lặp vô hạn. Cần bổ sung điều kiện nào tại vị trí // ???",
+                  "question_number": 5,
+                  "question_type": "bug_analysis",
+                  "topic": "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)"
+                }
+              ],
+              "review_topics": [
+                "Khối 3: Cấu trúc điều khiển rẽ nhánh & Vòng lặp",
+                "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)"
+              ],
+              "scenario_type": "risk_level",
+              "study_advice": "Bạn nên rèn luyện lại cú pháp vòng lặp và cách đọc mã chạy từng bước đối với mảng một chiều. Hãy bắt đầu từ việc hiểu rõ điều kiện dừng của hàm đệ quy và quy tắc truyền tham số trong C.",
+              "target_blocks": [
+                "IT1108_KB03",
+                "IT1108_KB04"
+              ]
+            },
+            "schema_valid": true,
+            "sql_isjson_compatible": true,
+            "valid_questions": [
+              {
+                "code_snippet": "",
+                "correct_answer": "C",
+                "difficulty": "easy",
+                "explanation": "Từ khóa break được dùng để thoát khỏi câu lệnh switch-case ngay lập tức. Nếu không có break, chương trình sẽ tiếp tục thực thi các case bên dưới (hiện tượng fall-through).",
+                "hint": "Từ khóa này cũng dùng để thoát khỏi vòng lặp for hoặc while.",
+                "it1108_block_code": "IT1108_KB03",
+                "options": {
+                  "A": "continue",
+                  "B": "exit",
+                  "C": "break",
+                  "D": "return"
+                },
+                "question": "Trong ngôn ngữ lập trình C, câu lệnh switch-case sẽ dừng việc thực thi các case tiếp theo khi gặp từ khóa nào?",
+                "question_number": 1,
+                "question_type": "concept",
+                "topic": "Khối 3: Cấu trúc điều khiển rẽ nhánh & Vòng lặp"
+              },
+              {
+                "code_snippet": "#include <stdio.h>\nint main() {\n    int s = 0;\n    for(int i = 1; i <= 3; i++) s += i;\n    printf(\"%d\", s);\n    return 0;\n}",
+                "correct_answer": "B",
+                "difficulty": "easy",
+                "explanation": "Vòng lặp chạy i từ 1 đến 3. Các giá trị s cộng dồn lần lượt là: 0+1=1, 1+2=3, 3+3=6. Do đó kết quả in ra là 6.",
+                "hint": "Tính tổng tích lũy các giá trị i = 1, 2, 3.",
+                "it1108_block_code": "IT1108_KB03",
+                "options": {
+                  "A": "3",
+                  "B": "6",
+                  "C": "10",
+                  "D": "0"
+                },
+                "question": "Giá trị của biến s sau khi đoạn mã sau thực thi xong là bao nhiêu?",
+                "question_number": 2,
+                "question_type": "code_trace",
+                "topic": "Khối 3: Cấu trúc điều khiển rẽ nhánh & Vòng lặp"
+              },
+              {
+                "code_snippet": "",
+                "correct_answer": "D",
+                "difficulty": "medium",
+                "explanation": "Khi khởi tạo một phần số phần tử của mảng, các phần tử còn lại (ở đây là arr[3] và arr[4]) sẽ tự động nhận giá trị mặc định là 0.",
+                "hint": "Các phần tử không được liệt kê trong danh sách khởi tạo mảng cục bộ sẽ có giá trị mặc định nào?",
+                "it1108_block_code": "IT1108_KB04",
+                "options": {
+                  "A": "Rác (không xác định)",
+                  "B": "10",
+                  "C": "30",
+                  "D": "0"
+                },
+                "question": "Mảng arr được khai báo `int arr[5] = {10, 20, 30};`. Phân tử `arr[3]` có giá trị là bao nhiêu?",
+                "question_number": 3,
+                "question_type": "concept",
+                "topic": "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)"
+              },
+              {
+                "code_snippet": "#include <stdio.h>\nvoid tangVal(int a) { a += 5; }\nint main() {\n    int x = 5;\n    tangVal(x);\n    printf(\"%d\", x);\n    return 0;\n}",
+                "correct_answer": "A",
+                "difficulty": "medium",
+                "explanation": "Trong C, biến được truyền vào hàm theo dạng truyền giá trị (pass-by-value). Hàm tangVal nhận bản sao của x nên biến x trong main không bị thay đổi.",
+                "hint": "Hãy chú ý đến cơ chế truyền tham số theo giá trị (pass-by-value) trong ngôn ngữ C.",
+                "it1108_block_code": "IT1108_KB04",
+                "options": {
+                  "A": "5",
+                  "B": "10",
+                  "C": "15",
+                  "D": "0"
+                },
+                "question": "Giá trị in ra màn hình khi chạy đoạn mã dưới đây là bao nhiêu?",
+                "question_number": 4,
+                "question_type": "code_trace",
+                "topic": "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)"
+              },
+              {
+                "code_snippet": "#include <stdio.h>\nint tong(int n) {\n    // ???\n    return n + tong(n - 1);\n}\nint main() { printf(\"%d\", tong(3)); return 0; }",
+                "correct_answer": "A",
+                "difficulty": "medium",
+                "explanation": "Để dừng chuỗi gọi đệ quy khi n giảm về 0, ta cần kiểm tra `if (n == 0) return 0;` làm điểm dừng cơ sở.",
+                "hint": "Hàm đệ quy cần một trường hợp cơ sở để trả về kết quả cụ thể mà không gọi lại chính nó.",
+                "it1108_block_code": "IT1108_KB04",
+                "options": {
+                  "A": "if (n == 0) return 0;",
+                  "B": "if (n > 0) return 1;",
+                  "C": "if (n == 1) return 0;",
+                  "D": "if (n < 0) return -1;"
+                },
+                "question": "Đoạn mã tính tổng bằng đệ quy sau đây thiếu điều kiện dừng, gây ra lỗi lặp vô hạn. Cần bổ sung điều kiện nào tại vị trí // ???",
+                "question_number": 5,
+                "question_type": "bug_analysis",
+                "topic": "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)"
+              }
+            ],
+            "warnings": []
+          },
+          "within_timeout_nfr01": false
+        },
+        "http_status": 200,
+        "is_simulated": false,
+        "ml_prediction": {
+          "decision_threshold": 0.35,
+          "inference_backend": "best_model_joblib_tuple_tree_adapter",
+          "model_name": "SmartLMS_AtRisk_RandomForest_Pipeline",
+          "model_version": "1.0.0",
+          "prediction": 1,
+          "risk_level": "HIGH",
+          "risk_probability": 1.0
+        },
+        "mode_notice": "Đang gọi Google Gemini API thực tế.",
+        "personalized_profile": {
+          "block_data_source": "target_block_codes_only_no_metrics",
+          "decision_threshold": 0.35,
+          "has_class_percentile": false,
+          "has_detailed_block_data": false,
+          "risk_level": "HIGH",
+          "risk_probability": 1.0,
+          "simulated_student_code": "SIM_DEMO_KB2_FALLBACK",
+          "submission_behavior": {
+            "note": "Hoàn thành 42% số bài với điểm TB 45.8/100. Cần củng cố lại kiến thức cơ bản và nhắc hạn nộp bài.",
+            "status_code": "PARTIAL_SUBMISSION_LOW_SCORE",
+            "status_label": "Nộp thiếu bài và điểm thấp"
+          },
+          "weak_blocks": [
+            {
+              "avg_submitted_score": null,
+              "block_weighted_score": null,
+              "completion_rate": null,
+              "it1108_block_code": "IT1108_KB03",
+              "it1108_block_name": "Khối 3: Cấu trúc điều khiển rẽ nhánh & Vòng lặp",
+              "it1108_cdr": "M1, M3, M3.1, M3.3",
+              "it1108_lessons": "Bài 7: Cấu trúc điều khiển (7.1 Lệnh khối, 7.2 Lệnh rẽ nhánh if-else, 7.3 Lệnh lựa chọn switch-case, 7.4-7.7 Các lệnh lặp while, do...while, for)",
+              "it1108_weeks": "Tuần 8-9",
+              "lower_than_class_pct": null,
+              "normalized_status": null,
+              "submission_vs_score_status": null,
+              "submitted_assessments": null,
+              "total_mapped_assessments": null,
+              "vle_resources_count": 67
+            },
+            {
+              "avg_submitted_score": null,
+              "block_weighted_score": null,
+              "completion_rate": null,
+              "it1108_block_code": "IT1108_KB04",
+              "it1108_block_name": "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)",
+              "it1108_cdr": "M3, M3.2, M3.3",
+              "it1108_lessons": "Bài 8: Hàm (khái niệm, khai báo, phạm vi biến, truyền tham số, hàm đệ quy); Bài 9 - Mục 9.1: Mảng (khai báo, thao tác tìm kiếm/sắp xếp trên mảng, mảng nhiều chiều)",
+              "it1108_weeks": "Tuần 10-11",
+              "lower_than_class_pct": null,
+              "normalized_status": null,
+              "submission_vs_score_status": null,
+              "submitted_assessments": null,
+              "total_mapped_assessments": null,
+              "vle_resources_count": 53
+            }
+          ]
+        },
+        "prompt_selection": {
+          "reason": "Hồ sơ thiếu dữ liệu chi tiết theo từng khối (chỉ có chỉ số tổng hợp ML); tự động fallback sang kịch bản risk_level.",
+          "requested_scenario": "auto",
+          "selected_scenario": "risk_level"
+        },
+        "questions": [
+          {
+            "code_snippet": "",
+            "correct_answer": "C",
+            "difficulty": "easy",
+            "explanation": "Từ khóa break được dùng để thoát khỏi câu lệnh switch-case ngay lập tức. Nếu không có break, chương trình sẽ tiếp tục thực thi các case bên dưới (hiện tượng fall-through).",
+            "hint": "Từ khóa này cũng dùng để thoát khỏi vòng lặp for hoặc while.",
+            "it1108_block_code": "IT1108_KB03",
+            "options": {
+              "A": "continue",
+              "B": "exit",
+              "C": "break",
+              "D": "return"
+            },
+            "question": "Trong ngôn ngữ lập trình C, câu lệnh switch-case sẽ dừng việc thực thi các case tiếp theo khi gặp từ khóa nào?",
+            "question_number": 1,
+            "question_type": "concept",
+            "topic": "Khối 3: Cấu trúc điều khiển rẽ nhánh & Vòng lặp"
+          },
+          {
+            "code_snippet": "#include <stdio.h>\nint main() {\n    int s = 0;\n    for(int i = 1; i <= 3; i++) s += i;\n    printf(\"%d\", s);\n    return 0;\n}",
+            "correct_answer": "B",
+            "difficulty": "easy",
+            "explanation": "Vòng lặp chạy i từ 1 đến 3. Các giá trị s cộng dồn lần lượt là: 0+1=1, 1+2=3, 3+3=6. Do đó kết quả in ra là 6.",
+            "hint": "Tính tổng tích lũy các giá trị i = 1, 2, 3.",
+            "it1108_block_code": "IT1108_KB03",
+            "options": {
+              "A": "3",
+              "B": "6",
+              "C": "10",
+              "D": "0"
+            },
+            "question": "Giá trị của biến s sau khi đoạn mã sau thực thi xong là bao nhiêu?",
+            "question_number": 2,
+            "question_type": "code_trace",
+            "topic": "Khối 3: Cấu trúc điều khiển rẽ nhánh & Vòng lặp"
+          },
+          {
+            "code_snippet": "",
+            "correct_answer": "D",
+            "difficulty": "medium",
+            "explanation": "Khi khởi tạo một phần số phần tử của mảng, các phần tử còn lại (ở đây là arr[3] và arr[4]) sẽ tự động nhận giá trị mặc định là 0.",
+            "hint": "Các phần tử không được liệt kê trong danh sách khởi tạo mảng cục bộ sẽ có giá trị mặc định nào?",
+            "it1108_block_code": "IT1108_KB04",
+            "options": {
+              "A": "Rác (không xác định)",
+              "B": "10",
+              "C": "30",
+              "D": "0"
+            },
+            "question": "Mảng arr được khai báo `int arr[5] = {10, 20, 30};`. Phân tử `arr[3]` có giá trị là bao nhiêu?",
+            "question_number": 3,
+            "question_type": "concept",
+            "topic": "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)"
+          },
+          {
+            "code_snippet": "#include <stdio.h>\nvoid tangVal(int a) { a += 5; }\nint main() {\n    int x = 5;\n    tangVal(x);\n    printf(\"%d\", x);\n    return 0;\n}",
+            "correct_answer": "A",
+            "difficulty": "medium",
+            "explanation": "Trong C, biến được truyền vào hàm theo dạng truyền giá trị (pass-by-value). Hàm tangVal nhận bản sao của x nên biến x trong main không bị thay đổi.",
+            "hint": "Hãy chú ý đến cơ chế truyền tham số theo giá trị (pass-by-value) trong ngôn ngữ C.",
+            "it1108_block_code": "IT1108_KB04",
+            "options": {
+              "A": "5",
+              "B": "10",
+              "C": "15",
+              "D": "0"
+            },
+            "question": "Giá trị in ra màn hình khi chạy đoạn mã dưới đây là bao nhiêu?",
+            "question_number": 4,
+            "question_type": "code_trace",
+            "topic": "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)"
+          },
+          {
+            "code_snippet": "#include <stdio.h>\nint tong(int n) {\n    // ???\n    return n + tong(n - 1);\n}\nint main() { printf(\"%d\", tong(3)); return 0; }",
+            "correct_answer": "A",
+            "difficulty": "medium",
+            "explanation": "Để dừng chuỗi gọi đệ quy khi n giảm về 0, ta cần kiểm tra `if (n == 0) return 0;` làm điểm dừng cơ sở.",
+            "hint": "Hàm đệ quy cần một trường hợp cơ sở để trả về kết quả cụ thể mà không gọi lại chính nó.",
+            "it1108_block_code": "IT1108_KB04",
+            "options": {
+              "A": "if (n == 0) return 0;",
+              "B": "if (n > 0) return 1;",
+              "C": "if (n == 1) return 0;",
+              "D": "if (n < 0) return -1;"
+            },
+            "question": "Đoạn mã tính tổng bằng đệ quy sau đây thiếu điều kiện dừng, gây ra lỗi lặp vô hạn. Cần bổ sung điều kiện nào tại vị trí // ???",
+            "question_number": 5,
+            "question_type": "bug_analysis",
+            "topic": "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)"
+          }
+        ],
+        "simulated_student_code": "SIM_DEMO_KB2_FALLBACK",
+        "step_failed": null,
+        "submission_behavior": {
+          "note": "Hoàn thành 42% số bài với điểm TB 45.8/100. Cần củng cố lại kiến thức cơ bản và nhắc hạn nộp bài.",
+          "status_code": "PARTIAL_SUBMISSION_LOW_SCORE",
+          "status_label": "Nộp thiếu bài và điểm thấp"
+        },
+        "success": true,
+        "topic_mapping_summary": {
+          "block_data_source": "target_block_codes_only_no_metrics",
+          "has_class_percentile": false,
+          "has_detailed_block_data": false,
+          "mapped_block_codes": [
+            "IT1108_KB03",
+            "IT1108_KB04"
+          ],
+          "mapped_blocks_count": 2
+        },
+        "user_guidance": null
+      }
+    },
+    {
+      "scenario_case": "KB3_API_503_UNAVAILABLE",
+      "result": {
+        "can_retry": true,
+        "data_source": "LIVE_GEMINI_API",
+        "error_category": "TRANSIENT_SERVICE_ERROR",
+        "error_message": "Dịch vụ Gemini API đang quá tải (503 UNAVAILABLE). Vui lòng thử lại sau: HTTP 503 UNAVAILABLE từ Gemini API (ai_studio): {\"error\":{\"code\":503,\"message\":\"High demand (controlled test).\",\"status\":\"UNAVAILABLE\"}}",
+        "error_type": "SERVICE_UNAVAILABLE",
+        "genai_result": {
+          "api_provider": "ai_studio",
+          "attempts_used": 3,
+          "json_retries_used": 0,
+          "latency_ms": 2.32,
+          "model_used": "gemini-3.5-flash",
+          "models_tried": [
+            "gemini-3.5-flash",
+            "gemini-3.5-flash",
+            "gemini-3.5-flash-lite"
+          ],
+          "pii_report": {
+            "findings": [],
+            "pii_safe": true,
+            "stripped_pii_keys": []
+          },
+          "prompt_bundle": {
+            "pii_report": {
+              "findings": [],
+              "pii_safe": true,
+              "stripped_pii_keys": []
+            },
+            "request_params": {
+              "course_code": "IT1108",
+              "course_name": "Nhập môn lập trình",
+              "difficulty": "auto",
+              "knowledge_blocks": [
+                "IT1108_KB06",
+                "IT1108_KB05",
+                "IT1108_KB04"
+              ],
+              "num_questions": 5,
+              "review_topics": [
+                "Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ",
+                "Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự",
+                "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)"
+              ],
+              "scenario_type": "detailed_profile"
+            },
+            "reused_week56_directly": true,
+            "sanitized_profile": {
+              "risk_level": "HIGH",
+              "risk_probability": 1.0,
+              "weak_blocks": [
+                {
+                  "avg_submitted_score": null,
+                  "detail": "thấp hơn 100.0% lớp, chưa nộp bài kiểm tra ở mốc đánh giá",
+                  "it1108_block_code": "IT1108_KB06",
+                  "it1108_block_name": "Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ",
+                  "it1108_cdr": "M1, M2, M3, M3.1, M3.2, M3.3",
+                  "it1108_lessons": "Bài 10: Cấu trúc (khai báo, sử dụng và xử lý dữ liệu cấu trúc); Bài 11: Tệp dữ liệu (khái niệm, thao tác cơ bản, tệp văn bản, tệp nhị phân); Tuần 16: Ôn tập & Định hướng",
+                  "it1108_weeks": "Tuần 14-16",
+                  "lower_than_class_pct": 100.0,
+                  "simulated_assessments": [
+                    "Trắc nghiệm Khối 6 (Phần 1): Khai báo và xử lý dữ liệu cấu trúc struct, typedef (Bài 10)",
+                    "Trắc nghiệm Khối 6 (Phần 2): Thao tác đọc/ghi tệp văn bản và tệp nhị phân (Bài 11)",
+                    "Trắc nghiệm ôn tập tổng hợp toàn học phần IT1108 (Bài 1-11, Tuần 16)"
+                  ],
+                  "submission_vs_score_status": "MISSING_SUBMISSION"
+                },
+                {
+                  "avg_submitted_score": 5.0,
+                  "detail": "thấp hơn 50.4% lớp, nộp thiếu bài và điểm trung bình 5.0/100",
+                  "it1108_block_code": "IT1108_KB05",
+                  "it1108_block_name": "Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự",
+                  "it1108_cdr": "M3, M3.1, M3.2, M3.3",
+                  "it1108_lessons": "Bài 9 - Mục 9.2: Con trỏ (khái niệm, toán tử & và *, phép toán con trỏ, con trỏ & mảng, bộ nhớ động); Mục 9.3: Xâu ký tự (vào ra xâu, hàm xử lý ký tự/xâu, mảng các xâu)",
+                  "it1108_weeks": "Tuần 12-13",
+                  "lower_than_class_pct": 50.4,
+                  "simulated_assessments": [
+                    "Bài kiểm tra thực hành tổng hợp (A1): Con trỏ, cấp phát bộ nhớ động và xử lý xâu ký tự (Bài 9.2 & 9.3)",
+                    "Trắc nghiệm Khối 5: Toán tử con trỏ (&, *), số học con trỏ, malloc/free và string.h (Bài 9.2 & 9.3)"
+                  ],
+                  "submission_vs_score_status": "PARTIAL_SUBMISSION_AND_LOW_SCORE"
+                },
+                {
+                  "avg_submitted_score": 29.0,
+                  "detail": "thấp hơn 55.9% lớp, nộp thiếu bài và điểm trung bình 29.0/100",
+                  "it1108_block_code": "IT1108_KB04",
+                  "it1108_block_name": "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)",
+                  "it1108_cdr": "M3, M3.2, M3.3",
+                  "it1108_lessons": "Bài 8: Hàm (khái niệm, khai báo, phạm vi biến, truyền tham số, hàm đệ quy); Bài 9 - Mục 9.1: Mảng (khai báo, thao tác tìm kiếm/sắp xếp trên mảng, mảng nhiều chiều)",
+                  "it1108_weeks": "Tuần 10-11",
+                  "lower_than_class_pct": 55.9,
+                  "simulated_assessments": [
+                    "Bài kiểm tra thực hành Khối 4: Xây dựng hàm, đệ quy và xử lý mảng 1-2 chiều (Bài 8 & 9.1)",
+                    "Trắc nghiệm Khối 4: Phạm vi biến, truyền tham số, đệ quy và mảng (Bài 8 & 9.1)"
+                  ],
+                  "submission_vs_score_status": "PARTIAL_SUBMISSION_AND_LOW_SCORE"
+                }
+              ]
+            },
+            "scenario_type": "detailed_profile",
+            "system_instruction": "Bạn là Cố vấn Học tập AI và Giảng viên hỗ trợ môn IT1108 – Nhập môn lập trình (ngôn ngữ lập trình C).\nNhiệm vụ của bạn là tạo bộ câu hỏi trắc nghiệm ôn tập bằng tiếng Việt giúp người học củng cố kiến thức đúng trọng tâm.\n\nQUY TẮC BẮT BUỘC:\n1. Chỉ trả về DUY NHẤT một JSON object hợp lệ (không bọc markdown ```json, không thêm văn bản ngoài JSON).\n2. Toàn bộ đoạn mã minh họa (code_snippet) phải viết bằng ngôn ngữ C chuẩn (ANSI C / C99), biên dịch hợp lệ, không dùng thư viện không chuẩn như <conio.h> hay void main().\n3. Mỗi câu hỏi bắt buộc có đủ 6 khóa: question, options (đúng 4 phương án A, B, C, D phân biệt rõ ràng, chỉ 1 đáp án đúng), correct_answer, explanation, topic, difficulty (easy/medium/hard), cùng các khóa bổ trợ trong Schema.\n4. Mỗi trường văn bản viết súc tích, đúng trọng tâm để bảo đảm phản hồi nhanh dưới 20 giây: `question` 1–2 câu rõ ràng, `code_snippet` ngắn gọn tối đa 6 dòng C (hoặc chuỗi rỗng \"\" nếu không cần), `hint` đúng 1 câu ngắn, `explanation` 1–2 câu giải thích rõ đáp án đúng và lỗi sai chính, `difficulty_strategy` và `study_advice` mỗi trường 1–2 câu.\n5. Tuyệt đối KHÔNG đề cập hoặc tự suy đoán thông tin cá nhân của sinh viên (họ tên, MSSV, email, ID, dữ liệu nhạy cảm).\n6. KHÔNG tự chẩn đoán, phán xét hay đưa ra kết luận tuyệt đối về năng lực hoặc khả năng qua môn của sinh viên; chỉ dùng các chỉ số mô phỏng như ngữ cảnh tham khảo để điều chỉnh độ khó câu hỏi và đưa ra lời khuyên ôn tập mang tính hỗ trợ.",
+            "user_prompt": "KỊCH BẢN 3 (DETAILED PROFILE - HỒ SƠ HỌC TẬP MÔ PHỎNG CHI TIẾT):\nThông tin học phần: IT1108 – Nhập môn lập trình (ngôn ngữ C).\nKhối kiến thức IT1108: IT1108_KB06 – Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ, IT1108_KB05 – Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự, IT1108_KB04 – Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)\nChủ đề cần ôn tập: Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ, Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự, Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)\nNgữ cảnh tham khảo từ ML: mức rủi ro CAO (xác suất tham khảo: 1.00).\n\nPHẠM VI BÀI HỌC IT1108:\n- IT1108_KB06 (Tuần 14-16 | CĐR M1, M2, M3, M3.1, M3.2, M3.3): Bài 10: Cấu trúc (khai báo, sử dụng và xử lý dữ liệu cấu trúc); Bài 11: Tệp dữ liệu (khái niệm, thao tác cơ bản, tệp văn bản, tệp nhị phân); Tuần 16: Ôn tập & Định hướng\n- IT1108_KB05 (Tuần 12-13 | CĐR M3, M3.1, M3.2, M3.3): Bài 9 - Mục 9.2: Con trỏ (khái niệm, toán tử & và *, phép toán con trỏ, con trỏ & mảng, bộ nhớ động); Mục 9.3: Xâu ký tự (vào ra xâu, hàm xử lý ký tự/xâu, mảng các xâu)\n- IT1108_KB04 (Tuần 10-11 | CĐR M3, M3.2, M3.3): Bài 8: Hàm (khái niệm, khai báo, phạm vi biến, truyền tham số, hàm đệ quy); Bài 9 - Mục 9.1: Mảng (khai báo, thao tác tìm kiếm/sắp xếp trên mảng, mảng nhiều chiều)\n\nTRẠNG THÁI HỌC TẬP MÔ PHỎNG TỪNG KHỐI KIẾN THỨC:\n- IT1108_KB06 – Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ: thấp hơn 100.0% lớp, chưa nộp bài kiểm tra ở mốc đánh giá\n- IT1108_KB05 – Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự: thấp hơn 50.4% lớp, nộp thiếu bài và điểm trung bình 5.0/100\n- IT1108_KB04 – Khối 4: Hàm & Mảng (1 chiều, nhiều chiều): thấp hơn 55.9% lớp, nộp thiếu bài và điểm trung bình 29.0/100\n\nCHỈ DẪN SƯ PHẠM HỖ TRỢ THEO TỪNG CHỦ ĐỀ:\n  * IT1108_KB06 (Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ | thấp hơn 100.0% lớp, chưa nộp bài kiểm tra ở mốc đánh giá): Ưu tiên câu hỏi nền tảng ('easy', question_type='guided_basic') kèm gợi ý từng bước trong trường 'hint' để người học dễ khởi động lại.\n  * IT1108_KB05 (Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự | thấp hơn 50.4% lớp, nộp thiếu bài và điểm trung bình 5.0/100): Kết hợp câu 'guided_basic' (độ khó 'easy', có 'hint' từng bước) và câu 'bug_analysis'/'code_trace' để củng cố phần kiến thức còn hổng.\n  * IT1108_KB04 (Khối 4: Hàm & Mảng (1 chiều, nhiều chiều) | thấp hơn 55.9% lớp, nộp thiếu bài và điểm trung bình 29.0/100): Kết hợp câu 'guided_basic' (độ khó 'easy', có 'hint' từng bước) và câu 'bug_analysis'/'code_trace' để củng cố phần kiến thức còn hổng.\n  * Lưu ý tham khảo: Nhóm có chỉ số rủi ro cao, tránh câu hỏi đánh đố xa chương trình, tập trung củng cố nền tảng.\n  * Lưu ý trung lập: Không tự chẩn đoán hay khẳng định tuyệt đối về năng lực/kết quả học tập của người học.\n\nHãy tạo 5 câu hỏi trắc nghiệm phân bổ hợp lý theo các chủ đề trên và trả về đúng JSON Schema.\n\nĐỊNH DẠNG JSON BẮT BUỘC (đúng 5 câu, đủ 6 khóa question/options/correct_answer/explanation/topic/difficulty):\n- Mã khối hợp lệ [\"IT1108_KB06\", \"IT1108_KB05\", \"IT1108_KB04\"]: IT1108_KB06='Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ', IT1108_KB05='Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự', IT1108_KB04='Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)'.\n- Chủ đề mục tiêu: [\"Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ\", \"Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự\", \"Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)\"].\n- Schema mẫu: {\"course_code\": \"IT1108\", \"course_name\": \"Nhập môn lập trình\", \"scenario_type\": \"detailed_profile\", \"target_blocks\": [\"IT1108_KB06\", \"IT1108_KB05\", \"IT1108_KB04\"], \"review_topics\": [\"Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ\", \"Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự\", \"Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)\"], \"difficulty_strategy\": \"1-2 câu chiến lược độ khó\", \"study_advice\": \"1-2 câu lời khuyên ôn tập hỗ trợ\", \"questions\": [{\"question_number\": 1, \"it1108_block_code\": \"IT1108_KB06\", \"topic\": \"Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ\", \"difficulty\": \"easy | medium | hard\", \"question_type\": \"concept | code_trace | bug_analysis | guided_basic\", \"question\": \"1-2 câu ngắn gọn\", \"code_snippet\": \"tối đa 6 dòng C hoặc chuỗi rỗng\", \"options\": {\"A\": \"...\", \"B\": \"...\", \"C\": \"...\", \"D\": \"...\"}, \"correct_answer\": \"A | B | C | D\", \"hint\": \"1 câu gợi ý ngắn\", \"explanation\": \"1-2 câu giải thích trọng tâm\"}]}",
+            "week56_base_prompt": "Sinh viên này có nguy cơ trượt môn cao (xác suất 1.00). Hãy điều chỉnh độ khó và cách giải thích cho phù hợp. Tình trạng cụ thể: IT1108_KB06 – Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ (thấp hơn 100.0% lớp, chưa nộp bài kiểm tra ở mốc đánh giá); IT1108_KB05 – Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự (thấp hơn 50.4% lớp, nộp thiếu bài và điểm trung bình 5.0/100); IT1108_KB04 – Khối 4: Hàm & Mảng (1 chiều, nhiều chiều) (thấp hơn 55.9% lớp, nộp thiếu bài và điểm trung bình 29.0/100). Hãy giảm độ khó xuống mức cơ bản kèm gợi ý từng bước đối với phần sinh viên chưa nộp bài/thấp hơn 85% lớp, và tăng câu hỏi phân tích lỗi sai thường gặp kèm giải thích chi tiết cách chạy chương trình đối với phần sinh viên đã nộp bài nhưng điểm thấp. Tạo 5 câu hỏi trắc nghiệm và trả về định dạng JSON."
+          },
+          "transport": "gemini-api",
+          "validation": {
+            "errors": [
+              "Dịch vụ Gemini API đang quá tải (503 UNAVAILABLE). Vui lòng thử lại sau: HTTP 503 UNAVAILABLE từ Gemini API (ai_studio): {\"error\":{\"code\":503,\"message\":\"High demand (controlled test).\",\"status\":\"UNAVAILABLE\"}}"
+            ],
+            "invalid_question_indices": [],
+            "is_valid": false,
+            "json_valid": false,
+            "normalized_data": null,
+            "schema_valid": false,
+            "sql_isjson_compatible": false,
+            "valid_questions": [],
+            "warnings": []
+          },
+          "within_timeout_nfr01": true
+        },
+        "http_status": 503,
+        "is_simulated": false,
+        "ml_prediction": {
+          "decision_threshold": 0.35,
+          "inference_backend": "best_model_joblib_tuple_tree_adapter",
+          "model_name": "SmartLMS_AtRisk_RandomForest_Pipeline",
+          "model_version": "1.0.0",
+          "prediction": 1,
+          "risk_level": "HIGH",
+          "risk_probability": 1.0
+        },
+        "mode_notice": "Đang gọi Google Gemini API thực tế.",
+        "personalized_profile": {
+          "block_data_source": "oulad_zip_assessments",
+          "decision_threshold": 0.35,
+          "has_class_percentile": true,
+          "has_detailed_block_data": true,
+          "risk_level": "HIGH",
+          "risk_probability": 1.0,
+          "simulated_student_code": "SIM_DEMO_KB3_LIVE_503",
+          "submission_behavior": {
+            "note": "Hoàn thành 42% số bài với điểm TB 45.8/100. Cần củng cố lại kiến thức cơ bản và nhắc hạn nộp bài.",
+            "status_code": "PARTIAL_SUBMISSION_LOW_SCORE",
+            "status_label": "Nộp thiếu bài và điểm thấp"
+          },
+          "weak_blocks": [
+            {
+              "avg_submitted_score": null,
+              "block_weighted_score": 0.0,
+              "completion_rate": 0.0,
+              "data_origin": "OULAD_FFF_2013J",
+              "it1108_block_code": "IT1108_KB06",
+              "it1108_block_name": "Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ",
+              "it1108_cdr": "M1, M2, M3, M3.1, M3.2, M3.3",
+              "it1108_lessons": "Bài 10: Cấu trúc (khai báo, sử dụng và xử lý dữ liệu cấu trúc); Bài 11: Tệp dữ liệu (khái niệm, thao tác cơ bản, tệp văn bản, tệp nhị phân); Tuần 16: Ôn tập & Định hướng",
+              "it1108_weeks": "Tuần 14-16",
+              "lower_than_class_pct": 100.0,
+              "normalized_status": "MISSING_SUBMISSION",
+              "submission_vs_score_status": "NO_SUBMISSION",
+              "submitted_assessments": 0,
+              "total_mapped_assessments": 3,
+              "vle_resources_count": 56
+            },
+            {
+              "avg_submitted_score": 5.0,
+              "block_weighted_score": 4.81,
+              "completion_rate": 0.5,
+              "data_origin": "OULAD_FFF_2013J",
+              "it1108_block_code": "IT1108_KB05",
+              "it1108_block_name": "Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự",
+              "it1108_cdr": "M3, M3.1, M3.2, M3.3",
+              "it1108_lessons": "Bài 9 - Mục 9.2: Con trỏ (khái niệm, toán tử & và *, phép toán con trỏ, con trỏ & mảng, bộ nhớ động); Mục 9.3: Xâu ký tự (vào ra xâu, hàm xử lý ký tự/xâu, mảng các xâu)",
+              "it1108_weeks": "Tuần 12-13",
+              "lower_than_class_pct": 50.4,
+              "normalized_status": "PARTIAL_SUBMISSION_AND_LOW_SCORE",
+              "submission_vs_score_status": "PARTIAL_SUBMISSION_LOW_SCORE",
+              "submitted_assessments": 1,
+              "total_mapped_assessments": 2,
+              "vle_resources_count": 65
+            },
+            {
+              "avg_submitted_score": 29.0,
+              "block_weighted_score": 27.88,
+              "completion_rate": 0.5,
+              "data_origin": "OULAD_FFF_2013J",
+              "it1108_block_code": "IT1108_KB04",
+              "it1108_block_name": "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)",
+              "it1108_cdr": "M3, M3.2, M3.3",
+              "it1108_lessons": "Bài 8: Hàm (khái niệm, khai báo, phạm vi biến, truyền tham số, hàm đệ quy); Bài 9 - Mục 9.1: Mảng (khai báo, thao tác tìm kiếm/sắp xếp trên mảng, mảng nhiều chiều)",
+              "it1108_weeks": "Tuần 10-11",
+              "lower_than_class_pct": 55.9,
+              "normalized_status": "PARTIAL_SUBMISSION_AND_LOW_SCORE",
+              "submission_vs_score_status": "PARTIAL_SUBMISSION_LOW_SCORE",
+              "submitted_assessments": 1,
+              "total_mapped_assessments": 2,
+              "vle_resources_count": 53
+            }
+          ]
+        },
+        "prompt_selection": {
+          "reason": "Hồ sơ có đủ dữ liệu chi tiết theo từng khối kiến thức; sử dụng kịch bản chính detailed_profile.",
+          "requested_scenario": "auto",
+          "selected_scenario": "detailed_profile"
+        },
+        "questions": [],
+        "simulated_student_code": "SIM_DEMO_KB3_LIVE_503",
+        "step_failed": "genai_generation",
+        "submission_behavior": {
+          "note": "Hoàn thành 42% số bài với điểm TB 45.8/100. Cần củng cố lại kiến thức cơ bản và nhắc hạn nộp bài.",
+          "status_code": "PARTIAL_SUBMISSION_LOW_SCORE",
+          "status_label": "Nộp thiếu bài và điểm thấp"
+        },
+        "success": false,
+        "topic_mapping_summary": {
+          "block_data_source": "oulad_zip_assessments",
+          "has_class_percentile": true,
+          "has_detailed_block_data": true,
+          "mapped_block_codes": [
+            "IT1108_KB06",
+            "IT1108_KB05",
+            "IT1108_KB04"
+          ],
+          "mapped_blocks_count": 3
+        },
+        "user_guidance": "Đây là lỗi dịch vụ/kết nối tạm thời phía Google Gemini API (KHÔNG phải lỗi chất lượng nội dung AI). Hệ thống không tự động chuyển sang Mock Mode. Vui lòng bấm 'Thử lại' sau vài giây hoặc chủ động chọn chế độ Mock Offline để demo."
+      }
+    }
+  ]
+}

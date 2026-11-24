@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart LMS & GenAI – Tuần 7+8 Playground (IT1108)</title>
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --text: #1e293b;
+      --muted: #64748b;
+      --primary: #1d4ed8;
+      --primary-hover: #1e40af;
+      --border: #dbe3ef;
+      --ok-bg: #ecfdf5;
+      --ok-text: #065f46;
+      --warn-bg: #fffbeb;
+      --warn-text: #92400e;
+      --err-bg: #fef2f2;
+      --err-text: #991b1b;
+      --code-bg: #0f172a;
+      --code-text: #e2e8f0;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    header {
+      background: linear-gradient(135deg, #1e3a8a, #1d4ed8);
+      color: #fff;
+      padding: 16px 24px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 2px 10px rgba(15, 23, 42, 0.12);
+    }
+    header h1 { margin: 0; font-size: 1.25rem; }
+    header p { margin: 2px 0 0; font-size: 0.88rem; opacity: 0.9; }
+    .badges { display: flex; gap: 8px; flex-wrap: wrap; }
+    .badge {
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    .layout {
+      max-width: 1380px;
+      margin: 20px auto;
+      padding: 0 16px 40px;
+      display: grid;
+      grid-template-columns: 390px 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+    @media (max-width: 980px) {
+      .layout { grid-template-columns: 1fr; }
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+      box-shadow: 0 1px 4px rgba(15, 23, 42, 0.04);
+    }
+    .card h2 {
+      margin: 0 0 12px;
+      font-size: 1.05rem;
+      color: #0f172a;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+    }
+    .field { margin-bottom: 11px; }
+    .field label {
+      display: block;
+      font-size: 0.83rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: #334155;
+    }
+    select, input, button {
+      font-family: inherit;
+      font-size: 0.9rem;
+    }
+    select, input[type="number"], input[type="text"] {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: #fff;
+    }
+    .row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .btn {
+      width: 100%;
+      padding: 10px 14px;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+    .btn-primary { background: var(--primary); color: #fff; }
+    .btn-primary:hover { background: var(--primary-hover); }
+    .btn-secondary { background: #e2e8f0; color: #0f172a; margin-top: 8px; }
+    .btn-secondary:hover { background: #cbd5e1; }
+    .btn-sm { width: auto; padding: 6px 12px; font-size: 0.82rem; }
+    .btn:disabled { opacity: 0.6; cursor: not-allowed; }
+    .tabs {
+      display: flex;
+      gap: 6px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      width: auto;
+      background: transparent;
+      border: none;
+      padding: 8px 14px;
+      font-weight: 600;
+      color: var(--muted);
+      border-bottom: 2px solid transparent;
+      cursor: pointer;
+    }
+    .tab-btn.active {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+    }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+    .alert {
+      padding: 10px 14px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      font-size: 0.9rem;
+    }
+    .alert-ok { background: var(--ok-bg); color: var(--ok-text); border: 1px solid #a7f3d0; }
+    .alert-warn { background: var(--warn-bg); color: var(--warn-text); border: 1px solid #fde68a; }
+    .alert-err { background: var(--err-bg); color: var(--err-text); border: 1px solid #fecaca; }
+    .metrics-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    .metric-box {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px 10px;
+      background: #f8fafc;
+    }
+    .metric-box .k { font-size: 0.75rem; color: var(--muted); }
+    .metric-box .v { font-size: 0.98rem; font-weight: 700; color: #0f172a; }
+    .q-card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 14px;
+      background: #fff;
+    }
+    .q-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .pill {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      background: #e0e7ff;
+      color: #1e3a8a;
+    }
+    .pill.easy { background: #dcfce7; color: #166534; }
+    .pill.medium { background: #fef3c7; color: #92400e; }
+    .pill.hard { background: #fee2e2; color: #991b1b; }
+    pre {
+      background: var(--code-bg);
+      color: var(--code-text);
+      padding: 10px 12px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 0.83rem;
+      margin: 8px 0;
+    }
+    .opt-label {
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+      padding: 7px 10px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin-bottom: 6px;
+      cursor: pointer;
+    }
+    .opt-label:hover { background: #f8fafc; }
+    .opt-label.correct { background: #ecfdf5; border-color: #10b981; }
+    .opt-label.wrong { background: #fef2f2; border-color: #ef4444; }
+    .hint-box {
+      margin-top: 8px;
+      padding: 8px 10px;
+      border-radius: 8px;
+      background: #eff6ff;
+      color: #1e3a8a;
+      font-size: 0.85rem;
+      display: none;
+    }
+    .exp-box {
+      margin-top: 8px;
+      padding: 9px 11px;
+      border-radius: 8px;
+      background: #f8fafc;
+      border-left: 3px solid var(--primary);
+      font-size: 0.86rem;
+      display: none;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 8px;
+      text-align: left;
+    }
+    th { background: #f1f5f9; }
+    .muted { color: var(--muted); font-size: 0.82rem; }
+    .view-switch {
+      max-width: 1380px;
+      margin: 14px auto 0;
+      padding: 0 16px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .view-btn {
+      padding: 9px 16px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #fff;
+      color: var(--text);
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .view-btn.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+    .hidden-view { display: none !important; }
+    .section-box {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 14px;
+      background: #fcfdff;
+    }
+    .section-box h3 {
+      margin: 0 0 10px;
+      font-size: 0.96rem;
+      color: #0f172a;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .risk-badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+    .risk-LOW { background: #dcfce7; color: #166534; border: 1px solid #86efac; }
+    .risk-MEDIUM { background: #fef3c7; color: #92400e; border: 1px solid #fcd34d; }
+    .risk-HIGH { background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; }
+    .source-banner {
+      padding: 10px 14px;
+      border-radius: 10px;
+      margin-bottom: 14px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .source-live { background: #eff6ff; color: #1e40af; border: 1px solid #93c5fd; }
+    .source-mock { background: #fffbeb; color: #92400e; border: 1px solid #f59e0b; }
+    .source-err { background: #fef2f2; color: #991b1b; border: 1px solid #f87171; }
+    .chk-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #334155;
+      margin: 10px 0;
+      cursor: pointer;
+    }
+    .chk-row input { width: auto; margin-top: 3px; }
+    .block-check-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      padding: 8px;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    .block-check-grid label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 500;
+      font-size: 0.8rem;
+      margin: 0;
+      cursor: pointer;
+    }
+    .btn-retry {
+      background: #dc2626;
+      color: #fff;
+      width: auto;
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 8px;
+    }
+    .btn-retry:hover { background: #b91c1c; }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Smart LMS &amp; Generative AI – Tuần 7+8 (ML &rarr; Mapping &rarr; GenAI)</h1>
+      <p>Học phần thực nghiệm: IT1108 – Nhập môn lập trình (Ngôn ngữ C) | Tái sử dụng OULAD FFF–2013J &amp; Random Forest</p>
+    </div>
+    <div class="badges">
+      <span class="badge" id="badge-mode">Cấu hình mặc định: {{ runtime.effective_mode | upper }}</span>
+      <span class="badge">Provider: {{ runtime.api_provider }}</span>
+      <span class="badge">Model: {{ runtime.model }} (Fallback: {{ runtime.fallback_model }})</span>
+      <span class="badge">Schema: {{ "BẬT" if runtime.use_response_schema else "TẮT" }} | Timeout: {{ runtime.timeout_seconds }}s</span>
+    </div>
+  </header>
+
+  <nav class="view-switch" aria-label="Chuyển chế độ Tuần 7 và Tuần 8">
+    <button type="button" class="view-btn active" id="btnShowWeek8">1. Demo Pipeline Tuần 8 (ML &rarr; Mapping &rarr; GenAI)</button>
+    <button type="button" class="view-btn" id="btnShowWeek7">2. Playground Tuần 7 (Kiểm thử 3 Prompt)</button>
+  </nav>
+
+  <main class="layout" id="viewWeek8">
+    <section class="card">
+      <h2>1. Đầu vào Sinh viên &amp; Cấu hình Pipeline</h2>
+
+      <div class="field">
+        <label for="w8PresetSelect">Kịch bản Demo nghiệm thu nhanh</label>
+        <select id="w8PresetSelect"></select>
+        <div id="w8PresetDesc" class="muted" style="margin-top:4px;"></div>
+      </div>
+
+      <div class="field">
+        <label for="w8StudentSelect">Sinh viên mẫu từ OULAD FFF–2013J</label>
+        <select id="w8StudentSelect"></select>
+      </div>
+
+      <div class="row-2">
+        <div class="field">
+          <label for="w8OuladIdInput">Mã sinh viên OULAD (id_student)</label>
+          <input type="text" id="w8OuladIdInput" value="54882" />
+        </div>
+        <div class="field">
+          <label for="w8SimCodeInput">Mã sinh viên mô phỏng</label>
+          <input type="text" id="w8SimCodeInput" value="SIM_WEEK8_FULL_01" />
+        </div>
+      </div>
+
+      <label class="chk-row" for="w8IncludeDetails">
+        <input type="checkbox" id="w8IncludeDetails" checked />
+        <span>Hồ sơ có dữ liệu chi tiết theo từng khối IT1108 (nếu bỏ chọn sẽ fallback về <code>risk_level</code>)</span>
+      </label>
+
+      <div id="w8TargetBlocksBox" style="display:none;">
+        <div class="field" style="margin-bottom:4px;">
+          <label>Chọn khối mục tiêu khi thiếu điểm chi tiết (không bịa điểm/phân vị)</label>
+        </div>
+        <div class="block-check-grid" id="w8TargetBlocksGrid">
+          {% for b in blocks %}
+          <label>
+            <input type="checkbox" class="w8-blk-chk" value="{{ b.it1108_block_code }}" {% if b.it1108_block_code in ['IT1108_KB03', 'IT1108_KB04'] %}checked{% endif %} />
+            <span>{{ b.it1108_block_code }}</span>
+          </label>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="w8ScenarioSelect">Lựa chọn Prompt Scenario</label>
+        <select id="w8ScenarioSelect">
+          <option value="auto">Tự động (detailed_profile &rarr; fallback risk_level)</option>
+          <option value="detailed_profile">detailed_profile (Chỉ định)</option>
+          <option value="risk_level">risk_level (Chỉ định)</option>
+          <option value="baseline">baseline (Chỉ dùng đối chứng)</option>
+        </select>
+      </div>
+
+      <div class="row-2">
+        <div class="field">
+          <label for="w8NumQuestions">Số lượng câu hỏi</label>
+          <input type="number" id="w8NumQuestions" min="1" max="10" value="5" />
+        </div>
+        <div class="field">
+          <label for="w8DifficultySelect">Mức độ khó</label>
+          <select id="w8DifficultySelect">
+            <option value="auto">Tự động theo ML + hồ sơ</option>
+            <option value="easy">easy (Cơ bản)</option>
+            <option value="medium">medium (Trung bình)</option>
+            <option value="hard">hard (Vận dụng)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row-2">
+        <div class="field">
+          <label for="w8ModeSelect">Chế độ gọi GenAI</label>
+          <select id="w8ModeSelect">
+            <option value="live">Live Gemini API (LIVE_GEMINI_API)</option>
+            <option value="mock">Mock Offline (MOCK_SIMULATED)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="w8SimulateErrorSelect">Mô phỏng lỗi (chỉ Mock)</label>
+          <select id="w8SimulateErrorSelect" disabled>
+            <option value="">Không mô phỏng lỗi</option>
+            <option value="service_unavailable">HTTP 503 UNAVAILABLE</option>
+            <option value="timeout">Timeout (503)</option>
+            <option value="rate_limit">Rate Limit 429 (503)</option>
+            <option value="malformed_json">JSON sai cú pháp (500)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="muted" style="margin-bottom:10px;">
+        Lưu ý: Khi chọn <strong>Live Gemini API</strong>, nếu Google trả lỗi 503/Timeout hệ thống sẽ retry có giới hạn và báo lỗi rõ để bạn thử lại, <strong>không tự động chuyển sang Mock</strong>.
+      </div>
+
+      <button type="button" class="btn btn-primary" id="btnW8Run">Chạy Pipeline ML &rarr; Mapping &rarr; GenAI</button>
+    </section>
+
+    <section class="card">
+      <h2>2. Kết quả Pipeline (ML &rarr; Topic Mapping &rarr; GenAI)</h2>
+      <div id="w8SourceBanner" class="source-banner source-live">
+        <span>Sẵn sàng kiểm thử. Chọn kịch bản hoặc sinh viên mẫu bên trái và bấm <strong>"Chạy Pipeline"</strong>.</span>
+        <span class="pill">{{ "Có API Key trong .env" if runtime.has_api_key else "Chưa có API Key Live" }}</span>
+      </div>
+
+      <div id="w8ResultArea">
+        <div class="alert alert-warn">Chưa có phiên chạy nào. Bạn có thể chọn nhanh <strong>Kịch bản 1 / 2 / 3</strong> ở cột bên trái để demo trực tiếp cho giảng viên.</div>
+      </div>
+    </section>
+  </main>
+
+  <main class="layout hidden-view" id="viewWeek7">
+    <section class="card">
+      <h2>1. Cấu hình 7 Tham số &amp; Hồ sơ mô phỏng</h2>
+
+      <div class="row-2">
+        <div class="field">
+          <label for="courseCodeInput">Mã học phần</label>
+          <input type="text" id="courseCodeInput" value="IT1108" />
+        </div>
+        <div class="field">
+          <label for="courseNameInput">Tên học phần</label>
+          <input type="text" id="courseNameInput" value="Nhập môn lập trình" />
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="knowledgeBlockOverride">Khối kiến thức IT1108</label>
+        <select id="knowledgeBlockOverride">
+          <option value="">Theo hồ sơ mô phỏng (2 khối)</option>
+          {% for b in blocks %}
+          <option value="{{ b.it1108_block_code }}">{{ b.it1108_block_code }} – {{ b.it1108_block_name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="reviewTopicsInput">Chủ đề cần ôn tập (cách nhau dấu phẩy)</label>
+        <input type="text" id="reviewTopicsInput" placeholder="Để trống = lấy tự động theo khối kiến thức" />
+      </div>
+
+      <div class="row-2">
+        <div class="field">
+          <label for="numQuestionsInput">Số lượng câu hỏi</label>
+          <input type="number" id="numQuestionsInput" min="1" max="10" value="5" />
+        </div>
+        <div class="field">
+          <label for="difficultySelect">Mức độ khó</label>
+          <select id="difficultySelect">
+            <option value="auto">Tự động theo kịch bản</option>
+            <option value="easy">easy (Cơ bản)</option>
+            <option value="medium">medium (Trung bình)</option>
+            <option value="hard">hard (Vận dụng)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="profileSelect">Hồ sơ học tập mô phỏng (ẩn danh)</label>
+        <select id="profileSelect">
+          {% for p in profiles %}
+          <option value="{{ p.profile_id }}">{{ p.title }}</option>
+          {% endfor %}
+        </select>
+        <div id="profileDesc" class="muted" style="margin-top: 4px;"></div>
+      </div>
+
+      <div class="row-2">
+        <div class="field">
+          <label for="riskLevel">Mức rủi ro ML</label>
+          <select id="riskLevel">
+            <option value="HIGH">HIGH (Cao)</option>
+            <option value="MEDIUM">MEDIUM (Trung bình)</option>
+            <option value="LOW">LOW (Thấp)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="riskProb">Xác suất tham khảo (0–1)</label>
+          <input type="number" id="riskProb" min="0" max="1" step="0.01" value="0.72" />
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="block1Select">Khối 1 trong hồ sơ</label>
+        <select id="block1Select">
+          {% for b in blocks %}
+          <option value="{{ b.it1108_block_code }}">{{ b.it1108_block_code }} – {{ b.it1108_block_name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="row-2">
+        <div class="field">
+          <label for="status1Select">Trạng thái Khối 1</label>
+          <select id="status1Select">
+            <option value="MISSING_SUBMISSION">Chưa nộp bài</option>
+            <option value="LOW_SCORE_DESPITE_SUBMISSION">Đã nộp, điểm thấp</option>
+            <option value="PARTIAL_SUBMISSION_AND_LOW_SCORE">Nộp thiếu &amp; điểm thấp</option>
+            <option value="NORMAL">Đạt yêu cầu (Ôn tập)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="pct1Input">Thấp hơn lớp (%)</label>
+          <input type="number" id="pct1Input" min="0" max="100" step="1" value="85" />
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="block2Select">Khối 2 trong hồ sơ</label>
+        <select id="block2Select">
+          {% for b in blocks %}
+          <option value="{{ b.it1108_block_code }}">{{ b.it1108_block_code }} – {{ b.it1108_block_name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="row-2">
+        <div class="field">
+          <label for="status2Select">Trạng thái Khối 2</label>
+          <select id="status2Select">
+            <option value="LOW_SCORE_DESPITE_SUBMISSION">Đã nộp, điểm thấp</option>
+            <option value="MISSING_SUBMISSION">Chưa nộp bài</option>
+            <option value="PARTIAL_SUBMISSION_AND_LOW_SCORE">Nộp thiếu &amp; điểm thấp</option>
+            <option value="NORMAL">Đạt yêu cầu (Ôn tập)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="score2Input">Điểm TB Khối 2 (/100)</label>
+          <input type="number" id="score2Input" min="0" max="100" step="1" value="42" />
+        </div>
+      </div>
+
+      <div class="row-2">
+        <div class="field">
+          <label for="scenarioSelect">Kịch bản Prompt</label>
+          <select id="scenarioSelect">
+            <option value="detailed_profile">3. Detailed Profile</option>
+            <option value="risk_level">2. Risk-Aware</option>
+            <option value="baseline">1. Baseline (Chung)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="modeSelect">Chế độ gọi AI</label>
+          <select id="modeSelect">
+            <option value="auto">Auto ({{ runtime.effective_mode }})</option>
+            <option value="mock">Mock Offline</option>
+            <option value="live">Live Gemini API</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="simulateErrorSelect">Mô phỏng lỗi NFR-03 (chỉ Mock)</label>
+        <select id="simulateErrorSelect">
+          <option value="">Không mô phỏng lỗi (Chạy bình thường)</option>
+          <option value="timeout">Timeout &gt; 20s (HTTP 503)</option>
+          <option value="rate_limit">Rate Limit 429 (HTTP 503)</option>
+          <option value="malformed_json">JSON sai cú pháp (HTTP 500)</option>
+          <option value="schema_error">Thiếu trường Schema (HTTP 500)</option>
+        </select>
+      </div>
+
+      <button class="btn btn-primary" id="btnGenerate">Sinh câu hỏi với AI</button>
+      <button class="btn btn-secondary" id="btnCompare">So sánh cả 3 kịch bản</button>
+    </section>
+
+    <section class="card">
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="tabQuiz">1. Luyện tập Trắc nghiệm</button>
+        <button class="tab-btn" data-tab="tabPrompt">2. Prompt &amp; Bảo mật PII (NFR-02)</button>
+        <button class="tab-btn" data-tab="tabJson">3. JSON Output &amp; Chỉ số NFR</button>
+        <button class="tab-btn" data-tab="tabCompare">4. So sánh 3 Kịch bản</button>
+      </div>
+
+      <div id="statusArea"></div>
+
+      <div id="tabQuiz" class="tab-panel active">
+        <div class="alert alert-warn">Chọn cấu hình bên trái và bấm <strong>"Sinh câu hỏi với AI"</strong> để kiểm thử.</div>
+      </div>
+
+      <div id="tabPrompt" class="tab-panel">
+        <div class="muted">Chưa có dữ liệu Prompt.</div>
+      </div>
+
+      <div id="tabJson" class="tab-panel">
+        <div class="muted">Chưa có dữ liệu JSON Output.</div>
+      </div>
+
+      <div id="tabCompare" class="tab-panel">
+        <div class="muted">Bấm <strong>"So sánh cả 3 kịch bản"</strong> để xem bảng đối chứng Baseline vs Risk-Aware vs Detailed Profile.</div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const INITIAL_PROFILES = {{ profiles | tojson }};
+    const BLOCKS_LIST = {{ blocks | tojson }};
+    let currentQuizData = null;
+
+    function escapeHtml(str) {
+      return String(str ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    function activateTab(tabId) {
+      document.querySelectorAll(".tab-btn").forEach(b => b.classList.toggle("active", b.dataset.tab === tabId));
+      document.querySelectorAll(".tab-panel").forEach(p => p.classList.toggle("active", p.id === tabId));
+    }
+
+    document.querySelectorAll(".tab-btn").forEach(btn => {
+      btn.addEventListener("click", () => activateTab(btn.dataset.tab));
+    });
+
+    function syncFormFromProfile(profileId) {
+      const p = INITIAL_PROFILES.find(item => item.profile_id === profileId) || INITIAL_PROFILES[0];
+      if (!p) return;
+      document.getElementById("profileDesc").textContent = p.description || "";
+      document.getElementById("riskLevel").value = p.risk_level || "HIGH";
+      document.getElementById("riskProb").value = p.risk_probability ?? 0.72;
+
+      const wb = p.weak_blocks || [];
+      if (wb[0]) {
+        document.getElementById("block1Select").value = wb[0].it1108_block_code;
+        document.getElementById("status1Select").value = wb[0].submission_vs_score_status;
+        document.getElementById("pct1Input").value = wb[0].lower_than_class_pct ?? 85;
+      }
+      if (wb[1]) {
+        document.getElementById("block2Select").value = wb[1].it1108_block_code;
+        document.getElementById("status2Select").value = wb[1].submission_vs_score_status;
+        document.getElementById("score2Input").value = wb[1].avg_submitted_score ?? 42;
+      }
+    }
+
+    function buildCustomProfilePayload() {
+      const selectedId = document.getElementById("profileSelect").value;
+      const b1Code = document.getElementById("block1Select").value;
+      const b2Code = document.getElementById("block2Select").value;
+      const b1Info = BLOCKS_LIST.find(b => b.it1108_block_code === b1Code) || {};
+      const b2Info = BLOCKS_LIST.find(b => b.it1108_block_code === b2Code) || {};
+
+      const weakBlocks = [
+        {
+          it1108_block_code: b1Code,
+          it1108_block_name: b1Info.it1108_block_name || b1Code,
+          lower_than_class_pct: parseFloat(document.getElementById("pct1Input").value || "85"),
+          avg_submitted_score: document.getElementById("status1Select").value === "MISSING_SUBMISSION" ? 0 : 45,
+          submission_vs_score_status: document.getElementById("status1Select").value
+        }
+      ];
+      if (b2Code !== b1Code) {
+        weakBlocks.push({
+          it1108_block_code: b2Code,
+          it1108_block_name: b2Info.it1108_block_name || b2Code,
+          lower_than_class_pct: 65,
+          avg_submitted_score: parseFloat(document.getElementById("score2Input").value || "42"),
+          submission_vs_score_status: document.getElementById("status2Select").value
+        });
+      }
+
+      return {
+        profile_id: selectedId || "custom",
+        risk_level: document.getElementById("riskLevel").value,
+        risk_probability: parseFloat(document.getElementById("riskProb").value || "0.72"),
+        weak_blocks: weakBlocks
+      };
+    }
+
+    function buildRequestParams() {
+      return {
+        course_code: document.getElementById("courseCodeInput").value.trim() || "IT1108",
+        course_name: document.getElementById("courseNameInput").value.trim() || "Nhập môn lập trình",
+        knowledge_block: document.getElementById("knowledgeBlockOverride").value || null,
+        review_topics: document.getElementById("reviewTopicsInput").value.trim() || null,
+        num_questions: parseInt(document.getElementById("numQuestionsInput").value || "5", 10),
+        difficulty: document.getElementById("difficultySelect").value || "auto",
+        scenario_type: document.getElementById("scenarioSelect").value,
+        mode: document.getElementById("modeSelect").value,
+        simulate_error: document.getElementById("simulateErrorSelect").value || null,
+        profile: buildCustomProfilePayload()
+      };
+    }
+
+    function renderStatus(data) {
+      const area = document.getElementById("statusArea");
+      if (data.success) {
+        const m = data.metrics || {};
+        area.innerHTML = `
+          <div class="alert alert-ok">
+            <strong>Thành công (HTTP ${data.http_status})</strong> – Chế độ: <code>${escapeHtml(data.mode_used)}</code> (${escapeHtml(data.transport)}) |
+            Model: <code>${escapeHtml(data.model_used)}</code> | Độ trễ: <strong>${data.latency_ms} ms</strong> |
+            Điểm phù hợp sư phạm: <strong>${m.pedagogical_alignment_score ?? "-"} / 100</strong>
+          </div>`;
+      } else {
+        area.innerHTML = `
+          <div class="alert alert-err">
+            <strong>Bắt lỗi an toàn NFR-03 (HTTP ${data.http_status} – ${escapeHtml(data.error_type)})</strong><br/>
+            ${escapeHtml(data.error_message)}
+          </div>`;
+      }
+    }
+
+    function renderQuizTab(data) {
+      const el = document.getElementById("tabQuiz");
+      if (!data.success || !data.quiz_data) {
+        currentQuizData = null;
+        el.innerHTML = `<div class="alert alert-warn">Không có bộ câu hỏi hợp lệ để hiển thị (xem chi tiết tại Tab 3).</div>`;
+        return;
+      }
+      const quiz = data.quiz_data;
+      currentQuizData = quiz;
+      let html = `
+        <div class="alert alert-ok" style="background:#eff6ff;color:#1e3a8a;border-color:#bfdbfe;">
+          <div><strong>Học phần:</strong> ${escapeHtml(quiz.course_code)} – ${escapeHtml(quiz.course_name)}</div>
+          <div><strong>Chiến lược độ khó:</strong> ${escapeHtml(quiz.difficulty_strategy)}</div>
+          <div style="margin-top:4px;"><strong>Lời khuyên ôn tập:</strong> ${escapeHtml(quiz.study_advice)}</div>
+        </div>
+      `;
+
+      quiz.questions.forEach((q, idx) => {
+        const diffClass = escapeHtml(q.difficulty);
+        const qText = q.question || q.question_text || "";
+        const qTopic = q.topic || q.it1108_block_name || "";
+        html += `
+          <div class="q-card" id="qCard_${idx}">
+            <div class="q-header">
+              <strong>Câu ${q.question_number}: [${escapeHtml(q.it1108_block_code)}] ${escapeHtml(qTopic)}</strong>
+              <div>
+                <span class="pill ${diffClass}">${escapeHtml(q.difficulty)}</span>
+                <span class="pill">${escapeHtml(q.question_type)}</span>
+              </div>
+            </div>
+            <div>${escapeHtml(qText)}</div>
+            ${q.code_snippet ? `<pre><code>${escapeHtml(q.code_snippet)}</code></pre>` : ""}
+            <div style="margin-top:8px;">
+              ${["A", "B", "C", "D"].map(k => `
+                <label class="opt-label" id="opt_${idx}_${k}">
+                  <input type="radio" name="q_${idx}" value="${k}" />
+                  <span><strong>${k}.</strong> ${escapeHtml(q.options[k])}</span>
+                </label>
+              `).join("")}
+            </div>
+            <div style="margin-top:8px; display:flex; gap:8px; align-items:center;">
+              <button type="button" class="btn btn-secondary btn-sm" onclick="toggleHint(${idx})">Xem gợi ý từng bước</button>
+            </div>
+            <div class="hint-box" id="hint_${idx}"><strong>Gợi ý:</strong> ${escapeHtml(q.hint || "Không có gợi ý.")}</div>
+            <div class="exp-box" id="exp_${idx}"></div>
+          </div>
+        `;
+      });
+
+      html += `
+        <button type="button" class="btn btn-primary" onclick="gradeQuiz()">Nộp bài &amp; Xem giải thích AI</button>
+        <div id="gradeSummary" style="margin-top:10px;"></div>
+      `;
+      el.innerHTML = html;
+    }
+
+    window.toggleHint = function(idx) {
+      const box = document.getElementById(`hint_${idx}`);
+      if (box) box.style.display = box.style.display === "block" ? "none" : "block";
+    };
+
+    window.gradeQuiz = function() {
+      if (!currentQuizData) return;
+      let score = 0;
+      const total = currentQuizData.questions.length;
+      currentQuizData.questions.forEach((q, idx) => {
+        const checked = document.querySelector(`input[name="q_${idx}"]:checked`);
+        const chosen = checked ? checked.value : null;
+        ["A", "B", "C", "D"].forEach(k => {
+          const lbl = document.getElementById(`opt_${idx}_${k}`);
+          if (!lbl) return;
+          lbl.classList.remove("correct", "wrong");
+          if (k === q.correct_answer) lbl.classList.add("correct");
+          else if (chosen === k && k !== q.correct_answer) lbl.classList.add("wrong");
+        });
+        if (chosen === q.correct_answer) score += 1;
+        const expBox = document.getElementById(`exp_${idx}`);
+        if (expBox) {
+          expBox.style.display = "block";
+          expBox.innerHTML = `<strong>Đáp án đúng: ${escapeHtml(q.correct_answer)}</strong> ${chosen === q.correct_answer ? "✅" : (chosen ? "❌ (Bạn chọn " + escapeHtml(chosen) + ")" : "⚪ (Chưa chọn)")}<br/>${escapeHtml(q.explanation)}`;
+        }
+      });
+      const sumEl = document.getElementById("gradeSummary");
+      sumEl.innerHTML = `<div class="alert ${score >= Math.ceil(total * 0.8) ? "alert-ok" : "alert-warn"}">Kết quả làm thử: <strong>${score} / ${total}</strong> câu đúng.</div>`;
+    };
+
+    function renderPromptTab(data) {
+      const el = document.getElementById("tabPrompt");
+      const p = data.prompt_bundle;
+      if (!p) {
+        el.innerHTML = `<div class="muted">Không có Prompt bundle.</div>`;
+        return;
+      }
+      const pii = p.pii_report || {};
+      el.innerHTML = `
+        <div class="alert ${pii.pii_safe ? "alert-ok" : "alert-err"}">
+          <strong>Kiểm tra ẩn danh NFR-02:</strong> ${pii.pii_safe ? "AN TOÀN (Không chứa PII)" : "CẢNH BÁO RÒ RỈ PII"}<br/>
+          <span class="muted">Các trường PII đã lọc: <code>${escapeHtml((pii.stripped_pii_keys || []).join(", ") || "Không có")}</code></span>
+        </div>
+        <div class="field">
+          <label>System Instruction (Cố vấn học tập IT1108 – Không tự chẩn đoán)</label>
+          <pre>${escapeHtml(p.system_instruction)}</pre>
+        </div>
+        <div class="field">
+          <label>User Prompt thực tế gửi Gemini API (Kịch bản: ${escapeHtml(p.scenario_type)})</label>
+          <pre>${escapeHtml(p.user_prompt)}</pre>
+        </div>
+        <div class="field">
+          <label>Prompt nền kế thừa từ hàm build_prompt_scenarios() (week 5+6/predict.py)</label>
+          <pre>${escapeHtml(p.week56_base_prompt)}</pre>
+        </div>
+      `;
+    }
+
+    function renderJsonTab(data) {
+      const el = document.getElementById("tabJson");
+      const val = data.validation || {};
+      const m = data.metrics || {};
+      el.innerHTML = `
+        <div class="metrics-strip">
+          <div class="metric-box"><div class="k">HTTP Status</div><div class="v">${data.http_status}</div></div>
+          <div class="metric-box"><div class="k">JSON Valid</div><div class="v">${val.json_valid ? "PASS" : "FAIL"}</div></div>
+          <div class="metric-box"><div class="k">Schema Valid</div><div class="v">${val.schema_valid ? "PASS" : "FAIL"}</div></div>
+          <div class="metric-box"><div class="k">SQL ISJSON</div><div class="v">${val.sql_isjson_compatible ? "PASS" : "FAIL"}</div></div>
+          <div class="metric-box"><div class="k">NFR-01 (&le;20s)</div><div class="v">${data.within_timeout_nfr01 ? "PASS" : "FAIL"} (${data.latency_ms}ms)</div></div>
+          <div class="metric-box"><div class="k">Alignment Score</div><div class="v">${m.pedagogical_alignment_score ?? "-"} / 100</div></div>
+        </div>
+        ${(val.errors && val.errors.length) ? `<div class="alert alert-err"><strong>Lỗi Schema/JSON:</strong><ul>${val.errors.map(e => `<li>${escapeHtml(e)}</li>`).join("")}</ul></div>` : ""}
+        <div class="field">
+          <label>JSON Output chuẩn hóa (6 trường cốt lõi: question, options, correct_answer, explanation, topic, difficulty)</label>
+          <pre>${escapeHtml(data.quiz_data ? JSON.stringify(data.quiz_data, null, 2) : (data.raw_response_preview || ""))}</pre>
+        </div>
+      `;
+    }
+
+    function renderCompareTab(comp) {
+      const el = document.getElementById("tabCompare");
+      const rows = comp.summary || [];
+      let html = `
+        <div class="alert alert-ok">Đã chạy đối chứng cả 3 kịch bản ở chế độ <code>${escapeHtml(comp.effective_mode)}</code>.</div>
+        <table>
+          <thead>
+            <tr>
+              <th>Kịch bản</th>
+              <th>JSON / Schema</th>
+              <th>PII Safe</th>
+              <th>Độ trễ (ms)</th>
+              <th>Giải thích TB (ký tự)</th>
+              <th>Gợi ý chi tiết (%)</th>
+              <th>Code C (%)</th>
+              <th>Alignment (/100)</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${rows.map(r => `
+              <tr>
+                <td><strong>${escapeHtml(r.scenario_type)}</strong></td>
+                <td>${r.json_valid && r.schema_valid ? "PASS" : "FAIL"}</td>
+                <td>${r.pii_safe ? "PASS" : "FAIL"}</td>
+                <td>${r.latency_ms}</td>
+                <td>${r.avg_explanation_chars}</td>
+                <td>${r.avg_meaningful_hint_pct}%</td>
+                <td>${r.avg_code_snippet_pct}%</td>
+                <td><strong>${r.pedagogical_alignment_score}</strong></td>
+              </tr>
+            `).join("")}
+          </tbody>
+        </table>
+      `;
+
+      ["baseline", "risk_level", "detailed_profile"].forEach(sc => {
+        const res = (comp.results || {})[sc];
+        if (!res || !res.quiz_data) return;
+        const q1 = (res.quiz_data.questions || [])[0];
+        html += `
+          <div class="q-card" style="margin-top:12px;">
+            <div class="q-header">
+              <strong>Kịch bản: ${escapeHtml(sc)}</strong>
+              <span class="pill">Alignment: ${res.metrics.pedagogical_alignment_score}/100</span>
+            </div>
+            <div class="muted"><strong>Chiến lược:</strong> ${escapeHtml(res.quiz_data.difficulty_strategy)}</div>
+            ${q1 ? `<div style="margin-top:6px;"><strong>Mẫu Câu 1 (${escapeHtml(q1.difficulty)} | ${escapeHtml(q1.topic)}):</strong> ${escapeHtml(q1.question || q1.question_text)}</div>` : ""}
+          </div>
+        `;
+      });
+
+      el.innerHTML = html;
+    }
+
+    document.getElementById("profileSelect").addEventListener("change", (e) => syncFormFromProfile(e.target.value));
+    syncFormFromProfile(document.getElementById("profileSelect").value);
+
+    document.getElementById("btnGenerate").addEventListener("click", async () => {
+      const btn = document.getElementById("btnGenerate");
+      btn.disabled = true;
+      btn.textContent = "Đang gọi AI...";
+      try {
+        const body = buildRequestParams();
+        const resp = await fetch("/api/generate", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(body)
+        });
+        const data = await resp.json();
+        renderStatus(data);
+        renderQuizTab(data);
+        renderPromptTab(data);
+        renderJsonTab(data);
+        activateTab(data.success ? "tabQuiz" : "tabJson");
+      } catch (err) {
+        renderStatus({ success: false, http_status: 500, error_type: "CLIENT_ERROR", error_message: String(err) });
+      } finally {
+        btn.disabled = false;
+        btn.textContent = "Sinh câu hỏi với AI";
+      }
+    });
+
+    document.getElementById("btnCompare").addEventListener("click", async () => {
+      const btn = document.getElementById("btnCompare");
+      btn.disabled = true;
+      btn.textContent = "Đang chạy 3 kịch bản...";
+      try {
+        const body = buildRequestParams();
+        const resp = await fetch("/api/compare", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(body)
+        });
+        const comp = await resp.json();
+        renderCompareTab(comp);
+        activateTab("tabCompare");
+      } catch (err) {
+        renderStatus({ success: false, http_status: 500, error_type: "CLIENT_ERROR", error_message: String(err) });
+      } finally {
+        btn.disabled = false;
+        btn.textContent = "So sánh cả 3 kịch bản";
+      }
+    });
+
+    // =========================================================================
+    // TUẦN 8: KẾT NỐI PIPELINE ML -> TOPIC MAPPING -> GENAI TRÊN WEB UI
+    // =========================================================================
+    let w8Catalog = { students: [], demo_presets: [], blocks: [] };
+    let w8CurrentQuizData = null;
+
+    function switchMainView(viewName) {
+      const show8 = viewName === "week8";
+      document.getElementById("viewWeek8").classList.toggle("hidden-view", !show8);
+      document.getElementById("viewWeek7").classList.toggle("hidden-view", show8);
+      document.getElementById("btnShowWeek8").classList.toggle("active", show8);
+      document.getElementById("btnShowWeek7").classList.toggle("active", !show8);
+    }
+
+    document.getElementById("btnShowWeek8").addEventListener("click", () => switchMainView("week8"));
+    document.getElementById("btnShowWeek7").addEventListener("click", () => switchMainView("week7"));
+
+    function syncW8IncludeDetailsUI() {
+      const checked = document.getElementById("w8IncludeDetails").checked;
+      document.getElementById("w8TargetBlocksBox").style.display = checked ? "none" : "block";
+    }
+
+    function syncW8ModeUI() {
+      const modeVal = document.getElementById("w8ModeSelect").value;
+      const errSel = document.getElementById("w8SimulateErrorSelect");
+      if (modeVal === "mock") {
+        errSel.disabled = false;
+      } else {
+        errSel.value = "";
+        errSel.disabled = true;
+      }
+    }
+
+    document.getElementById("w8IncludeDetails").addEventListener("change", syncW8IncludeDetailsUI);
+    document.getElementById("w8ModeSelect").addEventListener("change", syncW8ModeUI);
+
+    function applyW8Preset(presetId) {
+      const p = (w8Catalog.demo_presets || []).find(item => item.preset_id === presetId);
+      if (!p) return;
+      document.getElementById("w8PresetDesc").textContent = p.description || "";
+      document.getElementById("w8OuladIdInput").value = p.oulad_student_id ?? "";
+      document.getElementById("w8SimCodeInput").value = p.simulated_student_code || "SIM_WEEK8_01";
+      document.getElementById("w8IncludeDetails").checked = !!p.include_block_details;
+      syncW8IncludeDetailsUI();
+
+      const targets = new Set(p.target_block_codes || []);
+      if (targets.size > 0) {
+        document.querySelectorAll(".w8-blk-chk").forEach(chk => {
+          chk.checked = targets.has(chk.value);
+        });
+      }
+
+      document.getElementById("w8ScenarioSelect").value = p.requested_scenario || "auto";
+      document.getElementById("w8NumQuestions").value = p.num_questions || 5;
+      document.getElementById("w8DifficultySelect").value = p.difficulty || "auto";
+      document.getElementById("w8ModeSelect").value = p.recommended_mode || "live";
+      syncW8ModeUI();
+      document.getElementById("w8SimulateErrorSelect").value = p.simulate_error || "";
+    }
+
+    async function loadW8Catalog() {
+      try {
+        const resp = await fetch("/api/pipeline/students");
+        if (!resp.ok) return;
+        w8Catalog = await resp.json();
+
+        const presetSel = document.getElementById("w8PresetSelect");
+        presetSel.innerHTML = (w8Catalog.demo_presets || [])
+          .map(p => `<option value="${escapeHtml(p.preset_id)}">${escapeHtml(p.title)}</option>`)
+          .join("");
+        presetSel.addEventListener("change", e => applyW8Preset(e.target.value));
+
+        const stuSel = document.getElementById("w8StudentSelect");
+        stuSel.innerHTML = (w8Catalog.students || [])
+          .map(s => `<option value="${s.oulad_student_id}">${escapeHtml(s.label)}</option>`)
+          .join("");
+        stuSel.addEventListener("change", e => {
+          const s = (w8Catalog.students || []).find(item => String(item.oulad_student_id) === String(e.target.value));
+          if (s) {
+            document.getElementById("w8OuladIdInput").value = s.oulad_student_id;
+            document.getElementById("w8SimCodeInput").value = s.simulated_student_code;
+          }
+        });
+
+        if ((w8Catalog.demo_presets || []).length > 0) {
+          applyW8Preset(w8Catalog.demo_presets[0].preset_id);
+        }
+      } catch (e) {
+        console.warn("Không tải được danh mục sinh viên Tuần 8:", e);
+      }
+    }
+
+    window.w8ToggleHint = function(idx) {
+      const box = document.getElementById(`w8Hint_${idx}`);
+      if (box) box.style.display = box.style.display === "block" ? "none" : "block";
+    };
+
+    window.w8GradeQuiz = function() {
+      if (!w8CurrentQuizData) return;
+      let score = 0;
+      const total = w8CurrentQuizData.length;
+      w8CurrentQuizData.forEach((q, idx) => {
+        const checked = document.querySelector(`input[name="w8q_${idx}"]:checked`);
+        const chosen = checked ? checked.value : null;
+        ["A", "B", "C", "D"].forEach(k => {
+          const lbl = document.getElementById(`w8Opt_${idx}_${k}`);
+          if (!lbl) return;
+          lbl.classList.remove("correct", "wrong");
+          if (k === q.correct_answer) lbl.classList.add("correct");
+          else if (chosen === k && k !== q.correct_answer) lbl.classList.add("wrong");
+        });
+        if (chosen === q.correct_answer) score += 1;
+        const expBox = document.getElementById(`w8Exp_${idx}`);
+        if (expBox) {
+          expBox.style.display = "block";
+          expBox.innerHTML = `<strong>Đáp án đúng: ${escapeHtml(q.correct_answer)}</strong> ${chosen === q.correct_answer ? "✅" : (chosen ? "❌ (Bạn chọn " + escapeHtml(chosen) + ")" : "⚪ (Chưa chọn)")}<br/>${escapeHtml(q.explanation)}`;
+        }
+      });
+      const sumEl = document.getElementById("w8GradeSummary");
+      if (sumEl) {
+        sumEl.innerHTML = `<div class="alert ${score >= Math.ceil(total * 0.8) ? "alert-ok" : "alert-warn"}">Kết quả làm thử: <strong>${score} / ${total}</strong> câu đúng.</div>`;
+      }
+    };
+
+    function renderW8SourceBanner(data) {
+      const banner = document.getElementById("w8SourceBanner");
+      const isSim = !!data.is_simulated;
+      const ds = data.data_source || (isSim ? "MOCK_SIMULATED" : "LIVE_GEMINI_API");
+      if (!data.success) {
+        banner.className = "source-banner source-err";
+        banner.innerHTML = `
+          <span>LỖI PIPELINE (HTTP ${escapeHtml(data.http_status)} – ${escapeHtml(data.error_type)}) | Nguồn: <code>${escapeHtml(ds)}</code> (<code>is_simulated=${escapeHtml(String(isSim))}</code>)</span>
+          <span class="pill">${isSim ? "MOCK_SIMULATED" : "LIVE_GEMINI_API (Không tự chuyển Mock)"}</span>
+        `;
+      } else if (isSim) {
+        banner.className = "source-banner source-mock";
+        banner.innerHTML = `
+          <span>NGUỒN DỮ LIỆU: <code>MOCK_SIMULATED</code> – ${escapeHtml(data.mode_notice || "Đang chạy dữ liệu mô phỏng offline, KHÔNG phải kết quả Gemini API thực tế.")}</span>
+          <span class="pill">MOCK_SIMULATED</span>
+        `;
+      } else {
+        banner.className = "source-banner source-live";
+        banner.innerHTML = `
+          <span>NGUỒN DỮ LIỆU: <code>LIVE_GEMINI_API</code> – ${escapeHtml(data.mode_notice || "Kết quả sinh trực tiếp từ Google Gemini API.")}</span>
+          <span class="pill">LIVE_GEMINI_API</span>
+        `;
+      }
+    }
+
+    function renderW8PipelineResult(data) {
+      renderW8SourceBanner(data);
+      const area = document.getElementById("w8ResultArea");
+      let html = "";
+
+      // 1. ML Prediction & Behavior
+      const ml = data.ml_prediction;
+      const behav = data.submission_behavior;
+      if (ml && ml.risk_level) {
+        html += `
+          <div class="section-box">
+            <h3>
+              <span>Bước 1–2: Dự đoán Machine Learning &amp; Trạng thái học tập</span>
+              <span class="risk-badge risk-${escapeHtml(ml.risk_level)}">MỨC CẢNH BÁO: ${escapeHtml(ml.risk_level)} (p = ${Number(ml.risk_probability).toFixed(4)})</span>
+            </h3>
+            <div class="metrics-strip">
+              <div class="metric-box"><div class="k">Nhãn dự đoán</div><div class="v">${ml.prediction === 1 ? "At-Risk (1)" : "An toàn (0)"}</div></div>
+              <div class="metric-box"><div class="k">Ngưỡng cảnh báo</div><div class="v">LOW &lt; 0.35 | HIGH &ge; 0.65</div></div>
+              <div class="metric-box"><div class="k">Mã hành vi</div><div class="v">${escapeHtml(behav ? behav.status_code : "-")}</div></div>
+              <div class="metric-box"><div class="k">Backend ML</div><div class="v" style="font-size:0.78rem;">${escapeHtml(ml.inference_backend || "-")}</div></div>
+            </div>
+            ${behav ? `<div class="muted"><strong>${escapeHtml(behav.status_label)}:</strong> ${escapeHtml(behav.note)}</div>` : ""}
+          </div>
+        `;
+      }
+
+      // 2. Topic Mapping
+      const prof = data.personalized_profile;
+      const mapSum = data.topic_mapping_summary;
+      if (prof && Array.isArray(prof.weak_blocks)) {
+        html += `
+          <div class="section-box">
+            <h3>
+              <span>Bước 3–4: Topic Mapping IT1108 (${escapeHtml(prof.simulated_student_code)})</span>
+              <span class="pill">${prof.has_detailed_block_data ? "Đủ chi tiết khối OULAD" : "Thiếu chi tiết khối (Không bịa số liệu)"}</span>
+            </h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>Mã khối</th>
+                  <th>Chủ đề IT1108</th>
+                  <th>Trạng thái khối</th>
+                  <th>Hoàn thành</th>
+                  <th>Điểm TB nộp</th>
+                  <th>Thấp hơn lớp (%)</th>
+                  <th>Học liệu VLE</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${prof.weak_blocks.map(b => `
+                  <tr>
+                    <td><strong>${escapeHtml(b.it1108_block_code)}</strong></td>
+                    <td>${escapeHtml(b.it1108_block_name)}</td>
+                    <td>${escapeHtml(b.submission_vs_score_status || "Chưa có dữ liệu chi tiết")}</td>
+                    <td>${b.completion_rate !== null && b.completion_rate !== undefined ? (Number(b.completion_rate) * 100).toFixed(0) + "%" : "<span class='muted'>Chưa có</span>"}</td>
+                    <td>${b.avg_submitted_score !== null && b.avg_submitted_score !== undefined ? Number(b.avg_submitted_score).toFixed(1) + "/100" : "<span class='muted'>Chưa có</span>"}</td>
+                    <td>${b.lower_than_class_pct !== null && b.lower_than_class_pct !== undefined ? Number(b.lower_than_class_pct).toFixed(1) + "%" : "<span class='muted'>Chưa có</span>"}</td>
+                    <td>${escapeHtml(b.vle_resources_count ?? 0)} mục</td>
+                  </tr>
+                `).join("")}
+              </tbody>
+            </table>
+            <div class="muted" style="margin-top:6px;">Nguồn khối: <code>${escapeHtml(mapSum ? mapSum.block_data_source : "")}</code></div>
+          </div>
+        `;
+      }
+
+      // 3. Prompt Scenario & API Trace
+      const ps = data.prompt_selection;
+      const ga = data.genai_result || {};
+      if (ps || data.genai_result) {
+        const pii = ga.pii_report || {};
+        html += `
+          <div class="section-box">
+            <h3>
+              <span>Bước 5–6: Lựa chọn Prompt Scenario &amp; Giám sát API</span>
+              <span class="pill">${escapeHtml(ps ? ps.selected_scenario : "-")}</span>
+            </h3>
+            ${ps ? `<div style="margin-bottom:8px;font-size:0.88rem;"><strong>Lý do chọn kịch bản:</strong> ${escapeHtml(ps.reason)}</div>` : ""}
+            <div class="metrics-strip">
+              <div class="metric-box"><div class="k">Model sử dụng</div><div class="v" style="font-size:0.84rem;">${escapeHtml(ga.model_used || "-")}</div></div>
+              <div class="metric-box"><div class="k">Lượt thử / JSON retry</div><div class="v">${escapeHtml(ga.attempts_used ?? "-")} lần / ${escapeHtml(ga.json_retries_used ?? 0)}</div></div>
+              <div class="metric-box"><div class="k">Độ trễ</div><div class="v">${ga.latency_ms ?? "-"} ms</div></div>
+              <div class="metric-box"><div class="k">Bảo mật PII (NFR-02)</div><div class="v">${pii.pii_safe === false ? "CẢNH BÁO" : "AN TOÀN"}</div></div>
+            </div>
+            ${Array.isArray(ga.models_tried) && ga.models_tried.length ? `<div class="muted">Chuỗi model đã thử: <code>${escapeHtml(ga.models_tried.join(" -> "))}</code></div>` : ""}
+          </div>
+        `;
+      }
+
+      // 4. Error OR Quiz Questions
+      if (!data.success) {
+        w8CurrentQuizData = null;
+        html += `
+          <div class="alert alert-err">
+            <div><strong>Lỗi tại bước <code>${escapeHtml(data.step_failed || "unknown")}</code> – HTTP ${escapeHtml(data.http_status)} (${escapeHtml(data.error_type || "ERROR")})</strong></div>
+            ${data.error_category ? `<div style="margin-top:4px;"><strong>Phân loại:</strong> <code>${escapeHtml(data.error_category)}</code></div>` : ""}
+            <div style="margin-top:6px;">${escapeHtml(data.error_message || "")}</div>
+            ${data.user_guidance ? `<div style="margin-top:6px;"><strong>Hướng dẫn:</strong> ${escapeHtml(data.user_guidance)}</div>` : ""}
+            ${data.can_retry ? `<div><button type="button" class="btn-retry" id="btnW8Retry">Thử lại ngay</button></div>` : ""}
+          </div>
+        `;
+      } else {
+        const questions = data.questions || [];
+        w8CurrentQuizData = questions;
+        const norm = (ga.validation && ga.validation.normalized_data) || {};
+        html += `
+          <div class="section-box">
+            <h3>
+              <span>Bước 7: Bộ câu hỏi ôn tập cá nhân hóa (${questions.length} câu)</span>
+              <span class="pill">JSON/Schema: PASS</span>
+            </h3>
+            ${norm.difficulty_strategy ? `<div class="alert alert-ok" style="background:#eff6ff;color:#1e3a8a;border-color:#bfdbfe;"><strong>Chiến lược độ khó:</strong> ${escapeHtml(norm.difficulty_strategy)}<br/><strong>Lời khuyên:</strong> ${escapeHtml(norm.study_advice || "")}</div>` : ""}
+            ${questions.map((q, idx) => `
+              <div class="q-card">
+                <div class="q-header">
+                  <strong>Câu ${q.question_number}: [${escapeHtml(q.it1108_block_code)}] ${escapeHtml(q.topic)}</strong>
+                  <div>
+                    <span class="pill ${escapeHtml(q.difficulty)}">${escapeHtml(q.difficulty)}</span>
+                    <span class="pill">${escapeHtml(q.question_type)}</span>
+                  </div>
+                </div>
+                <div>${escapeHtml(q.question)}</div>
+                ${q.code_snippet ? `<pre><code>${escapeHtml(q.code_snippet)}</code></pre>` : ""}
+                <div style="margin-top:8px;">
+                  ${["A", "B", "C", "D"].map(k => `
+                    <label class="opt-label" id="w8Opt_${idx}_${k}">
+                      <input type="radio" name="w8q_${idx}" value="${k}" />
+                      <span><strong>${k}.</strong> ${escapeHtml((q.options || {})[k] || "")}</span>
+                    </label>
+                  `).join("")}
+                </div>
+                <div style="margin-top:8px;">
+                  <button type="button" class="btn btn-secondary btn-sm" onclick="w8ToggleHint(${idx})">Xem gợi ý</button>
+                </div>
+                <div class="hint-box" id="w8Hint_${idx}"><strong>Gợi ý:</strong> ${escapeHtml(q.hint || "Không có gợi ý.")}</div>
+                <div class="exp-box" id="w8Exp_${idx}"></div>
+              </div>
+            `).join("")}
+            <button type="button" class="btn btn-primary" onclick="w8GradeQuiz()">Nộp bài &amp; Xem đáp án / giải thích</button>
+            <div id="w8GradeSummary" style="margin-top:10px;"></div>
+          </div>
+        `;
+      }
+
+      html += `
+        <details style="margin-top:10px;">
+          <summary style="cursor:pointer;font-weight:600;font-size:0.88rem;color:#334155;">Xem dữ liệu JSON kết quả đầy đủ (ẩn API Key)</summary>
+          <pre>${escapeHtml(JSON.stringify(data, null, 2))}</pre>
+        </details>
+      `;
+
+      area.innerHTML = html;
+      const retryBtn = document.getElementById("btnW8Retry");
+      if (retryBtn) {
+        retryBtn.addEventListener("click", runW8Pipeline);
+      }
+    }
+
+    async function runW8Pipeline() {
+      const btn = document.getElementById("btnW8Run");
+      btn.disabled = true;
+      btn.textContent = "Đang chạy ML + Mapping + GenAI...";
+      try {
+        const includeDetails = document.getElementById("w8IncludeDetails").checked;
+        const targetBlocks = Array.from(document.querySelectorAll(".w8-blk-chk:checked")).map(el => el.value);
+        const body = {
+          oulad_student_id: document.getElementById("w8OuladIdInput").value.trim(),
+          simulated_student_code: document.getElementById("w8SimCodeInput").value.trim() || "SIM_WEBUI_01",
+          include_block_details: includeDetails,
+          target_block_codes: includeDetails ? [] : targetBlocks,
+          requested_scenario: document.getElementById("w8ScenarioSelect").value,
+          num_questions: parseInt(document.getElementById("w8NumQuestions").value || "5", 10),
+          difficulty: document.getElementById("w8DifficultySelect").value,
+          mode: document.getElementById("w8ModeSelect").value,
+          simulate_error: document.getElementById("w8SimulateErrorSelect").value || null
+        };
+        const resp = await fetch("/api/pipeline/run", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(body)
+        });
+        const data = await resp.json();
+        renderW8PipelineResult(data);
+      } catch (err) {
+        renderW8PipelineResult({
+          success: false,
+          http_status: 500,
+          step_failed: "webui_fetch",
+          data_source: document.getElementById("w8ModeSelect").value === "mock" ? "MOCK_SIMULATED" : "LIVE_GEMINI_API",
+          is_simulated: document.getElementById("w8ModeSelect").value === "mock",
+          error_type: "NETWORK_OR_CLIENT_ERROR",
+          error_message: String(err),
+          can_retry: true
+        });
+      } finally {
+        btn.disabled = false;
+        btn.textContent = "Chạy Pipeline ML → Mapping → GenAI";
+      }
+    }
+
+    document.getElementById("btnW8Run").addEventListener("click", runW8Pipeline);
+    syncW8IncludeDetailsUI();
+    syncW8ModeUI();
+    loadW8Catalog();
+  </script>
+</body>
+</html>

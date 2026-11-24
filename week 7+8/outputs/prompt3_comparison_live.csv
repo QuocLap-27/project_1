@@ -1,0 +1,17 @@
+﻿case_id,scenario_type,data_source,is_simulated,mode_used,api_provider,model_used,success,http_status,error_type,error_message,latency_ms,within_timeout_nfr01,pii_safe,json_valid,schema_valid,sql_isjson_compatible,expected_num_questions,actual_num_questions,topic_relevance_pct,four_options_pct,single_answer_pct,explanation_fit_pct,difficulty_fit_pct,max_pairwise_similarity,avg_pairwise_similarity,duplicate_pairs,no_excessive_duplication,difficulty_distribution,avg_explanation_chars,overall_quality_score
+TC01_KB01_KB02_FOUNDATION,baseline,LIVE_GEMINI_API,False,live,ai_studio,gemini-3.5-flash,True,200,,,41379.45,False,True,True,True,True,5,5,100.0,100.0,100.0,100.0,100.0,0.5928,0.2502,0,True,"{""easy"": 2, ""medium"": 3, ""hard"": 0}",119.0,100.0
+TC01_KB01_KB02_FOUNDATION,risk_level,LIVE_GEMINI_API,False,live,ai_studio,gemini-3.5-flash,False,500,INVALID_JSON,"Dữ liệu AI trả về không đúng định dạng JSON: Lỗi cú pháp JSON (DecodeError tại dòng 16, cột 22): Expecting ',' delimiter",22853.8,False,True,False,False,False,5,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,False,"{""easy"": 0, ""medium"": 0, ""hard"": 0}",0.0,0.0
+TC01_KB01_KB02_FOUNDATION,detailed_profile,LIVE_GEMINI_API,False,live,ai_studio,gemini-3.5-flash,True,200,,,25946.01,False,True,True,True,True,5,5,100.0,100.0,100.0,100.0,100.0,0.5983,0.2157,0,True,"{""easy"": 3, ""medium"": 2, ""hard"": 0}",114.6,100.0
+TC02_KB03_KB04_CONTROL_FUNC,baseline,LIVE_GEMINI_API,False,live,ai_studio,gemini-3.5-flash,False,503,TIMEOUT,Hệ thống AI quá thời gian phản hồi (> 45s): The read operation timed out,45150.81,False,True,False,False,False,5,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,False,"{""easy"": 0, ""medium"": 0, ""hard"": 0}",0.0,0.0
+TC02_KB03_KB04_CONTROL_FUNC,risk_level,LIVE_GEMINI_API,False,live,ai_studio,gemini-3.5-flash,False,503,API_ERROR,"Hệ thống AI đang bận hoặc gặp sự cố kết nối: HTTP 503 từ Gemini API (ai_studio): {
+  ""error"": {
+    ""code"": 503,
+    ""message"": ""This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."",
+    ""status"": ""UNAVAILABLE""
+  }
+}
+",7062.11,True,True,False,False,False,5,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,False,"{""easy"": 0, ""medium"": 0, ""hard"": 0}",0.0,0.0
+TC02_KB03_KB04_CONTROL_FUNC,detailed_profile,LIVE_GEMINI_API,False,live,ai_studio,gemini-3.5-flash,True,200,,,9913.56,True,True,True,True,True,5,5,100.0,100.0,100.0,100.0,100.0,0.3625,0.1276,0,True,"{""easy"": 2, ""medium"": 3, ""hard"": 0}",133.6,100.0
+TC03_KB05_KB06_POINTER_STRUCT,baseline,LIVE_GEMINI_API,False,live,ai_studio,gemini-3.5-flash,True,200,,,8686.19,True,True,True,True,True,5,5,100.0,100.0,100.0,100.0,84.0,0.3919,0.1897,0,True,"{""easy"": 1, ""medium"": 3, ""hard"": 1}",110.8,96.8
+TC03_KB05_KB06_POINTER_STRUCT,risk_level,LIVE_GEMINI_API,False,live,ai_studio,gemini-3.5-flash,True,200,,,30523.02,False,True,True,True,True,5,5,100.0,100.0,100.0,100.0,100.0,0.2173,0.1313,0,True,"{""easy"": 2, ""medium"": 3, ""hard"": 0}",123.0,100.0
+TC03_KB05_KB06_POINTER_STRUCT,detailed_profile,LIVE_GEMINI_API,False,live,ai_studio,gemini-3.5-flash,False,500,INVALID_JSON,"Dữ liệu AI trả về không đúng định dạng JSON: Lỗi cú pháp JSON (DecodeError tại dòng 41, cột 122): Invalid control character at",17371.36,True,True,False,False,False,5,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,False,"{""easy"": 0, ""medium"": 0, ""hard"": 0}",0.0,0.0

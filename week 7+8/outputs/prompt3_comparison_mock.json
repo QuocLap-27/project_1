@@ -1,0 +1,1778 @@
+{
+  "generated_at": "2026-11-25 01:13:25",
+  "dataset_name": "IT1108_Prompt_Engineering_Benchmark_Week7",
+  "effective_mode": "mock",
+  "data_source": "MOCK_SIMULATED",
+  "is_simulated": true,
+  "model": "gemini-3.5-flash",
+  "fallback_model": "gemini-3.5-flash-lite",
+  "socket_timeout_seconds": 20.0,
+  "total_runs": 9,
+  "scenario_summary": [
+    {
+      "scenario_type": "baseline",
+      "data_source": "MOCK_SIMULATED",
+      "is_simulated": true,
+      "total_cases": 3,
+      "successful_cases": 3,
+      "json_valid_pct": 100.0,
+      "schema_valid_pct": 100.0,
+      "nfr01_within_20s_pct": 100.0,
+      "avg_latency_ms": 3.34,
+      "avg_topic_relevance_pct": 100.0,
+      "avg_four_options_pct": 100.0,
+      "avg_single_answer_pct": 100.0,
+      "avg_explanation_fit_pct": 66.67,
+      "avg_difficulty_fit_pct": 76.0,
+      "no_duplication_rate_pct": 100.0,
+      "avg_max_similarity": 0.35,
+      "avg_explanation_chars": 89.07,
+      "avg_overall_quality_score": 90.2
+    },
+    {
+      "scenario_type": "risk_level",
+      "data_source": "MOCK_SIMULATED",
+      "is_simulated": true,
+      "total_cases": 3,
+      "successful_cases": 3,
+      "json_valid_pct": 100.0,
+      "schema_valid_pct": 100.0,
+      "nfr01_within_20s_pct": 100.0,
+      "avg_latency_ms": 3.38,
+      "avg_topic_relevance_pct": 100.0,
+      "avg_four_options_pct": 100.0,
+      "avg_single_answer_pct": 100.0,
+      "avg_explanation_fit_pct": 100.0,
+      "avg_difficulty_fit_pct": 90.67,
+      "no_duplication_rate_pct": 100.0,
+      "avg_max_similarity": 0.26,
+      "avg_explanation_chars": 128.13,
+      "avg_overall_quality_score": 98.13
+    },
+    {
+      "scenario_type": "detailed_profile",
+      "data_source": "MOCK_SIMULATED",
+      "is_simulated": true,
+      "total_cases": 3,
+      "successful_cases": 3,
+      "json_valid_pct": 100.0,
+      "schema_valid_pct": 100.0,
+      "nfr01_within_20s_pct": 100.0,
+      "avg_latency_ms": 3.65,
+      "avg_topic_relevance_pct": 100.0,
+      "avg_four_options_pct": 100.0,
+      "avg_single_answer_pct": 100.0,
+      "avg_explanation_fit_pct": 100.0,
+      "avg_difficulty_fit_pct": 90.67,
+      "no_duplication_rate_pct": 100.0,
+      "avg_max_similarity": 0.33,
+      "avg_explanation_chars": 141.2,
+      "avg_overall_quality_score": 98.13
+    }
+  ],
+  "detailed_records": [
+    {
+      "case_id": "TC01_KB01_KB02_FOUNDATION",
+      "scenario_type": "baseline",
+      "data_source": "MOCK_SIMULATED",
+      "is_simulated": true,
+      "mode_used": "mock",
+      "api_provider": "mock",
+      "model_used": "gemini-3.5-flash (mock-offline)",
+      "success": true,
+      "http_status": 200,
+      "error_type": null,
+      "error_message": null,
+      "latency_ms": 3.18,
+      "within_timeout_nfr01": true,
+      "pii_safe": true,
+      "json_valid": true,
+      "schema_valid": true,
+      "sql_isjson_compatible": true,
+      "expected_num_questions": 5,
+      "actual_num_questions": 5,
+      "topic_relevance_pct": 100.0,
+      "four_options_pct": 100.0,
+      "single_answer_pct": 100.0,
+      "explanation_fit_pct": 40.0,
+      "difficulty_fit_pct": 64.0,
+      "max_pairwise_similarity": 0.3292,
+      "avg_pairwise_similarity": 0.1849,
+      "duplicate_pairs": 0,
+      "no_excessive_duplication": true,
+      "difficulty_distribution": {
+        "easy": 0,
+        "medium": 5,
+        "hard": 0
+      },
+      "avg_explanation_chars": 91.0,
+      "overall_quality_score": 83.8
+    },
+    {
+      "case_id": "TC01_KB01_KB02_FOUNDATION",
+      "scenario_type": "risk_level",
+      "data_source": "MOCK_SIMULATED",
+      "is_simulated": true,
+      "mode_used": "mock",
+      "api_provider": "mock",
+      "model_used": "gemini-3.5-flash (mock-offline)",
+      "success": true,
+      "http_status": 200,
+      "error_type": null,
+      "error_message": null,
+      "latency_ms": 3.64,
+      "within_timeout_nfr01": true,
+      "pii_safe": true,
+      "json_valid": true,
+      "schema_valid": true,
+      "sql_isjson_compatible": true,
+      "expected_num_questions": 5,
+      "actual_num_questions": 5,
+      "topic_relevance_pct": 100.0,
+      "four_options_pct": 100.0,
+      "single_answer_pct": 100.0,
+      "explanation_fit_pct": 100.0,
+      "difficulty_fit_pct": 88.0,
+      "max_pairwise_similarity": 0.2158,
+      "avg_pairwise_similarity": 0.1496,
+      "duplicate_pairs": 0,
+      "no_excessive_duplication": true,
+      "difficulty_distribution": {
+        "easy": 4,
+        "medium": 1,
+        "hard": 0
+      },
+      "avg_explanation_chars": 147.8,
+      "overall_quality_score": 97.6
+    },
+    {
+      "case_id": "TC01_KB01_KB02_FOUNDATION",
+      "scenario_type": "detailed_profile",
+      "data_source": "MOCK_SIMULATED",
+      "is_simulated": true,
+      "mode_used": "mock",
+      "api_provider": "mock",
+      "model_used": "gemini-3.5-flash (mock-offline)",
+      "success": true,
+      "http_status": 200,
+      "error_type": null,
+      "error_message": null,
+      "latency_ms": 3.47,
+      "within_timeout_nfr01": true,
+      "pii_safe": true,
+      "json_valid": true,
+      "schema_valid": true,
+      "sql_isjson_compatible": true,
+      "expected_num_questions": 5,
+      "actual_num_questions": 5,
+      "topic_relevance_pct": 100.0,
+      "four_options_pct": 100.0,
+      "single_answer_pct": 100.0,
+      "explanation_fit_pct": 100.0,
+      "difficulty_fit_pct": 88.0,
+      "max_pairwise_similarity": 0.4079,
+      "avg_pairwise_similarity": 0.1576,
+      "duplicate_pairs": 0,
+      "no_excessive_duplication": true,
+      "difficulty_distribution": {
+        "easy": 2,
+        "medium": 3,
+        "hard": 0
+      },
+      "avg_explanation_chars": 152.8,
+      "overall_quality_score": 97.6
+    },
+    {
+      "case_id": "TC02_KB03_KB04_CONTROL_FUNC",
+      "scenario_type": "baseline",
+      "data_source": "MOCK_SIMULATED",
+      "is_simulated": true,
+      "mode_used": "mock",
+      "api_provider": "mock",
+      "model_used": "gemini-3.5-flash (mock-offline)",
+      "success": true,
+      "http_status": 200,
+      "error_type": null,
+      "error_message": null,
+      "latency_ms": 3.29,
+      "within_timeout_nfr01": true,
+      "pii_safe": true,
+      "json_valid": true,
+      "schema_valid": true,
+      "sql_isjson_compatible": true,
+      "expected_num_questions": 5,
+      "actual_num_questions": 5,
+      "topic_relevance_pct": 100.0,
+      "four_options_pct": 100.0,
+      "single_answer_pct": 100.0,
+      "explanation_fit_pct": 100.0,
+      "difficulty_fit_pct": 64.0,
+      "max_pairwise_similarity": 0.3563,
+      "avg_pairwise_similarity": 0.1798,
+      "duplicate_pairs": 0,
+      "no_excessive_duplication": true,
+      "difficulty_distribution": {
+        "easy": 0,
+        "medium": 5,
+        "hard": 0
+      },
+      "avg_explanation_chars": 102.8,
+      "overall_quality_score": 92.8
+    },
+    {
+      "case_id": "TC02_KB03_KB04_CONTROL_FUNC",
+      "scenario_type": "risk_level",
+      "data_source": "MOCK_SIMULATED",
+      "is_simulated": true,
+      "mode_used": "mock",
+      "api_provider": "mock",
+      "model_used": "gemini-3.5-flash (mock-offline)",
+      "success": true,
+      "http_status": 200,
+      "error_type": null,
+      "error_message": null,
+      "latency_ms": 3.39,
+      "within_timeout_nfr01": true,
+      "pii_safe": true,
+      "json_valid": true,
+      "schema_valid": true,
+      "sql_isjson_compatible": true,
+      "expected_num_questions": 5,
+      "actual_num_questions": 5,
+      "topic_relevance_pct": 100.0,
+      "four_options_pct": 100.0,
+      "single_answer_pct": 100.0,
+      "explanation_fit_pct": 100.0,
+      "difficulty_fit_pct": 100.0,
+      "max_pairwise_similarity": 0.2054,
+      "avg_pairwise_similarity": 0.1239,
+      "duplicate_pairs": 0,
+      "no_excessive_duplication": true,
+      "difficulty_distribution": {
+        "easy": 4,
+        "medium": 1,
+        "hard": 0
+      },
+      "avg_explanation_chars": 129.4,
+      "overall_quality_score": 100.0
+    },
+    {
+      "case_id": "TC02_KB03_KB04_CONTROL_FUNC",
+      "scenario_type": "detailed_profile",
+      "data_source": "MOCK_SIMULATED",
+      "is_simulated": true,
+      "mode_used": "mock",
+      "api_provider": "mock",
+      "model_used": "gemini-3.5-flash (mock-offline)",
+      "success": true,
+      "http_status": 200,
+      "error_type": null,
+      "error_message": null,
+      "latency_ms": 3.33,
+      "within_timeout_nfr01": true,
+      "pii_safe": true,
+      "json_valid": true,
+      "schema_valid": true,
+      "sql_isjson_compatible": true,
+      "expected_num_questions": 5,
+      "actual_num_questions": 5,
+      "topic_relevance_pct": 100.0,
+      "four_options_pct": 100.0,
+      "single_answer_pct": 100.0,
+      "explanation_fit_pct": 100.0,
+      "difficulty_fit_pct": 100.0,
+      "max_pairwise_similarity": 0.2054,
+      "avg_pairwise_similarity": 0.1363,
+      "duplicate_pairs": 0,
+      "no_excessive_duplication": true,
+      "difficulty_distribution": {
+        "easy": 3,
+        "medium": 2,
+        "hard": 0
+      },
+      "avg_explanation_chars": 151.4,
+      "overall_quality_score": 100.0
+    },
+    {
+      "case_id": "TC03_KB05_KB06_POINTER_STRUCT",
+      "scenario_type": "baseline",
+      "data_source": "MOCK_SIMULATED",
+      "is_simulated": true,
+      "mode_used": "mock",
+      "api_provider": "mock",
+      "model_used": "gemini-3.5-flash (mock-offline)",
+      "success": true,
+      "http_status": 200,
+      "error_type": null,
+      "error_message": null,
+      "latency_ms": 3.56,
+      "within_timeout_nfr01": true,
+      "pii_safe": true,
+      "json_valid": true,
+      "schema_valid": true,
+      "sql_isjson_compatible": true,
+      "expected_num_questions": 5,
+      "actual_num_questions": 5,
+      "topic_relevance_pct": 100.0,
+      "four_options_pct": 100.0,
+      "single_answer_pct": 100.0,
+      "explanation_fit_pct": 60.0,
+      "difficulty_fit_pct": 100.0,
+      "max_pairwise_similarity": 0.3661,
+      "avg_pairwise_similarity": 0.1248,
+      "duplicate_pairs": 0,
+      "no_excessive_duplication": true,
+      "difficulty_distribution": {
+        "easy": 0,
+        "medium": 5,
+        "hard": 0
+      },
+      "avg_explanation_chars": 73.4,
+      "overall_quality_score": 94.0
+    },
+    {
+      "case_id": "TC03_KB05_KB06_POINTER_STRUCT",
+      "scenario_type": "risk_level",
+      "data_source": "MOCK_SIMULATED",
+      "is_simulated": true,
+      "mode_used": "mock",
+      "api_provider": "mock",
+      "model_used": "gemini-3.5-flash (mock-offline)",
+      "success": true,
+      "http_status": 200,
+      "error_type": null,
+      "error_message": null,
+      "latency_ms": 3.11,
+      "within_timeout_nfr01": true,
+      "pii_safe": true,
+      "json_valid": true,
+      "schema_valid": true,
+      "sql_isjson_compatible": true,
+      "expected_num_questions": 5,
+      "actual_num_questions": 5,
+      "topic_relevance_pct": 100.0,
+      "four_options_pct": 100.0,
+      "single_answer_pct": 100.0,
+      "explanation_fit_pct": 100.0,
+      "difficulty_fit_pct": 84.0,
+      "max_pairwise_similarity": 0.3626,
+      "avg_pairwise_similarity": 0.1608,
+      "duplicate_pairs": 0,
+      "no_excessive_duplication": true,
+      "difficulty_distribution": {
+        "easy": 4,
+        "medium": 0,
+        "hard": 1
+      },
+      "avg_explanation_chars": 107.2,
+      "overall_quality_score": 96.8
+    },
+    {
+      "case_id": "TC03_KB05_KB06_POINTER_STRUCT",
+      "scenario_type": "detailed_profile",
+      "data_source": "MOCK_SIMULATED",
+      "is_simulated": true,
+      "mode_used": "mock",
+      "api_provider": "mock",
+      "model_used": "gemini-3.5-flash (mock-offline)",
+      "success": true,
+      "http_status": 200,
+      "error_type": null,
+      "error_message": null,
+      "latency_ms": 4.16,
+      "within_timeout_nfr01": true,
+      "pii_safe": true,
+      "json_valid": true,
+      "schema_valid": true,
+      "sql_isjson_compatible": true,
+      "expected_num_questions": 5,
+      "actual_num_questions": 5,
+      "topic_relevance_pct": 100.0,
+      "four_options_pct": 100.0,
+      "single_answer_pct": 100.0,
+      "explanation_fit_pct": 100.0,
+      "difficulty_fit_pct": 84.0,
+      "max_pairwise_similarity": 0.3626,
+      "avg_pairwise_similarity": 0.1494,
+      "duplicate_pairs": 0,
+      "no_excessive_duplication": true,
+      "difficulty_distribution": {
+        "easy": 2,
+        "medium": 2,
+        "hard": 1
+      },
+      "avg_explanation_chars": 119.4,
+      "overall_quality_score": 96.8
+    }
+  ],
+  "runs": [
+    {
+      "case_id": "TC01_KB01_KB02_FOUNDATION",
+      "scenario_type": "baseline",
+      "data_source": "MOCK_SIMULATED",
+      "is_simulated": true,
+      "evaluation": {
+        "case_id": "TC01_KB01_KB02_FOUNDATION",
+        "scenario_type": "baseline",
+        "data_source": "MOCK_SIMULATED",
+        "is_simulated": true,
+        "mode_used": "mock",
+        "api_provider": "mock",
+        "model_used": "gemini-3.5-flash (mock-offline)",
+        "success": true,
+        "http_status": 200,
+        "error_type": null,
+        "error_message": null,
+        "latency_ms": 3.18,
+        "within_timeout_nfr01": true,
+        "pii_safe": true,
+        "json_valid": true,
+        "schema_valid": true,
+        "sql_isjson_compatible": true,
+        "expected_num_questions": 5,
+        "actual_num_questions": 5,
+        "topic_relevance_pct": 100.0,
+        "four_options_pct": 100.0,
+        "single_answer_pct": 100.0,
+        "explanation_fit_pct": 40.0,
+        "difficulty_fit_pct": 64.0,
+        "max_pairwise_similarity": 0.3292,
+        "avg_pairwise_similarity": 0.1849,
+        "duplicate_pairs": 0,
+        "no_excessive_duplication": true,
+        "difficulty_distribution": {
+          "easy": 0,
+          "medium": 5,
+          "hard": 0
+        },
+        "avg_explanation_chars": 91.0,
+        "overall_quality_score": 83.8
+      },
+      "quiz_data": {
+        "course_code": "IT1108",
+        "course_name": "Nhập môn lập trình",
+        "scenario_type": "baseline",
+        "target_blocks": [
+          "IT1108_KB01",
+          "IT1108_KB02"
+        ],
+        "review_topics": [
+          "Giải quyết bài toán, sơ đồ khối và thuật toán",
+          "Kiểu dữ liệu chuẩn, vào/ra printf-scanf và biểu thức C"
+        ],
+        "difficulty_strategy": "Phân bổ đề ôn tập chung theo chủ đề học phần, chưa xét đến ngữ cảnh mô phỏng của người học.",
+        "study_advice": "Ôn tập lại kiến thức trọng tâm các chủ đề đã chọn và luyện tập thêm bài tập mẫu.",
+        "questions": [
+          {
+            "question_number": 1,
+            "it1108_block_code": "IT1108_KB01",
+            "topic": "Khối 1: Giải quyết bài toán, Thuật toán & Tổng quan lập trình",
+            "difficulty": "medium",
+            "question_type": "concept",
+            "question": "Tính chất 'Tính dừng' (Finiteness) của một thuật toán có ý nghĩa gì?",
+            "code_snippet": "",
+            "options": {
+              "A": "Thuật toán phải chạy trong thời gian dưới 1 giây",
+              "B": "Thuật toán phải kết thúc sau một số hữu hạn bước với mọi đầu vào hợp lệ",
+              "C": "Thuật toán không được chứa bất kỳ vòng lặp nào",
+              "D": "Thuật toán chỉ dùng cho bài toán số học"
+            },
+            "correct_answer": "B",
+            "hint": "Xem lại giáo trình bài giảng tương ứng.",
+            "explanation": "Tính dừng đảm bảo thuật toán không bị lặp vô tận mà luôn kết thúc sau số bước hữu hạn để cho ra kết quả đúng."
+          },
+          {
+            "question_number": 2,
+            "it1108_block_code": "IT1108_KB02",
+            "topic": "Khối 2: Ngôn ngữ C cơ bản, Hệ đếm, Kiểu dữ liệu, Vào/ra & Biểu thức",
+            "difficulty": "medium",
+            "question_type": "code_trace",
+            "question": "Kết quả của biến c trong đoạn mã ngôn ngữ C sau là bao nhiêu?",
+            "code_snippet": "int a = 3, b = 4;\nint c = ++a + b--;",
+            "options": {
+              "A": "7",
+              "B": "8",
+              "C": "9",
+              "D": "6"
+            },
+            "correct_answer": "B",
+            "hint": "Xem lại giáo trình bài giảng tương ứng.",
+            "explanation": "++a tăng a từ 3 lên 4 rồi trả về 4; b-- trả về giá trị hiện tại là 4 rồi mới giảm b xuống 3."
+          },
+          {
+            "question_number": 3,
+            "it1108_block_code": "IT1108_KB01",
+            "topic": "Khối 1: Giải quyết bài toán, Thuật toán & Tổng quan lập trình",
+            "difficulty": "medium",
+            "question_type": "code_trace",
+            "question": "Cho đoạn mã giả thuật toán dưới đây. Khi nhập n = 4, giá trị cuối cùng của s là bao nhiêu?",
+            "code_snippet": "s <- 0\ni <- 1\nTrong khi i <= n:\n    s <- s + i\n    i <- i + 1\nXuat s",
+            "options": {
+              "A": "6",
+              "B": "10",
+              "C": "4",
+              "D": "15"
+            },
+            "correct_answer": "B",
+            "hint": "Xem lại giáo trình bài giảng tương ứng.",
+            "explanation": "Lần vết từng bước với n = 4: Khởi tạo s=0, i=1."
+          },
+          {
+            "question_number": 4,
+            "it1108_block_code": "IT1108_KB02",
+            "topic": "Khối 2: Ngôn ngữ C cơ bản, Hệ đếm, Kiểu dữ liệu, Vào/ra & Biểu thức",
+            "difficulty": "medium",
+            "question_type": "bug_analysis",
+            "question": "Khi chạy đoạn chương trình C dưới đây, kết quả in ra màn hình là gì và vì sao?",
+            "code_snippet": "#include <stdio.h>\nint main() {\n    int a = 5, b = 2;\n    float kq = a / b;\n    printf(\"%.1f\", kq);\n    return 0;\n}",
+            "options": {
+              "A": "2.5",
+              "B": "2.0",
+              "C": "3.0",
+              "D": "Lỗi biên dịch"
+            },
+            "correct_answer": "B",
+            "hint": "Xem lại giáo trình bài giảng tương ứng.",
+            "explanation": "Vì a và b đều có kiểu int nên phép chia a / b là chia lấy phần nguyên (5 / 2 = 2), sau đó mới ép sang float thành 2."
+          },
+          {
+            "question_number": 5,
+            "it1108_block_code": "IT1108_KB01",
+            "topic": "Khối 1: Giải quyết bài toán, Thuật toán & Tổng quan lập trình",
+            "difficulty": "medium",
+            "question_type": "bug_analysis",
+            "question": "Đoạn mã giả tìm số lớn nhất trong 2 số a, b dưới đây gặp lỗi logic gì nếu a = 5 và b = 5?",
+            "code_snippet": "Neu a > b:\n    max <- a\nNeu b > a:\n    max <- b\nXuat max",
+            "options": {
+              "A": "Khi a == b, không nhánh nào gán giá trị cho biến max",
+              "B": "Lệnh Neu không thể so sánh hai số nguyên",
+              "C": "Biến max luôn nhận giá trị a trong mọi trường hợp",
+              "D": "Thuật toán rơi vào vòng lặp vô hạn"
+            },
+            "correct_answer": "A",
+            "hint": "Xem lại giáo trình bài giảng tương ứng.",
+            "explanation": "Khi a == b, cả (a > b) và (b > a) đều sai nên biến max chưa được gán giá trị (dữ liệu rác)."
+          }
+        ]
+      },
+      "error_type": null,
+      "error_message": null
+    },
+    {
+      "case_id": "TC01_KB01_KB02_FOUNDATION",
+      "scenario_type": "risk_level",
+      "data_source": "MOCK_SIMULATED",
+      "is_simulated": true,
+      "evaluation": {
+        "case_id": "TC01_KB01_KB02_FOUNDATION",
+        "scenario_type": "risk_level",
+        "data_source": "MOCK_SIMULATED",
+        "is_simulated": true,
+        "mode_used": "mock",
+        "api_provider": "mock",
+        "model_used": "gemini-3.5-flash (mock-offline)",
+        "success": true,
+        "http_status": 200,
+        "error_type": null,
+        "error_message": null,
+        "latency_ms": 3.64,
+        "within_timeout_nfr01": true,
+        "pii_safe": true,
+        "json_valid": true,
+        "schema_valid": true,
+        "sql_isjson_compatible": true,
+        "expected_num_questions": 5,
+        "actual_num_questions": 5,
+        "topic_relevance_pct": 100.0,
+        "four_options_pct": 100.0,
+        "single_answer_pct": 100.0,
+        "explanation_fit_pct": 100.0,
+        "difficulty_fit_pct": 88.0,
+        "max_pairwise_similarity": 0.2158,
+        "avg_pairwise_similarity": 0.1496,
+        "duplicate_pairs": 0,
+        "no_excessive_duplication": true,
+        "difficulty_distribution": {
+          "easy": 4,
+          "medium": 1,
+          "hard": 0
+        },
+        "avg_explanation_chars": 147.8,
+        "overall_quality_score": 97.6
+      },
+      "quiz_data": {
+        "course_code": "IT1108",
+        "course_name": "Nhập môn lập trình",
+        "scenario_type": "risk_level",
+        "target_blocks": [
+          "IT1108_KB01",
+          "IT1108_KB02"
+        ],
+        "review_topics": [
+          "Giải quyết bài toán, sơ đồ khối và thuật toán",
+          "Kiểu dữ liệu chuẩn, vào/ra printf-scanf và biểu thức C"
+        ],
+        "difficulty_strategy": "Điều chỉnh độ khó tổng thể theo mức rủi ro tham khảo HIGH (xác suất tham khảo 0.84): ưu tiên củng cố kiến thức cốt lõi trước khi làm câu hỏi vận dụng.",
+        "study_advice": "Mức tham khảo hiện tại là HIGH. Bạn nên làm đủ 5 câu ôn tập và đọc kỹ phần giải thích để củng cố kiến thức.",
+        "questions": [
+          {
+            "question_number": 1,
+            "it1108_block_code": "IT1108_KB01",
+            "topic": "Khối 1: Giải quyết bài toán, Thuật toán & Tổng quan lập trình",
+            "difficulty": "easy",
+            "question_type": "guided_basic",
+            "question": "Trong quy trình giải quyết bài toán bằng máy tính, thứ tự các bước cơ bản nào sau đây là đúng?",
+            "code_snippet": "",
+            "options": {
+              "A": "Xác định bài toán -> Thiết kế thuật toán -> Viết chương trình -> Kiểm thử & sửa lỗi",
+              "B": "Viết chương trình -> Xác định bài toán -> Kiểm thử -> Thiết kế thuật toán",
+              "C": "Kiểm thử -> Thiết kế thuật toán -> Xác định bài toán -> Viết chương trình",
+              "D": "Thiết kế giao diện -> Viết chương trình -> Bỏ qua bước kiểm thử"
+            },
+            "correct_answer": "A",
+            "hint": "Gợi ý từng bước: Bước 1 cần xác định rõ Input/Output, Bước 2 thiết kế thuật toán, sau đó mới lập trình C và kiểm thử.",
+            "explanation": "Quy trình chuẩn gồm 4 giai đoạn nối tiếp: (1) Xác định Input/Output của bài toán, (2) Thiết kế thuật toán bằng mã giả hoặc sơ đồ khối, (3) Cài đặt thành chương trình C, (4) Biên dịch và kiểm thử với nhiều bộ dữ liệu."
+          },
+          {
+            "question_number": 2,
+            "it1108_block_code": "IT1108_KB02",
+            "topic": "Khối 2: Ngôn ngữ C cơ bản, Hệ đếm, Kiểu dữ liệu, Vào/ra & Biểu thức",
+            "difficulty": "easy",
+            "question_type": "guided_basic",
+            "question": "Trong ngôn ngữ C, hàm nào sau đây dùng để đọc một số nguyên từ bàn phím vào biến x?",
+            "code_snippet": "int x;\n// Cần đọc giá trị nguyên vào biến x",
+            "options": {
+              "A": "scanf(\"%d\", &x);",
+              "B": "scanf(\"%d\", x);",
+              "C": "printf(\"%d\", &x);",
+              "D": "input(\"%d\", &x);"
+            },
+            "correct_answer": "A",
+            "hint": "Gợi ý từng bước: Dùng scanf, định dạng %d cho kiểu int và đặt toán tử địa chỉ & trước biến x.",
+            "explanation": "Hàm scanf cần địa chỉ vùng nhớ của biến nên phải viết &x. Thiếu dấu & sẽ truyền giá trị rác làm địa chỉ và gây lỗi khi chạy chương trình."
+          },
+          {
+            "question_number": 3,
+            "it1108_block_code": "IT1108_KB01",
+            "topic": "Khối 1: Giải quyết bài toán, Thuật toán & Tổng quan lập trình",
+            "difficulty": "easy",
+            "question_type": "guided_basic",
+            "question": "Trong sơ đồ khối (Flowchart), ký hiệu hình thoi được sử dụng để biểu diễn thao tác nào?",
+            "code_snippet": "",
+            "options": {
+              "A": "Bắt đầu hoặc kết thúc thuật toán",
+              "B": "Nhập hoặc xuất dữ liệu",
+              "C": "Kiểm tra điều kiện rẽ nhánh (Đúng/Sai)",
+              "D": "Thực hiện phép gán hoặc tính toán tuần tự"
+            },
+            "correct_answer": "C",
+            "hint": "Gợi ý từng bước: Hình oval dùng cho Bắt đầu/Kết thúc; hình chữ nhật cho tính toán; hình thoi có 2 nhánh Đúng/Sai.",
+            "explanation": "Trong chuẩn biểu diễn sơ đồ khối IT1108: hình oval là Bắt đầu/Kết thúc, hình bình hành là Nhập/Xuất, hình chữ nhật là Xử lý/Tính toán, còn hình thoi biểu diễn nút kiểm tra điều kiện rẽ nhánh."
+          },
+          {
+            "question_number": 4,
+            "it1108_block_code": "IT1108_KB02",
+            "topic": "Khối 2: Ngôn ngữ C cơ bản, Hệ đếm, Kiểu dữ liệu, Vào/ra & Biểu thức",
+            "difficulty": "easy",
+            "question_type": "guided_basic",
+            "question": "Số nhị phân 1010 (cơ số 2) tương ứng với giá trị nào trong hệ thập phân (cơ số 10)?",
+            "code_snippet": "",
+            "options": {
+              "A": "8",
+              "B": "10",
+              "C": "12",
+              "D": "14"
+            },
+            "correct_answer": "B",
+            "hint": "Gợi ý từng bước: Nhân từng bit từ phải sang trái với lũy thừa của 2: 1*2^3 + 0*2^2 + 1*2^1 + 0*2^0.",
+            "explanation": "Áp dụng công thức quy đổi nhị phân sang thập phân: 1*8 + 0*4 + 1*2 + 0*1 = 8 + 2 = 10."
+          },
+          {
+            "question_number": 5,
+            "it1108_block_code": "IT1108_KB01",
+            "topic": "Khối 1: Giải quyết bài toán, Thuật toán & Tổng quan lập trình",
+            "difficulty": "medium",
+            "question_type": "concept",
+            "question": "Tính chất 'Tính dừng' (Finiteness) của một thuật toán có ý nghĩa gì?",
+            "code_snippet": "",
+            "options": {
+              "A": "Thuật toán phải chạy trong thời gian dưới 1 giây",
+              "B": "Thuật toán phải kết thúc sau một số hữu hạn bước với mọi đầu vào hợp lệ",
+              "C": "Thuật toán không được chứa bất kỳ vòng lặp nào",
+              "D": "Thuật toán chỉ dùng cho bài toán số học"
+            },
+            "correct_answer": "B",
+            "hint": "Nhớ lại 5 tính chất cơ bản của thuật toán: đầu vào, đầu ra, tính xác định, tính dừng và tính hiệu quả.",
+            "explanation": "Tính dừng đảm bảo thuật toán không bị lặp vô tận mà luôn kết thúc sau số bước hữu hạn để cho ra kết quả đúng."
+          }
+        ]
+      },
+      "error_type": null,
+      "error_message": null
+    },
+    {
+      "case_id": "TC01_KB01_KB02_FOUNDATION",
+      "scenario_type": "detailed_profile",
+      "data_source": "MOCK_SIMULATED",
+      "is_simulated": true,
+      "evaluation": {
+        "case_id": "TC01_KB01_KB02_FOUNDATION",
+        "scenario_type": "detailed_profile",
+        "data_source": "MOCK_SIMULATED",
+        "is_simulated": true,
+        "mode_used": "mock",
+        "api_provider": "mock",
+        "model_used": "gemini-3.5-flash (mock-offline)",
+        "success": true,
+        "http_status": 200,
+        "error_type": null,
+        "error_message": null,
+        "latency_ms": 3.47,
+        "within_timeout_nfr01": true,
+        "pii_safe": true,
+        "json_valid": true,
+        "schema_valid": true,
+        "sql_isjson_compatible": true,
+        "expected_num_questions": 5,
+        "actual_num_questions": 5,
+        "topic_relevance_pct": 100.0,
+        "four_options_pct": 100.0,
+        "single_answer_pct": 100.0,
+        "explanation_fit_pct": 100.0,
+        "difficulty_fit_pct": 88.0,
+        "max_pairwise_similarity": 0.4079,
+        "avg_pairwise_similarity": 0.1576,
+        "duplicate_pairs": 0,
+        "no_excessive_duplication": true,
+        "difficulty_distribution": {
+          "easy": 2,
+          "medium": 3,
+          "hard": 0
+        },
+        "avg_explanation_chars": 152.8,
+        "overall_quality_score": 97.6
+      },
+      "quiz_data": {
+        "course_code": "IT1108",
+        "course_name": "Nhập môn lập trình",
+        "scenario_type": "detailed_profile",
+        "target_blocks": [
+          "IT1108_KB01",
+          "IT1108_KB02"
+        ],
+        "review_topics": [
+          "Giải quyết bài toán, sơ đồ khối và thuật toán",
+          "Kiểu dữ liệu chuẩn, vào/ra printf-scanf và biểu thức C"
+        ],
+        "difficulty_strategy": "Cá nhân hóa tham khảo (rủi ro HIGH, p=0.84): ưu tiên câu easy dạng guided_basic kèm gợi ý từng bước cho chủ đề chưa có bài nộp; tăng câu code_trace/bug_analysis kèm giải thích lần vết từng dòng cho chủ đề điểm còn thấp.",
+        "study_advice": "Gợi ý lộ trình ôn tập: hoàn thành các câu hướng dẫn từng bước trước ở phần chưa nộp bài, sau đó tự lần vết trên giấy các đoạn code C để khắc phục lỗi sai thường gặp.",
+        "questions": [
+          {
+            "question_number": 1,
+            "it1108_block_code": "IT1108_KB01",
+            "topic": "Khối 1: Giải quyết bài toán, Thuật toán & Tổng quan lập trình",
+            "difficulty": "easy",
+            "question_type": "guided_basic",
+            "question": "Trong quy trình giải quyết bài toán bằng máy tính, thứ tự các bước cơ bản nào sau đây là đúng?",
+            "code_snippet": "",
+            "options": {
+              "A": "Xác định bài toán -> Thiết kế thuật toán -> Viết chương trình -> Kiểm thử & sửa lỗi",
+              "B": "Viết chương trình -> Xác định bài toán -> Kiểm thử -> Thiết kế thuật toán",
+              "C": "Kiểm thử -> Thiết kế thuật toán -> Xác định bài toán -> Viết chương trình",
+              "D": "Thiết kế giao diện -> Viết chương trình -> Bỏ qua bước kiểm thử"
+            },
+            "correct_answer": "A",
+            "hint": "Gợi ý từng bước: Bước 1 cần xác định rõ Input/Output, Bước 2 thiết kế thuật toán, sau đó mới lập trình C và kiểm thử.",
+            "explanation": "Quy trình chuẩn gồm 4 giai đoạn nối tiếp: (1) Xác định Input/Output của bài toán, (2) Thiết kế thuật toán bằng mã giả hoặc sơ đồ khối, (3) Cài đặt thành chương trình C, (4) Biên dịch và kiểm thử với nhiều bộ dữ liệu."
+          },
+          {
+            "question_number": 2,
+            "it1108_block_code": "IT1108_KB02",
+            "topic": "Khối 2: Ngôn ngữ C cơ bản, Hệ đếm, Kiểu dữ liệu, Vào/ra & Biểu thức",
+            "difficulty": "medium",
+            "question_type": "bug_analysis",
+            "question": "Khi chạy đoạn chương trình C dưới đây, kết quả in ra màn hình là gì và vì sao?",
+            "code_snippet": "#include <stdio.h>\nint main() {\n    int a = 5, b = 2;\n    float kq = a / b;\n    printf(\"%.1f\", kq);\n    return 0;\n}",
+            "options": {
+              "A": "2.5",
+              "B": "2.0",
+              "C": "3.0",
+              "D": "Lỗi biên dịch"
+            },
+            "correct_answer": "B",
+            "hint": "Kiểm tra kiểu dữ liệu của hai toán hạng a và b trước khi phép chia a / b thực hiện.",
+            "explanation": "Vì a và b đều có kiểu int nên phép chia a / b là chia lấy phần nguyên (5 / 2 = 2), sau đó mới ép sang float thành 2.0. Muốn ra 2.5 phải viết (float)a / b."
+          },
+          {
+            "question_number": 3,
+            "it1108_block_code": "IT1108_KB01",
+            "topic": "Khối 1: Giải quyết bài toán, Thuật toán & Tổng quan lập trình",
+            "difficulty": "easy",
+            "question_type": "guided_basic",
+            "question": "Trong sơ đồ khối (Flowchart), ký hiệu hình thoi được sử dụng để biểu diễn thao tác nào?",
+            "code_snippet": "",
+            "options": {
+              "A": "Bắt đầu hoặc kết thúc thuật toán",
+              "B": "Nhập hoặc xuất dữ liệu",
+              "C": "Kiểm tra điều kiện rẽ nhánh (Đúng/Sai)",
+              "D": "Thực hiện phép gán hoặc tính toán tuần tự"
+            },
+            "correct_answer": "C",
+            "hint": "Gợi ý từng bước: Hình oval dùng cho Bắt đầu/Kết thúc; hình chữ nhật cho tính toán; hình thoi có 2 nhánh Đúng/Sai.",
+            "explanation": "Trong chuẩn biểu diễn sơ đồ khối IT1108: hình oval là Bắt đầu/Kết thúc, hình bình hành là Nhập/Xuất, hình chữ nhật là Xử lý/Tính toán, còn hình thoi biểu diễn nút kiểm tra điều kiện rẽ nhánh."
+          },
+          {
+            "question_number": 4,
+            "it1108_block_code": "IT1108_KB02",
+            "topic": "Khối 2: Ngôn ngữ C cơ bản, Hệ đếm, Kiểu dữ liệu, Vào/ra & Biểu thức",
+            "difficulty": "medium",
+            "question_type": "code_trace",
+            "question": "Đoạn chương trình C sau in ra màn hình giá trị của biến r là bao nhiêu?",
+            "code_snippet": "int x = 17, y = 5;\nint r = x % y + x / y;\nprintf(\"%d\", r);",
+            "options": {
+              "A": "5",
+              "B": "6",
+              "C": "2",
+              "D": "3"
+            },
+            "correct_answer": "A",
+            "hint": "Tính riêng phép chia lấy dư 17 % 5 và phép chia lấy nguyên 17 / 5 rồi cộng lại.",
+            "explanation": "Lần vết biểu thức: 17 % 5 cho phần dư là 2; 17 / 5 cho phần nguyên là 3. Vì vậy r = 2 + 3 = 5."
+          },
+          {
+            "question_number": 5,
+            "it1108_block_code": "IT1108_KB01",
+            "topic": "Khối 1: Giải quyết bài toán, Thuật toán & Tổng quan lập trình",
+            "difficulty": "medium",
+            "question_type": "concept",
+            "question": "Tính chất 'Tính dừng' (Finiteness) của một thuật toán có ý nghĩa gì?",
+            "code_snippet": "",
+            "options": {
+              "A": "Thuật toán phải chạy trong thời gian dưới 1 giây",
+              "B": "Thuật toán phải kết thúc sau một số hữu hạn bước với mọi đầu vào hợp lệ",
+              "C": "Thuật toán không được chứa bất kỳ vòng lặp nào",
+              "D": "Thuật toán chỉ dùng cho bài toán số học"
+            },
+            "correct_answer": "B",
+            "hint": "Nhớ lại 5 tính chất cơ bản của thuật toán: đầu vào, đầu ra, tính xác định, tính dừng và tính hiệu quả.",
+            "explanation": "Tính dừng đảm bảo thuật toán không bị lặp vô tận mà luôn kết thúc sau số bước hữu hạn để cho ra kết quả đúng."
+          }
+        ]
+      },
+      "error_type": null,
+      "error_message": null
+    },
+    {
+      "case_id": "TC02_KB03_KB04_CONTROL_FUNC",
+      "scenario_type": "baseline",
+      "data_source": "MOCK_SIMULATED",
+      "is_simulated": true,
+      "evaluation": {
+        "case_id": "TC02_KB03_KB04_CONTROL_FUNC",
+        "scenario_type": "baseline",
+        "data_source": "MOCK_SIMULATED",
+        "is_simulated": true,
+        "mode_used": "mock",
+        "api_provider": "mock",
+        "model_used": "gemini-3.5-flash (mock-offline)",
+        "success": true,
+        "http_status": 200,
+        "error_type": null,
+        "error_message": null,
+        "latency_ms": 3.29,
+        "within_timeout_nfr01": true,
+        "pii_safe": true,
+        "json_valid": true,
+        "schema_valid": true,
+        "sql_isjson_compatible": true,
+        "expected_num_questions": 5,
+        "actual_num_questions": 5,
+        "topic_relevance_pct": 100.0,
+        "four_options_pct": 100.0,
+        "single_answer_pct": 100.0,
+        "explanation_fit_pct": 100.0,
+        "difficulty_fit_pct": 64.0,
+        "max_pairwise_similarity": 0.3563,
+        "avg_pairwise_similarity": 0.1798,
+        "duplicate_pairs": 0,
+        "no_excessive_duplication": true,
+        "difficulty_distribution": {
+          "easy": 0,
+          "medium": 5,
+          "hard": 0
+        },
+        "avg_explanation_chars": 102.8,
+        "overall_quality_score": 92.8
+      },
+      "quiz_data": {
+        "course_code": "IT1108",
+        "course_name": "Nhập môn lập trình",
+        "scenario_type": "baseline",
+        "target_blocks": [
+          "IT1108_KB03",
+          "IT1108_KB04"
+        ],
+        "review_topics": [
+          "Cấu trúc điều khiển rẽ nhánh if-else, switch-case và vòng lặp",
+          "Hàm, truyền tham số, đệ quy và mảng 1-2 chiều"
+        ],
+        "difficulty_strategy": "Phân bổ đề ôn tập chung theo chủ đề học phần, chưa xét đến ngữ cảnh mô phỏng của người học.",
+        "study_advice": "Ôn tập lại kiến thức trọng tâm các chủ đề đã chọn và luyện tập thêm bài tập mẫu.",
+        "questions": [
+          {
+            "question_number": 1,
+            "it1108_block_code": "IT1108_KB03",
+            "topic": "Khối 3: Cấu trúc điều khiển rẽ nhánh & Vòng lặp",
+            "difficulty": "medium",
+            "question_type": "code_trace",
+            "question": "Trong đoạn mã sau, chữ 'Hi' được in ra bao nhiêu lần?",
+            "code_snippet": "int n = 0;\nwhile (n > 0) {\n    printf(\"Hi\");\n    n--;\n}",
+            "options": {
+              "A": "0 lần",
+              "B": "1 lần",
+              "C": "Vô hạn lần",
+              "D": "Lỗi biên dịch"
+            },
+            "correct_answer": "A",
+            "hint": "Xem lại giáo trình bài giảng tương ứng.",
+            "explanation": "Với n = 0, biểu thức điều kiện (0 > 0) nhận giá trị sai ngay từ đầu nên vòng lặp while không thực hiện lần nào."
+          },
+          {
+            "question_number": 2,
+            "it1108_block_code": "IT1108_KB04",
+            "topic": "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)",
+            "difficulty": "medium",
+            "question_type": "concept",
+            "question": "Trong hàm đệ quy, 'trường hợp cơ sở' (base case) dùng để làm gì?",
+            "code_snippet": "",
+            "options": {
+              "A": "Dừng chuỗi gọi đệ quy để tránh tràn bộ nhớ ngăn xếp (Stack Overflow)",
+              "B": "Tăng tốc độ biên dịch chương trình",
+              "C": "Chuyển mảng 1 chiều thành 2 chiều",
+              "D": "Khởi tạo biến toàn cục"
+            },
+            "correct_answer": "A",
+            "hint": "Xem lại giáo trình bài giảng tương ứng.",
+            "explanation": "Mỗi hàm đệ quy bắt buộc có điều kiện dừng (base case); nếu thiếu, hàm gọi mãi cho đến khi hết bộ nhớ Stack."
+          },
+          {
+            "question_number": 3,
+            "it1108_block_code": "IT1108_KB03",
+            "topic": "Khối 3: Cấu trúc điều khiển rẽ nhánh & Vòng lặp",
+            "difficulty": "medium",
+            "question_type": "bug_analysis",
+            "question": "Đoạn mã C kiểm tra điểm đạt môn dưới đây có lỗi logic gì?",
+            "code_snippet": "int diem = 3;\nif (diem >= 5);\n    printf(\"Qua mon\\n\");",
+            "options": {
+              "A": "Có dấu chấm phẩy (;) ngay sau if (diem >= 5) nên luôn in ra 'Qua mon'",
+              "B": "Biến diem chưa được khởi tạo giá trị",
+              "C": "Toán tử >= không dùng được cho kiểu int",
+              "D": "Không có lỗi gì, chương trình không in ra gì cả"
+            },
+            "correct_answer": "A",
+            "hint": "Xem lại giáo trình bài giảng tương ứng.",
+            "explanation": "Lần vết: dấu ';' ngay sau if (diem >= 5); tạo thành một câu lệnh rỗng làm thân của if."
+          },
+          {
+            "question_number": 4,
+            "it1108_block_code": "IT1108_KB04",
+            "topic": "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)",
+            "difficulty": "medium",
+            "question_type": "bug_analysis",
+            "question": "Đoạn code dùng hàm hoan_vi để đổi chỗ hai số dưới đây in ra kết quả gì tại main() và tại sao?",
+            "code_snippet": "#include <stdio.h>\nvoid hoan_vi(int x, int y) {\n    int tmp = x;\n    x = y;\n    y = tmp;\n}\nint main() {\n    int a = 3, b = 7;\n    hoan_vi(a, b);\n    printf(\"%d %d\", a, b);\n    return 0;\n}",
+            "options": {
+              "A": "7 3",
+              "B": "3 7 (vì hàm truyền tham trị nên không đổi giá trị biến gốc)",
+              "C": "3 3",
+              "D": "7 7"
+            },
+            "correct_answer": "B",
+            "hint": "Xem lại giáo trình bài giảng tương ứng.",
+            "explanation": "Lần vết: khi gọi hoan_vi(a, b), C truyền theo tham trị (pass-by-value), tạo hai bản sao x=3, y=7."
+          },
+          {
+            "question_number": 5,
+            "it1108_block_code": "IT1108_KB03",
+            "topic": "Khối 3: Cấu trúc điều khiển rẽ nhánh & Vòng lặp",
+            "difficulty": "medium",
+            "question_type": "code_trace",
+            "question": "Đoạn code C sau in ra màn hình giá trị của biến sum là bao nhiêu?",
+            "code_snippet": "int sum = 0;\nfor (int i = 1; i <= 5; i++) {\n    if (i % 2 == 0) continue;\n    sum += i;\n}\nprintf(\"%d\", sum);",
+            "options": {
+              "A": "6",
+              "B": "9",
+              "C": "15",
+              "D": "10"
+            },
+            "correct_answer": "B",
+            "hint": "Xem lại giáo trình bài giảng tương ứng.",
+            "explanation": "Lần vết: i=1 (lẻ) -> sum=1; i=2 (chẵn) -> continue; i=3 (lẻ) -> sum=4; i=4 (chẵn) -> continue; i=5 (lẻ) -> sum=9."
+          }
+        ]
+      },
+      "error_type": null,
+      "error_message": null
+    },
+    {
+      "case_id": "TC02_KB03_KB04_CONTROL_FUNC",
+      "scenario_type": "risk_level",
+      "data_source": "MOCK_SIMULATED",
+      "is_simulated": true,
+      "evaluation": {
+        "case_id": "TC02_KB03_KB04_CONTROL_FUNC",
+        "scenario_type": "risk_level",
+        "data_source": "MOCK_SIMULATED",
+        "is_simulated": true,
+        "mode_used": "mock",
+        "api_provider": "mock",
+        "model_used": "gemini-3.5-flash (mock-offline)",
+        "success": true,
+        "http_status": 200,
+        "error_type": null,
+        "error_message": null,
+        "latency_ms": 3.39,
+        "within_timeout_nfr01": true,
+        "pii_safe": true,
+        "json_valid": true,
+        "schema_valid": true,
+        "sql_isjson_compatible": true,
+        "expected_num_questions": 5,
+        "actual_num_questions": 5,
+        "topic_relevance_pct": 100.0,
+        "four_options_pct": 100.0,
+        "single_answer_pct": 100.0,
+        "explanation_fit_pct": 100.0,
+        "difficulty_fit_pct": 100.0,
+        "max_pairwise_similarity": 0.2054,
+        "avg_pairwise_similarity": 0.1239,
+        "duplicate_pairs": 0,
+        "no_excessive_duplication": true,
+        "difficulty_distribution": {
+          "easy": 4,
+          "medium": 1,
+          "hard": 0
+        },
+        "avg_explanation_chars": 129.4,
+        "overall_quality_score": 100.0
+      },
+      "quiz_data": {
+        "course_code": "IT1108",
+        "course_name": "Nhập môn lập trình",
+        "scenario_type": "risk_level",
+        "target_blocks": [
+          "IT1108_KB03",
+          "IT1108_KB04"
+        ],
+        "review_topics": [
+          "Cấu trúc điều khiển rẽ nhánh if-else, switch-case và vòng lặp",
+          "Hàm, truyền tham số, đệ quy và mảng 1-2 chiều"
+        ],
+        "difficulty_strategy": "Điều chỉnh độ khó tổng thể theo mức rủi ro tham khảo HIGH (xác suất tham khảo 0.72): ưu tiên củng cố kiến thức cốt lõi trước khi làm câu hỏi vận dụng.",
+        "study_advice": "Mức tham khảo hiện tại là HIGH. Bạn nên làm đủ 5 câu ôn tập và đọc kỹ phần giải thích để củng cố kiến thức.",
+        "questions": [
+          {
+            "question_number": 1,
+            "it1108_block_code": "IT1108_KB03",
+            "topic": "Khối 3: Cấu trúc điều khiển rẽ nhánh & Vòng lặp",
+            "difficulty": "easy",
+            "question_type": "guided_basic",
+            "question": "Điểm khác biệt quan trọng nhất giữa vòng lặp while và vòng lặp do...while trong C là gì?",
+            "code_snippet": "",
+            "options": {
+              "A": "do...while luôn thực hiện thân vòng lặp ít nhất 1 lần trước khi kiểm tra điều kiện",
+              "B": "while luôn chạy ít nhất 1 lần ngay cả khi điều kiện sai ngay từ đầu",
+              "C": "do...while không cần dấu chấm phẩy (;) ở cuối lệnh while",
+              "D": "while không thể dùng câu lệnh break bên trong"
+            },
+            "correct_answer": "A",
+            "hint": "Gợi ý từng bước: Quan sát vị trí đặt điều kiện while(...): đặt ở đầu là kiểm tra trước; đặt ở cuối là làm trước rồi mới kiểm tra.",
+            "explanation": "Vòng lặp while kiểm tra điều kiện trước khi vào thân nên có thể chạy 0 lần. Ngược lại, do...while thực hiện khối lệnh trước rồi mới xét điều kiện nên luôn chạy tối thiểu 1 lần và kết thúc bằng dấu chấm phẩy."
+          },
+          {
+            "question_number": 2,
+            "it1108_block_code": "IT1108_KB04",
+            "topic": "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)",
+            "difficulty": "easy",
+            "question_type": "guided_basic",
+            "question": "Với khai báo mảng int a[5] = {10, 20, 30, 40, 50}; trong ngôn ngữ C, chỉ số hợp lệ của mảng nằm trong khoảng nào?",
+            "code_snippet": "int a[5] = {10, 20, 30, 40, 50};",
+            "options": {
+              "A": "Từ 0 đến 4",
+              "B": "Từ 1 đến 5",
+              "C": "Từ 0 đến 5",
+              "D": "Từ 1 đến 4"
+            },
+            "correct_answer": "A",
+            "hint": "Gợi ý từng bước: Mảng trong C luôn đánh chỉ số bắt đầu từ 0, nên phần tử cuối của mảng n phần tử nằm ở vị trí n - 1.",
+            "explanation": "Mảng 5 phần tử đánh chỉ số a[0]..a[4]. Truy cập a[5] là vượt quá giới hạn mảng (Out of bounds)."
+          },
+          {
+            "question_number": 3,
+            "it1108_block_code": "IT1108_KB03",
+            "topic": "Khối 3: Cấu trúc điều khiển rẽ nhánh & Vòng lặp",
+            "difficulty": "easy",
+            "question_type": "guided_basic",
+            "question": "Để in ra các số nguyên từ 1 đến 5 bằng vòng lặp for, dòng khai báo nào sau đây viết đúng?",
+            "code_snippet": "for (/* điền điều kiện */) {\n    printf(\"%d \", i);\n}",
+            "options": {
+              "A": "int i = 1; i <= 5; i++",
+              "B": "int i = 1, i <= 5, i++",
+              "C": "int i = 1; i < 5; i++",
+              "D": "int i = 0; i <= 5; i++"
+            },
+            "correct_answer": "A",
+            "hint": "Gợi ý từng bước: 3 thành phần trong for(...) phân tách bằng dấu chấm phẩy (;). Bắt đầu từ 1 và dừng khi i <= 5 sẽ lấy đủ 1..5.",
+            "explanation": "Cú pháp chuẩn của for dùng dấu ';' để ngăn cách khởi tạo, điều kiện lặp và bước nhảy. Đáp án B sai vì dùng dấu phẩy, C chỉ in 1..4, D in 0..5."
+          },
+          {
+            "question_number": 4,
+            "it1108_block_code": "IT1108_KB04",
+            "topic": "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)",
+            "difficulty": "medium",
+            "question_type": "concept",
+            "question": "Trong hàm đệ quy, 'trường hợp cơ sở' (base case) dùng để làm gì?",
+            "code_snippet": "",
+            "options": {
+              "A": "Dừng chuỗi gọi đệ quy để tránh tràn bộ nhớ ngăn xếp (Stack Overflow)",
+              "B": "Tăng tốc độ biên dịch chương trình",
+              "C": "Chuyển mảng 1 chiều thành 2 chiều",
+              "D": "Khởi tạo biến toàn cục"
+            },
+            "correct_answer": "A",
+            "hint": "Điều gì xảy ra nếu hàm tự gọi lại chính nó mà không có điểm dừng?",
+            "explanation": "Mỗi hàm đệ quy bắt buộc có điều kiện dừng (base case); nếu thiếu, hàm gọi mãi cho đến khi hết bộ nhớ Stack."
+          },
+          {
+            "question_number": 5,
+            "it1108_block_code": "IT1108_KB03",
+            "topic": "Khối 3: Cấu trúc điều khiển rẽ nhánh & Vòng lặp",
+            "difficulty": "easy",
+            "question_type": "guided_basic",
+            "question": "Trong cấu trúc switch-case của C, lệnh break có tác dụng gì?",
+            "code_snippet": "switch (chon) {\n    case 1: printf(\"Mot\"); break;\n    default: printf(\"Khac\");\n}",
+            "options": {
+              "A": "Thoát khỏi cấu trúc switch sau khi thực hiện xong nhánh case phù hợp",
+              "B": "Kết thúc toàn bộ chương trình main() ngay lập tức",
+              "C": "Quay lại kiểm tra từ case 1",
+              "D": "Bỏ qua lỗi cú pháp nếu thiếu dấu hai chấm"
+            },
+            "correct_answer": "A",
+            "hint": "Gợi ý từng bước: Nếu thiếu break, chương trình sẽ trôi thẳng xuống các nhánh case bên dưới (fall-through).",
+            "explanation": "Lệnh break ngắt luồng chạy bên trong switch-case để không thực hiện nhầm các nhánh case kế tiếp."
+          }
+        ]
+      },
+      "error_type": null,
+      "error_message": null
+    },
+    {
+      "case_id": "TC02_KB03_KB04_CONTROL_FUNC",
+      "scenario_type": "detailed_profile",
+      "data_source": "MOCK_SIMULATED",
+      "is_simulated": true,
+      "evaluation": {
+        "case_id": "TC02_KB03_KB04_CONTROL_FUNC",
+        "scenario_type": "detailed_profile",
+        "data_source": "MOCK_SIMULATED",
+        "is_simulated": true,
+        "mode_used": "mock",
+        "api_provider": "mock",
+        "model_used": "gemini-3.5-flash (mock-offline)",
+        "success": true,
+        "http_status": 200,
+        "error_type": null,
+        "error_message": null,
+        "latency_ms": 3.33,
+        "within_timeout_nfr01": true,
+        "pii_safe": true,
+        "json_valid": true,
+        "schema_valid": true,
+        "sql_isjson_compatible": true,
+        "expected_num_questions": 5,
+        "actual_num_questions": 5,
+        "topic_relevance_pct": 100.0,
+        "four_options_pct": 100.0,
+        "single_answer_pct": 100.0,
+        "explanation_fit_pct": 100.0,
+        "difficulty_fit_pct": 100.0,
+        "max_pairwise_similarity": 0.2054,
+        "avg_pairwise_similarity": 0.1363,
+        "duplicate_pairs": 0,
+        "no_excessive_duplication": true,
+        "difficulty_distribution": {
+          "easy": 3,
+          "medium": 2,
+          "hard": 0
+        },
+        "avg_explanation_chars": 151.4,
+        "overall_quality_score": 100.0
+      },
+      "quiz_data": {
+        "course_code": "IT1108",
+        "course_name": "Nhập môn lập trình",
+        "scenario_type": "detailed_profile",
+        "target_blocks": [
+          "IT1108_KB03",
+          "IT1108_KB04"
+        ],
+        "review_topics": [
+          "Cấu trúc điều khiển rẽ nhánh if-else, switch-case và vòng lặp",
+          "Hàm, truyền tham số, đệ quy và mảng 1-2 chiều"
+        ],
+        "difficulty_strategy": "Cá nhân hóa tham khảo (rủi ro HIGH, p=0.72): ưu tiên câu easy dạng guided_basic kèm gợi ý từng bước cho chủ đề chưa có bài nộp; tăng câu code_trace/bug_analysis kèm giải thích lần vết từng dòng cho chủ đề điểm còn thấp.",
+        "study_advice": "Gợi ý lộ trình ôn tập: hoàn thành các câu hướng dẫn từng bước trước ở phần chưa nộp bài, sau đó tự lần vết trên giấy các đoạn code C để khắc phục lỗi sai thường gặp.",
+        "questions": [
+          {
+            "question_number": 1,
+            "it1108_block_code": "IT1108_KB03",
+            "topic": "Khối 3: Cấu trúc điều khiển rẽ nhánh & Vòng lặp",
+            "difficulty": "easy",
+            "question_type": "guided_basic",
+            "question": "Điểm khác biệt quan trọng nhất giữa vòng lặp while và vòng lặp do...while trong C là gì?",
+            "code_snippet": "",
+            "options": {
+              "A": "do...while luôn thực hiện thân vòng lặp ít nhất 1 lần trước khi kiểm tra điều kiện",
+              "B": "while luôn chạy ít nhất 1 lần ngay cả khi điều kiện sai ngay từ đầu",
+              "C": "do...while không cần dấu chấm phẩy (;) ở cuối lệnh while",
+              "D": "while không thể dùng câu lệnh break bên trong"
+            },
+            "correct_answer": "A",
+            "hint": "Gợi ý từng bước: Quan sát vị trí đặt điều kiện while(...): đặt ở đầu là kiểm tra trước; đặt ở cuối là làm trước rồi mới kiểm tra.",
+            "explanation": "Vòng lặp while kiểm tra điều kiện trước khi vào thân nên có thể chạy 0 lần. Ngược lại, do...while thực hiện khối lệnh trước rồi mới xét điều kiện nên luôn chạy tối thiểu 1 lần và kết thúc bằng dấu chấm phẩy."
+          },
+          {
+            "question_number": 2,
+            "it1108_block_code": "IT1108_KB04",
+            "topic": "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)",
+            "difficulty": "medium",
+            "question_type": "bug_analysis",
+            "question": "Đoạn code dùng hàm hoan_vi để đổi chỗ hai số dưới đây in ra kết quả gì tại main() và tại sao?",
+            "code_snippet": "#include <stdio.h>\nvoid hoan_vi(int x, int y) {\n    int tmp = x;\n    x = y;\n    y = tmp;\n}\nint main() {\n    int a = 3, b = 7;\n    hoan_vi(a, b);\n    printf(\"%d %d\", a, b);\n    return 0;\n}",
+            "options": {
+              "A": "7 3",
+              "B": "3 7 (vì hàm truyền tham trị nên không đổi giá trị biến gốc)",
+              "C": "3 3",
+              "D": "7 7"
+            },
+            "correct_answer": "B",
+            "hint": "Theo dõi phạm vi biến: x, y là bản sao cục bộ trong hoan_vi hay trỏ trực tiếp vào vùng nhớ của a, b?",
+            "explanation": "Lần vết: khi gọi hoan_vi(a, b), C truyền theo tham trị (pass-by-value), tạo hai bản sao x=3, y=7. Đổi chỗ x và y chỉ thay đổi bản sao cục bộ; khi thoát hàm, a=3 và b=7 ở main() giữ nguyên."
+          },
+          {
+            "question_number": 3,
+            "it1108_block_code": "IT1108_KB03",
+            "topic": "Khối 3: Cấu trúc điều khiển rẽ nhánh & Vòng lặp",
+            "difficulty": "easy",
+            "question_type": "guided_basic",
+            "question": "Để in ra các số nguyên từ 1 đến 5 bằng vòng lặp for, dòng khai báo nào sau đây viết đúng?",
+            "code_snippet": "for (/* điền điều kiện */) {\n    printf(\"%d \", i);\n}",
+            "options": {
+              "A": "int i = 1; i <= 5; i++",
+              "B": "int i = 1, i <= 5, i++",
+              "C": "int i = 1; i < 5; i++",
+              "D": "int i = 0; i <= 5; i++"
+            },
+            "correct_answer": "A",
+            "hint": "Gợi ý từng bước: 3 thành phần trong for(...) phân tách bằng dấu chấm phẩy (;). Bắt đầu từ 1 và dừng khi i <= 5 sẽ lấy đủ 1..5.",
+            "explanation": "Cú pháp chuẩn của for dùng dấu ';' để ngăn cách khởi tạo, điều kiện lặp và bước nhảy. Đáp án B sai vì dùng dấu phẩy, C chỉ in 1..4, D in 0..5."
+          },
+          {
+            "question_number": 4,
+            "it1108_block_code": "IT1108_KB04",
+            "topic": "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)",
+            "difficulty": "medium",
+            "question_type": "code_trace",
+            "question": "Cho hàm đệ quy sau. Giá trị trả về của f(4) là bao nhiêu?",
+            "code_snippet": "int f(int n) {\n    if (n <= 1) return 1;\n    return n + f(n - 1);\n}",
+            "options": {
+              "A": "10",
+              "B": "24",
+              "C": "9",
+              "D": "4"
+            },
+            "correct_answer": "A",
+            "hint": "Triển khai từng bước từ f(4) xuống điều kiện dừng n <= 1 rồi cộng ngược lên.",
+            "explanation": "Lần vết lời gọi đệ quy: f(4) = 4 + f(3) = 4 + 3 + f(2) = 4 + 3 + 2 + f(1). Với n=1 trả về 1. Tổng f(4) = 4 + 3 + 2 + 1 = 10."
+          },
+          {
+            "question_number": 5,
+            "it1108_block_code": "IT1108_KB03",
+            "topic": "Khối 3: Cấu trúc điều khiển rẽ nhánh & Vòng lặp",
+            "difficulty": "easy",
+            "question_type": "guided_basic",
+            "question": "Trong cấu trúc switch-case của C, lệnh break có tác dụng gì?",
+            "code_snippet": "switch (chon) {\n    case 1: printf(\"Mot\"); break;\n    default: printf(\"Khac\");\n}",
+            "options": {
+              "A": "Thoát khỏi cấu trúc switch sau khi thực hiện xong nhánh case phù hợp",
+              "B": "Kết thúc toàn bộ chương trình main() ngay lập tức",
+              "C": "Quay lại kiểm tra từ case 1",
+              "D": "Bỏ qua lỗi cú pháp nếu thiếu dấu hai chấm"
+            },
+            "correct_answer": "A",
+            "hint": "Gợi ý từng bước: Nếu thiếu break, chương trình sẽ trôi thẳng xuống các nhánh case bên dưới (fall-through).",
+            "explanation": "Lệnh break ngắt luồng chạy bên trong switch-case để không thực hiện nhầm các nhánh case kế tiếp."
+          }
+        ]
+      },
+      "error_type": null,
+      "error_message": null
+    },
+    {
+      "case_id": "TC03_KB05_KB06_POINTER_STRUCT",
+      "scenario_type": "baseline",
+      "data_source": "MOCK_SIMULATED",
+      "is_simulated": true,
+      "evaluation": {
+        "case_id": "TC03_KB05_KB06_POINTER_STRUCT",
+        "scenario_type": "baseline",
+        "data_source": "MOCK_SIMULATED",
+        "is_simulated": true,
+        "mode_used": "mock",
+        "api_provider": "mock",
+        "model_used": "gemini-3.5-flash (mock-offline)",
+        "success": true,
+        "http_status": 200,
+        "error_type": null,
+        "error_message": null,
+        "latency_ms": 3.56,
+        "within_timeout_nfr01": true,
+        "pii_safe": true,
+        "json_valid": true,
+        "schema_valid": true,
+        "sql_isjson_compatible": true,
+        "expected_num_questions": 5,
+        "actual_num_questions": 5,
+        "topic_relevance_pct": 100.0,
+        "four_options_pct": 100.0,
+        "single_answer_pct": 100.0,
+        "explanation_fit_pct": 60.0,
+        "difficulty_fit_pct": 100.0,
+        "max_pairwise_similarity": 0.3661,
+        "avg_pairwise_similarity": 0.1248,
+        "duplicate_pairs": 0,
+        "no_excessive_duplication": true,
+        "difficulty_distribution": {
+          "easy": 0,
+          "medium": 5,
+          "hard": 0
+        },
+        "avg_explanation_chars": 73.4,
+        "overall_quality_score": 94.0
+      },
+      "quiz_data": {
+        "course_code": "IT1108",
+        "course_name": "Nhập môn lập trình",
+        "scenario_type": "baseline",
+        "target_blocks": [
+          "IT1108_KB05",
+          "IT1108_KB06"
+        ],
+        "review_topics": [
+          "Con trỏ, bộ nhớ động malloc/free và xâu ký tự",
+          "Cấu trúc struct và thao tác đọc/ghi tệp dữ liệu"
+        ],
+        "difficulty_strategy": "Phân bổ đề ôn tập chung theo chủ đề học phần, chưa xét đến ngữ cảnh mô phỏng của người học.",
+        "study_advice": "Ôn tập lại kiến thức trọng tâm các chủ đề đã chọn và luyện tập thêm bài tập mẫu.",
+        "questions": [
+          {
+            "question_number": 1,
+            "it1108_block_code": "IT1108_KB05",
+            "topic": "Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự",
+            "difficulty": "medium",
+            "question_type": "code_trace",
+            "question": "Kết quả in ra của đoạn mã con trỏ và mảng sau là gì?",
+            "code_snippet": "int a[] = {4, 8, 12, 16};\nint *p = a;\nprintf(\"%d\", *(p + 2));",
+            "options": {
+              "A": "6",
+              "B": "12",
+              "C": "8",
+              "D": "16"
+            },
+            "correct_answer": "B",
+            "hint": "Xem lại giáo trình bài giảng tương ứng.",
+            "explanation": "p trỏ tới a[0]=4, p+1 trỏ tới a[1]=8, p+2 trỏ tới a[2]=12."
+          },
+          {
+            "question_number": 2,
+            "it1108_block_code": "IT1108_KB06",
+            "topic": "Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ",
+            "difficulty": "medium",
+            "question_type": "concept",
+            "question": "Cặp hàm nào trong <stdio.h> được thiết kế để đọc/ghi khối dữ liệu cấu trúc trên tệp nhị phân?",
+            "code_snippet": "",
+            "options": {
+              "A": "fread() và fwrite()",
+              "B": "fscanf() và fprintf()",
+              "C": "fgets() và fputs()",
+              "D": "scanf() và printf()"
+            },
+            "correct_answer": "A",
+            "hint": "Xem lại giáo trình bài giảng tương ứng.",
+            "explanation": "fread() và fwrite() đọc/ghi trực tiếp khối byte nhị phân (như struct hoặc mảng) với hiệu năng cao và không cần chuyển đổi văn bản."
+          },
+          {
+            "question_number": 3,
+            "it1108_block_code": "IT1108_KB05",
+            "topic": "Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự",
+            "difficulty": "medium",
+            "question_type": "code_trace",
+            "question": "Sau khi thực thi đoạn mã con trỏ dưới đây, giá trị của x và *p lần lượt là bao nhiêu?",
+            "code_snippet": "int x = 10;\nint *p = &x;\n*p = *p + 5;",
+            "options": {
+              "A": "x = 15, *p = 15",
+              "B": "x = 10, *p = 15",
+              "C": "x = 15, *p = 10",
+              "D": "Lỗi vì không thể cộng với *p"
+            },
+            "correct_answer": "A",
+            "hint": "Xem lại giáo trình bài giảng tương ứng.",
+            "explanation": "Lần vết: p = &x làm p trỏ vào biến x."
+          },
+          {
+            "question_number": 4,
+            "it1108_block_code": "IT1108_KB06",
+            "topic": "Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ",
+            "difficulty": "medium",
+            "question_type": "bug_analysis",
+            "question": "Trong hàm sử dụng con trỏ cấu trúc bên dưới, lỗi cú pháp nào xảy ra ở dòng gán điểm?",
+            "code_snippet": "struct SinhVien { float diem; };\nvoid dat_diem(struct SinhVien *sv) {\n    sv.diem = 8.5;\n}",
+            "options": {
+              "A": "sv là con trỏ struct nên phải dùng toán tử mũi tên sv->diem thay vì sv.diem",
+              "B": "Kiểu float không được đặt trong struct",
+              "C": "Thiếu dấu chấm phẩy sau float diem",
+              "D": "Hàm void không nhận được con trỏ struct"
+            },
+            "correct_answer": "A",
+            "hint": "Xem lại giáo trình bài giảng tương ứng.",
+            "explanation": "Với biến struct dùng sv."
+          },
+          {
+            "question_number": 5,
+            "it1108_block_code": "IT1108_KB05",
+            "topic": "Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự",
+            "difficulty": "medium",
+            "question_type": "bug_analysis",
+            "question": "Đoạn code cấp phát động mảng 5 số nguyên sau thiếu thao tác quan trọng nào để tránh rò rỉ bộ nhớ?",
+            "code_snippet": "#include <stdlib.h>\nint main() {\n    int *arr = (int*)malloc(5 * sizeof(int));\n    if (arr == NULL) return 1;\n    arr[0] = 9;\n    return 0;\n}",
+            "options": {
+              "A": "Chưa gọi free(arr); trước khi kết thúc chương trình",
+              "B": "Thay sizeof(int) bằng sizeof(char)",
+              "C": "Phải dùng scanf để cấp phát bộ nhớ",
+              "D": "Kiểm tra arr == NULL là thừa"
+            },
+            "correct_answer": "A",
+            "hint": "Xem lại giáo trình bài giảng tương ứng.",
+            "explanation": "Bộ nhớ xin qua malloc/calloc nằm trên Heap nên cần được giải phóng bằng free(arr); khi dùng xong để tránh Memory Leak."
+          }
+        ]
+      },
+      "error_type": null,
+      "error_message": null
+    },
+    {
+      "case_id": "TC03_KB05_KB06_POINTER_STRUCT",
+      "scenario_type": "risk_level",
+      "data_source": "MOCK_SIMULATED",
+      "is_simulated": true,
+      "evaluation": {
+        "case_id": "TC03_KB05_KB06_POINTER_STRUCT",
+        "scenario_type": "risk_level",
+        "data_source": "MOCK_SIMULATED",
+        "is_simulated": true,
+        "mode_used": "mock",
+        "api_provider": "mock",
+        "model_used": "gemini-3.5-flash (mock-offline)",
+        "success": true,
+        "http_status": 200,
+        "error_type": null,
+        "error_message": null,
+        "latency_ms": 3.11,
+        "within_timeout_nfr01": true,
+        "pii_safe": true,
+        "json_valid": true,
+        "schema_valid": true,
+        "sql_isjson_compatible": true,
+        "expected_num_questions": 5,
+        "actual_num_questions": 5,
+        "topic_relevance_pct": 100.0,
+        "four_options_pct": 100.0,
+        "single_answer_pct": 100.0,
+        "explanation_fit_pct": 100.0,
+        "difficulty_fit_pct": 84.0,
+        "max_pairwise_similarity": 0.3626,
+        "avg_pairwise_similarity": 0.1608,
+        "duplicate_pairs": 0,
+        "no_excessive_duplication": true,
+        "difficulty_distribution": {
+          "easy": 4,
+          "medium": 0,
+          "hard": 1
+        },
+        "avg_explanation_chars": 107.2,
+        "overall_quality_score": 96.8
+      },
+      "quiz_data": {
+        "course_code": "IT1108",
+        "course_name": "Nhập môn lập trình",
+        "scenario_type": "risk_level",
+        "target_blocks": [
+          "IT1108_KB05",
+          "IT1108_KB06"
+        ],
+        "review_topics": [
+          "Con trỏ, bộ nhớ động malloc/free và xâu ký tự",
+          "Cấu trúc struct và thao tác đọc/ghi tệp dữ liệu"
+        ],
+        "difficulty_strategy": "Điều chỉnh độ khó tổng thể theo mức rủi ro tham khảo MEDIUM (xác suất tham khảo 0.52): ưu tiên củng cố kiến thức cốt lõi trước khi làm câu hỏi vận dụng.",
+        "study_advice": "Mức tham khảo hiện tại là MEDIUM. Bạn nên làm đủ 5 câu ôn tập và đọc kỹ phần giải thích để củng cố kiến thức.",
+        "questions": [
+          {
+            "question_number": 1,
+            "it1108_block_code": "IT1108_KB05",
+            "topic": "Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự",
+            "difficulty": "easy",
+            "question_type": "guided_basic",
+            "question": "Trong ngôn ngữ C, xâu ký tự (string) kết thúc bằng ký tự đặc biệt nào?",
+            "code_snippet": "char s[] = \"IT1108\";",
+            "options": {
+              "A": "'\\0' (ký tự null)",
+              "B": "'\\n' (xuống dòng)",
+              "C": "' ' (dấu cách)",
+              "D": "EOF"
+            },
+            "correct_answer": "A",
+            "hint": "Gợi ý từng bước: Chuỗi 'IT1108' có 6 ký tự nhưng mảng char s[] chiếm 7 byte vì thêm ký tự '\\0' ở cuối.",
+            "explanation": "Trong C, xâu ký tự là mảng char kết thúc bằng ký tự null '\\0' để các hàm như strlen(), printf(\"%s\") biết điểm kết thúc chuỗi."
+          },
+          {
+            "question_number": 2,
+            "it1108_block_code": "IT1108_KB06",
+            "topic": "Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ",
+            "difficulty": "easy",
+            "question_type": "guided_basic",
+            "question": "Để mở một tệp văn bản 'data.txt' chỉ phục vụ đọc dữ liệu trong C, ta truyền chế độ (mode) nào vào hàm fopen?",
+            "code_snippet": "FILE *f = fopen(\"data.txt\", /* mode */);",
+            "options": {
+              "A": "\"r\"",
+              "B": "\"w\"",
+              "C": "\"wb\"",
+              "D": "\"a\""
+            },
+            "correct_answer": "A",
+            "hint": "Gợi ý từng bước: 'r' viết tắt của read (đọc), 'w' là write (ghi đè mới), 'a' là append (ghi nối thêm).",
+            "explanation": "Chế độ \"r\" mở tệp văn bản để đọc (trả về NULL nếu tệp chưa tồn tại). Dùng \"w\" khi muốn đọc sẽ làm xóa trắng dữ liệu tệp cũ."
+          },
+          {
+            "question_number": 3,
+            "it1108_block_code": "IT1108_KB05",
+            "topic": "Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự",
+            "difficulty": "easy",
+            "question_type": "guided_basic",
+            "question": "Toán tử nào dùng để lấy địa chỉ vùng nhớ của một biến trong ngôn ngữ C?",
+            "code_snippet": "int n = 10;\nint *p = /* lấy địa chỉ của n */;",
+            "options": {
+              "A": "&n",
+              "B": "*n",
+              "C": "->n",
+              "D": "addr(n)"
+            },
+            "correct_answer": "A",
+            "hint": "Gợi ý từng bước: Toán tử & trả về địa chỉ của biến, còn toán tử * dùng để khai báo con trỏ hoặc truy xuất giá trị tại địa chỉ.",
+            "explanation": "Toán tử & (address-of) trả về địa chỉ bộ nhớ của biến n để gán cho con trỏ int *p = &n."
+          },
+          {
+            "question_number": 4,
+            "it1108_block_code": "IT1108_KB06",
+            "topic": "Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ",
+            "difficulty": "easy",
+            "question_type": "guided_basic",
+            "question": "Sau khi đọc/ghi xong một tệp đã mở qua biến FILE *f, ta cần gọi hàm nào để đóng tệp an toàn?",
+            "code_snippet": "FILE *f = fopen(\"out.txt\", \"w\");\n// thao tác ghi dữ liệu\n/* đóng tệp */",
+            "options": {
+              "A": "fclose(f);",
+              "B": "free(f);",
+              "C": "closefile(f);",
+              "D": "end(f);"
+            },
+            "correct_answer": "A",
+            "hint": "Gợi ý từng bước: Cặp hàm chuẩn trong <stdio.h> để mở và đóng tệp là fopen(...) và fclose(...).",
+            "explanation": "Hàm fclose(f) đẩy toàn bộ dữ liệu từ bộ đệm xuống đĩa và giải phóng tài nguyên tệp đang mở."
+          },
+          {
+            "question_number": 5,
+            "it1108_block_code": "IT1108_KB05",
+            "topic": "Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự",
+            "difficulty": "hard",
+            "question_type": "code_trace",
+            "question": "Kết quả in ra của đoạn mã con trỏ và mảng sau là gì?",
+            "code_snippet": "int a[] = {4, 8, 12, 16};\nint *p = a;\nprintf(\"%d\", *(p + 2));",
+            "options": {
+              "A": "6",
+              "B": "12",
+              "C": "8",
+              "D": "16"
+            },
+            "correct_answer": "B",
+            "hint": "Tên mảng a trỏ tới a[0]; phép cộng con trỏ p + 2 dịch chuyển tới phần tử chỉ số 2.",
+            "explanation": "p trỏ tới a[0]=4, p+1 trỏ tới a[1]=8, p+2 trỏ tới a[2]=12. Toán tử giải tham chiếu *(p + 2) trả về giá trị 12."
+          }
+        ]
+      },
+      "error_type": null,
+      "error_message": null
+    },
+    {
+      "case_id": "TC03_KB05_KB06_POINTER_STRUCT",
+      "scenario_type": "detailed_profile",
+      "data_source": "MOCK_SIMULATED",
+      "is_simulated": true,
+      "evaluation": {
+        "case_id": "TC03_KB05_KB06_POINTER_STRUCT",
+        "scenario_type": "detailed_profile",
+        "data_source": "MOCK_SIMULATED",
+        "is_simulated": true,
+        "mode_used": "mock",
+        "api_provider": "mock",
+        "model_used": "gemini-3.5-flash (mock-offline)",
+        "success": true,
+        "http_status": 200,
+        "error_type": null,
+        "error_message": null,
+        "latency_ms": 4.16,
+        "within_timeout_nfr01": true,
+        "pii_safe": true,
+        "json_valid": true,
+        "schema_valid": true,
+        "sql_isjson_compatible": true,
+        "expected_num_questions": 5,
+        "actual_num_questions": 5,
+        "topic_relevance_pct": 100.0,
+        "four_options_pct": 100.0,
+        "single_answer_pct": 100.0,
+        "explanation_fit_pct": 100.0,
+        "difficulty_fit_pct": 84.0,
+        "max_pairwise_similarity": 0.3626,
+        "avg_pairwise_similarity": 0.1494,
+        "duplicate_pairs": 0,
+        "no_excessive_duplication": true,
+        "difficulty_distribution": {
+          "easy": 2,
+          "medium": 2,
+          "hard": 1
+        },
+        "avg_explanation_chars": 119.4,
+        "overall_quality_score": 96.8
+      },
+      "quiz_data": {
+        "course_code": "IT1108",
+        "course_name": "Nhập môn lập trình",
+        "scenario_type": "detailed_profile",
+        "target_blocks": [
+          "IT1108_KB05",
+          "IT1108_KB06"
+        ],
+        "review_topics": [
+          "Con trỏ, bộ nhớ động malloc/free và xâu ký tự",
+          "Cấu trúc struct và thao tác đọc/ghi tệp dữ liệu"
+        ],
+        "difficulty_strategy": "Cá nhân hóa tham khảo (rủi ro MEDIUM, p=0.52): tăng câu code_trace/bug_analysis kèm giải thích lần vết từng dòng cho chủ đề điểm còn thấp.",
+        "study_advice": "Gợi ý lộ trình ôn tập: hoàn thành các câu hướng dẫn từng bước trước ở phần chưa nộp bài, sau đó tự lần vết trên giấy các đoạn code C để khắc phục lỗi sai thường gặp.",
+        "questions": [
+          {
+            "question_number": 1,
+            "it1108_block_code": "IT1108_KB05",
+            "topic": "Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự",
+            "difficulty": "medium",
+            "question_type": "code_trace",
+            "question": "Sau khi thực thi đoạn mã con trỏ dưới đây, giá trị của x và *p lần lượt là bao nhiêu?",
+            "code_snippet": "int x = 10;\nint *p = &x;\n*p = *p + 5;",
+            "options": {
+              "A": "x = 15, *p = 15",
+              "B": "x = 10, *p = 15",
+              "C": "x = 15, *p = 10",
+              "D": "Lỗi vì không thể cộng với *p"
+            },
+            "correct_answer": "A",
+            "hint": "p đang lưu địa chỉ của x, nên *p truy cập trực tiếp vào vùng nhớ của x.",
+            "explanation": "Lần vết: p = &x làm p trỏ vào biến x. Biểu thức *p = *p + 5 đọc giá trị tại địa chỉ x (10), cộng 5 thành 15 và ghi lại vào x. Do đó cả x và *p đều bằng 15."
+          },
+          {
+            "question_number": 2,
+            "it1108_block_code": "IT1108_KB06",
+            "topic": "Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ",
+            "difficulty": "easy",
+            "question_type": "guided_basic",
+            "question": "Để mở một tệp văn bản 'data.txt' chỉ phục vụ đọc dữ liệu trong C, ta truyền chế độ (mode) nào vào hàm fopen?",
+            "code_snippet": "FILE *f = fopen(\"data.txt\", /* mode */);",
+            "options": {
+              "A": "\"r\"",
+              "B": "\"w\"",
+              "C": "\"wb\"",
+              "D": "\"a\""
+            },
+            "correct_answer": "A",
+            "hint": "Gợi ý từng bước: 'r' viết tắt của read (đọc), 'w' là write (ghi đè mới), 'a' là append (ghi nối thêm).",
+            "explanation": "Chế độ \"r\" mở tệp văn bản để đọc (trả về NULL nếu tệp chưa tồn tại). Dùng \"w\" khi muốn đọc sẽ làm xóa trắng dữ liệu tệp cũ."
+          },
+          {
+            "question_number": 3,
+            "it1108_block_code": "IT1108_KB05",
+            "topic": "Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự",
+            "difficulty": "medium",
+            "question_type": "bug_analysis",
+            "question": "Đoạn code cấp phát động mảng 5 số nguyên sau thiếu thao tác quan trọng nào để tránh rò rỉ bộ nhớ?",
+            "code_snippet": "#include <stdlib.h>\nint main() {\n    int *arr = (int*)malloc(5 * sizeof(int));\n    if (arr == NULL) return 1;\n    arr[0] = 9;\n    return 0;\n}",
+            "options": {
+              "A": "Chưa gọi free(arr); trước khi kết thúc chương trình",
+              "B": "Thay sizeof(int) bằng sizeof(char)",
+              "C": "Phải dùng scanf để cấp phát bộ nhớ",
+              "D": "Kiểm tra arr == NULL là thừa"
+            },
+            "correct_answer": "A",
+            "hint": "Vùng nhớ cấp phát trên Heap bằng malloc() có tự động thu hồi như biến cục bộ không?",
+            "explanation": "Bộ nhớ xin qua malloc/calloc nằm trên Heap nên cần được giải phóng bằng free(arr); khi dùng xong để tránh Memory Leak."
+          },
+          {
+            "question_number": 4,
+            "it1108_block_code": "IT1108_KB06",
+            "topic": "Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ",
+            "difficulty": "easy",
+            "question_type": "guided_basic",
+            "question": "Sau khi đọc/ghi xong một tệp đã mở qua biến FILE *f, ta cần gọi hàm nào để đóng tệp an toàn?",
+            "code_snippet": "FILE *f = fopen(\"out.txt\", \"w\");\n// thao tác ghi dữ liệu\n/* đóng tệp */",
+            "options": {
+              "A": "fclose(f);",
+              "B": "free(f);",
+              "C": "closefile(f);",
+              "D": "end(f);"
+            },
+            "correct_answer": "A",
+            "hint": "Gợi ý từng bước: Cặp hàm chuẩn trong <stdio.h> để mở và đóng tệp là fopen(...) và fclose(...).",
+            "explanation": "Hàm fclose(f) đẩy toàn bộ dữ liệu từ bộ đệm xuống đĩa và giải phóng tài nguyên tệp đang mở."
+          },
+          {
+            "question_number": 5,
+            "it1108_block_code": "IT1108_KB05",
+            "topic": "Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự",
+            "difficulty": "hard",
+            "question_type": "code_trace",
+            "question": "Kết quả in ra của đoạn mã con trỏ và mảng sau là gì?",
+            "code_snippet": "int a[] = {4, 8, 12, 16};\nint *p = a;\nprintf(\"%d\", *(p + 2));",
+            "options": {
+              "A": "6",
+              "B": "12",
+              "C": "8",
+              "D": "16"
+            },
+            "correct_answer": "B",
+            "hint": "Tên mảng a trỏ tới a[0]; phép cộng con trỏ p + 2 dịch chuyển tới phần tử chỉ số 2.",
+            "explanation": "p trỏ tới a[0]=4, p+1 trỏ tới a[1]=8, p+2 trỏ tới a[2]=12. Toán tử giải tham chiếu *(p + 2) trả về giá trị 12."
+          }
+        ]
+      },
+      "error_type": null,
+      "error_message": null
+    }
+  ]
+}

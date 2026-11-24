@@ -1,0 +1,13 @@
+# Dependencies cho phân hệ Kiểm thử GenAI (Tuần 7+8)
+# Các module cốt lõi có thể chạy trên Python stdlib + Flask sẵn có.
+# Cài đặt thêm google-genai và python-dotenv khi chạy kiểm thử Live Gemini API.
+
+google-genai>=1.0.0
+python-dotenv>=1.0.0
+Flask>=3.0.0
+pandas>=2.0.0
+pytest>=8.0.0
+
+# Thư viện phục vụ kết nối mô hình ML best_model.joblib (Tuần 8):
+scikit-learn>=1.3.0
+joblib>=1.3.0

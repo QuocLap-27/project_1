@@ -1,0 +1,554 @@
+{
+  "generated_at": "2026-11-25 01:32:45",
+  "mode": "live",
+  "data_source": "LIVE_GEMINI_API",
+  "is_simulated": false,
+  "cases": [
+    {
+      "case_name": "full_oulad_profile_detailed_scenario",
+      "result": {
+        "success": true,
+        "http_status": 200,
+        "step_failed": null,
+        "simulated_student_code": "SIM_WEEK8_FULL_01",
+        "data_source": "LIVE_GEMINI_API",
+        "is_simulated": false,
+        "mode_notice": "Đang gọi Google Gemini API thực tế.",
+        "can_retry": true,
+        "ml_prediction": {
+          "prediction": 1,
+          "risk_probability": 1.0,
+          "risk_level": "HIGH",
+          "decision_threshold": 0.35,
+          "model_name": "SmartLMS_AtRisk_RandomForest_Pipeline",
+          "model_version": "1.0.0",
+          "inference_backend": "best_model_joblib_tuple_tree_adapter"
+        },
+        "submission_behavior": {
+          "status_code": "PARTIAL_SUBMISSION_LOW_SCORE",
+          "status_label": "Nộp thiếu bài và điểm thấp",
+          "note": "Hoàn thành 42% số bài với điểm TB 45.8/100. Cần củng cố lại kiến thức cơ bản và nhắc hạn nộp bài."
+        },
+        "topic_mapping_summary": {
+          "block_data_source": "oulad_zip_assessments",
+          "has_detailed_block_data": true,
+          "has_class_percentile": true,
+          "mapped_blocks_count": 3,
+          "mapped_block_codes": [
+            "IT1108_KB06",
+            "IT1108_KB05",
+            "IT1108_KB04"
+          ]
+        },
+        "personalized_profile": {
+          "simulated_student_code": "SIM_WEEK8_FULL_01",
+          "risk_probability": 1.0,
+          "risk_level": "HIGH",
+          "decision_threshold": 0.35,
+          "submission_behavior": {
+            "status_code": "PARTIAL_SUBMISSION_LOW_SCORE",
+            "status_label": "Nộp thiếu bài và điểm thấp",
+            "note": "Hoàn thành 42% số bài với điểm TB 45.8/100. Cần củng cố lại kiến thức cơ bản và nhắc hạn nộp bài."
+          },
+          "weak_blocks": [
+            {
+              "it1108_block_code": "IT1108_KB06",
+              "it1108_block_name": "Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ",
+              "it1108_lessons": "Bài 10: Cấu trúc (khai báo, sử dụng và xử lý dữ liệu cấu trúc); Bài 11: Tệp dữ liệu (khái niệm, thao tác cơ bản, tệp văn bản, tệp nhị phân); Tuần 16: Ôn tập & Định hướng",
+              "it1108_weeks": "Tuần 14-16",
+              "it1108_cdr": "M1, M2, M3, M3.1, M3.2, M3.3",
+              "total_mapped_assessments": 3,
+              "submitted_assessments": 0,
+              "completion_rate": 0.0,
+              "avg_submitted_score": null,
+              "block_weighted_score": 0.0,
+              "lower_than_class_pct": 100.0,
+              "submission_vs_score_status": "NO_SUBMISSION",
+              "data_origin": "OULAD_FFF_2013J",
+              "vle_resources_count": 56,
+              "normalized_status": "MISSING_SUBMISSION"
+            },
+            {
+              "it1108_block_code": "IT1108_KB05",
+              "it1108_block_name": "Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự",
+              "it1108_lessons": "Bài 9 - Mục 9.2: Con trỏ (khái niệm, toán tử & và *, phép toán con trỏ, con trỏ & mảng, bộ nhớ động); Mục 9.3: Xâu ký tự (vào ra xâu, hàm xử lý ký tự/xâu, mảng các xâu)",
+              "it1108_weeks": "Tuần 12-13",
+              "it1108_cdr": "M3, M3.1, M3.2, M3.3",
+              "total_mapped_assessments": 2,
+              "submitted_assessments": 1,
+              "completion_rate": 0.5,
+              "avg_submitted_score": 5.0,
+              "block_weighted_score": 4.81,
+              "lower_than_class_pct": 50.4,
+              "submission_vs_score_status": "PARTIAL_SUBMISSION_LOW_SCORE",
+              "data_origin": "OULAD_FFF_2013J",
+              "vle_resources_count": 65,
+              "normalized_status": "PARTIAL_SUBMISSION_AND_LOW_SCORE"
+            },
+            {
+              "it1108_block_code": "IT1108_KB04",
+              "it1108_block_name": "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)",
+              "it1108_lessons": "Bài 8: Hàm (khái niệm, khai báo, phạm vi biến, truyền tham số, hàm đệ quy); Bài 9 - Mục 9.1: Mảng (khai báo, thao tác tìm kiếm/sắp xếp trên mảng, mảng nhiều chiều)",
+              "it1108_weeks": "Tuần 10-11",
+              "it1108_cdr": "M3, M3.2, M3.3",
+              "total_mapped_assessments": 2,
+              "submitted_assessments": 1,
+              "completion_rate": 0.5,
+              "avg_submitted_score": 29.0,
+              "block_weighted_score": 27.88,
+              "lower_than_class_pct": 55.9,
+              "submission_vs_score_status": "PARTIAL_SUBMISSION_LOW_SCORE",
+              "data_origin": "OULAD_FFF_2013J",
+              "vle_resources_count": 53,
+              "normalized_status": "PARTIAL_SUBMISSION_AND_LOW_SCORE"
+            }
+          ],
+          "has_detailed_block_data": true,
+          "has_class_percentile": true,
+          "block_data_source": "oulad_zip_assessments"
+        },
+        "prompt_selection": {
+          "requested_scenario": "auto",
+          "selected_scenario": "detailed_profile",
+          "reason": "Hồ sơ có đủ dữ liệu chi tiết theo từng khối kiến thức; sử dụng kịch bản chính detailed_profile."
+        },
+        "genai_result": {
+          "model_used": "gemini-3.5-flash",
+          "api_provider": "ai_studio",
+          "transport": "gemini-rest-api",
+          "latency_ms": 15819.55,
+          "within_timeout_nfr01": true,
+          "json_retries_used": 0,
+          "pii_report": {
+            "pii_safe": true,
+            "stripped_pii_keys": [],
+            "findings": []
+          },
+          "validation": {
+            "is_valid": true,
+            "json_valid": true,
+            "schema_valid": true,
+            "sql_isjson_compatible": true,
+            "errors": [],
+            "warnings": [],
+            "normalized_data": {
+              "course_code": "IT1108",
+              "course_name": "Nhập môn lập trình",
+              "scenario_type": "detailed_profile",
+              "target_blocks": [
+                "IT1108_KB06",
+                "IT1108_KB05",
+                "IT1108_KB04"
+              ],
+              "review_topics": [
+                "Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ",
+                "Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự",
+                "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)"
+              ],
+              "difficulty_strategy": "Tập trung vào độ khó dễ (easy) và trung bình (medium) với các dạng bài cơ bản để củng cố nền tảng kiến thức.",
+              "study_advice": "Hãy rà soát kỹ lý thuyết về con trỏ, cú pháp struct và cách duyệt mảng để lấy lại phong độ học tập.",
+              "questions": [
+                {
+                  "question_number": 1,
+                  "it1108_block_code": "IT1108_KB06",
+                  "topic": "Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ",
+                  "difficulty": "easy",
+                  "question_type": "guided_basic",
+                  "question": "Cú pháp nào sau đây được dùng để truy cập vào thành viên 'age' của biến cấu trúc 's' thuộc kiểu struct Student?",
+                  "code_snippet": "struct Student {\n    int age;\n};\nstruct Student s;",
+                  "options": {
+                    "A": "s->age",
+                    "B": "s.age",
+                    "C": "Student.age",
+                    "D": "*s.age"
+                  },
+                  "correct_answer": "B",
+                  "hint": "Dùng toán tử chấm (.) đối với biến thường và toán tử mũi tên (->) đối với con trỏ.",
+                  "explanation": "Với biến cấu trúc thông thường, ta dùng toán tử chấm (.) để truy cập thành viên. Toán tử (->) chỉ dùng cho biến con trỏ cấu trúc."
+                },
+                {
+                  "question_number": 2,
+                  "it1108_block_code": "IT1108_KB06",
+                  "topic": "Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ",
+                  "difficulty": "easy",
+                  "question_type": "guided_basic",
+                  "question": "Để mở một tệp văn bản có tên 'data.txt' chỉ để đọc, hàm fopen nào sau đây là đúng?",
+                  "code_snippet": "FILE *f;",
+                  "options": {
+                    "A": "fopen(\"data.txt\", \"w\");",
+                    "B": "fopen(\"data.txt\", \"r\");",
+                    "C": "fopen(\"data.txt\", \"a\");",
+                    "D": "fopen(\"data.txt\", \"rb\");"
+                  },
+                  "correct_answer": "B",
+                  "hint": "Ký tự 'r' là viết tắt của 'read' (đọc văn bản).",
+                  "explanation": "Chế độ \"r\" (read) dùng để mở tệp văn bản có sẵn chỉ để đọc dữ liệu."
+                },
+                {
+                  "question_number": 3,
+                  "it1108_block_code": "IT1108_KB05",
+                  "topic": "Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự",
+                  "difficulty": "easy",
+                  "question_type": "code_trace",
+                  "question": "Đoạn mã sau in ra giá trị bao nhiêu?",
+                  "code_snippet": "int x = 10;\nint *ptr = &x;\n*ptr = 20;\nprintf(\"%d\", x);",
+                  "options": {
+                    "A": "10",
+                    "B": "20",
+                    "C": "Địa chỉ biến x",
+                    "D": "Báo lỗi biên dịch"
+                  },
+                  "correct_answer": "B",
+                  "hint": "Toán tử * đại diện cho giải tham chiếu, truy cập trực tiếp giá trị ô nhớ mà con trỏ lưu trữ.",
+                  "explanation": "Con trỏ ptr trỏ tới x, nên câu lệnh *ptr = 20 làm thay đổi trực tiếp giá trị của x thành 20."
+                },
+                {
+                  "question_number": 4,
+                  "it1108_block_code": "IT1108_KB05",
+                  "topic": "Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự",
+                  "difficulty": "medium",
+                  "question_type": "concept",
+                  "question": "Hàm strlen trong thư viện <string.h> trả về kết quả gì cho chuỗi \"C_Program\"?",
+                  "code_snippet": "char str[] = \"C_Program\";\nprintf(\"%d\", strlen(str));",
+                  "options": {
+                    "A": "9",
+                    "B": "10",
+                    "C": "8",
+                    "D": "7"
+                  },
+                  "correct_answer": "A",
+                  "hint": "Đếm từng ký tự bao gồm cả dấu gạch dưới '_', bỏ qua ký tự null kết thúc xâu.",
+                  "explanation": "Hàm strlen đếm số ký tự trong xâu không tính ký tự kết thúc '\\0'. Chuỗi \"C_Program\" có đúng 9 ký tự."
+                },
+                {
+                  "question_number": 5,
+                  "it1108_block_code": "IT1108_KB04",
+                  "topic": "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)",
+                  "difficulty": "easy",
+                  "question_type": "code_trace",
+                  "question": "Giá trị nào sẽ được in ra màn hình sau khi thực hiện đoạn mã dưới đây?",
+                  "code_snippet": "int a[4] = {1, 3, 5, 7};\nprintf(\"%d\", a[2]);",
+                  "options": {
+                    "A": "3",
+                    "B": "4",
+                    "C": "5",
+                    "D": "6"
+                  },
+                  "correct_answer": "C",
+                  "hint": "Lưu ý chỉ số phần tử đầu tiên của mảng trong C bắt đầu từ 0.",
+                  "explanation": "Mảng a có chỉ số từ 0. Do đó a[0]=1, a[1]=3, a[2]=5. Giá trị a[2] là 5."
+                }
+              ]
+            },
+            "valid_questions": [
+              {
+                "question_number": 1,
+                "it1108_block_code": "IT1108_KB06",
+                "topic": "Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ",
+                "difficulty": "easy",
+                "question_type": "guided_basic",
+                "question": "Cú pháp nào sau đây được dùng để truy cập vào thành viên 'age' của biến cấu trúc 's' thuộc kiểu struct Student?",
+                "code_snippet": "struct Student {\n    int age;\n};\nstruct Student s;",
+                "options": {
+                  "A": "s->age",
+                  "B": "s.age",
+                  "C": "Student.age",
+                  "D": "*s.age"
+                },
+                "correct_answer": "B",
+                "hint": "Dùng toán tử chấm (.) đối với biến thường và toán tử mũi tên (->) đối với con trỏ.",
+                "explanation": "Với biến cấu trúc thông thường, ta dùng toán tử chấm (.) để truy cập thành viên. Toán tử (->) chỉ dùng cho biến con trỏ cấu trúc."
+              },
+              {
+                "question_number": 2,
+                "it1108_block_code": "IT1108_KB06",
+                "topic": "Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ",
+                "difficulty": "easy",
+                "question_type": "guided_basic",
+                "question": "Để mở một tệp văn bản có tên 'data.txt' chỉ để đọc, hàm fopen nào sau đây là đúng?",
+                "code_snippet": "FILE *f;",
+                "options": {
+                  "A": "fopen(\"data.txt\", \"w\");",
+                  "B": "fopen(\"data.txt\", \"r\");",
+                  "C": "fopen(\"data.txt\", \"a\");",
+                  "D": "fopen(\"data.txt\", \"rb\");"
+                },
+                "correct_answer": "B",
+                "hint": "Ký tự 'r' là viết tắt của 'read' (đọc văn bản).",
+                "explanation": "Chế độ \"r\" (read) dùng để mở tệp văn bản có sẵn chỉ để đọc dữ liệu."
+              },
+              {
+                "question_number": 3,
+                "it1108_block_code": "IT1108_KB05",
+                "topic": "Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự",
+                "difficulty": "easy",
+                "question_type": "code_trace",
+                "question": "Đoạn mã sau in ra giá trị bao nhiêu?",
+                "code_snippet": "int x = 10;\nint *ptr = &x;\n*ptr = 20;\nprintf(\"%d\", x);",
+                "options": {
+                  "A": "10",
+                  "B": "20",
+                  "C": "Địa chỉ biến x",
+                  "D": "Báo lỗi biên dịch"
+                },
+                "correct_answer": "B",
+                "hint": "Toán tử * đại diện cho giải tham chiếu, truy cập trực tiếp giá trị ô nhớ mà con trỏ lưu trữ.",
+                "explanation": "Con trỏ ptr trỏ tới x, nên câu lệnh *ptr = 20 làm thay đổi trực tiếp giá trị của x thành 20."
+              },
+              {
+                "question_number": 4,
+                "it1108_block_code": "IT1108_KB05",
+                "topic": "Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự",
+                "difficulty": "medium",
+                "question_type": "concept",
+                "question": "Hàm strlen trong thư viện <string.h> trả về kết quả gì cho chuỗi \"C_Program\"?",
+                "code_snippet": "char str[] = \"C_Program\";\nprintf(\"%d\", strlen(str));",
+                "options": {
+                  "A": "9",
+                  "B": "10",
+                  "C": "8",
+                  "D": "7"
+                },
+                "correct_answer": "A",
+                "hint": "Đếm từng ký tự bao gồm cả dấu gạch dưới '_', bỏ qua ký tự null kết thúc xâu.",
+                "explanation": "Hàm strlen đếm số ký tự trong xâu không tính ký tự kết thúc '\\0'. Chuỗi \"C_Program\" có đúng 9 ký tự."
+              },
+              {
+                "question_number": 5,
+                "it1108_block_code": "IT1108_KB04",
+                "topic": "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)",
+                "difficulty": "easy",
+                "question_type": "code_trace",
+                "question": "Giá trị nào sẽ được in ra màn hình sau khi thực hiện đoạn mã dưới đây?",
+                "code_snippet": "int a[4] = {1, 3, 5, 7};\nprintf(\"%d\", a[2]);",
+                "options": {
+                  "A": "3",
+                  "B": "4",
+                  "C": "5",
+                  "D": "6"
+                },
+                "correct_answer": "C",
+                "hint": "Lưu ý chỉ số phần tử đầu tiên của mảng trong C bắt đầu từ 0.",
+                "explanation": "Mảng a có chỉ số từ 0. Do đó a[0]=1, a[1]=3, a[2]=5. Giá trị a[2] là 5."
+              }
+            ],
+            "invalid_question_indices": []
+          }
+        },
+        "questions": [
+          {
+            "question_number": 1,
+            "it1108_block_code": "IT1108_KB06",
+            "topic": "Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ",
+            "difficulty": "easy",
+            "question_type": "guided_basic",
+            "question": "Cú pháp nào sau đây được dùng để truy cập vào thành viên 'age' của biến cấu trúc 's' thuộc kiểu struct Student?",
+            "code_snippet": "struct Student {\n    int age;\n};\nstruct Student s;",
+            "options": {
+              "A": "s->age",
+              "B": "s.age",
+              "C": "Student.age",
+              "D": "*s.age"
+            },
+            "correct_answer": "B",
+            "hint": "Dùng toán tử chấm (.) đối với biến thường và toán tử mũi tên (->) đối với con trỏ.",
+            "explanation": "Với biến cấu trúc thông thường, ta dùng toán tử chấm (.) để truy cập thành viên. Toán tử (->) chỉ dùng cho biến con trỏ cấu trúc."
+          },
+          {
+            "question_number": 2,
+            "it1108_block_code": "IT1108_KB06",
+            "topic": "Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ",
+            "difficulty": "easy",
+            "question_type": "guided_basic",
+            "question": "Để mở một tệp văn bản có tên 'data.txt' chỉ để đọc, hàm fopen nào sau đây là đúng?",
+            "code_snippet": "FILE *f;",
+            "options": {
+              "A": "fopen(\"data.txt\", \"w\");",
+              "B": "fopen(\"data.txt\", \"r\");",
+              "C": "fopen(\"data.txt\", \"a\");",
+              "D": "fopen(\"data.txt\", \"rb\");"
+            },
+            "correct_answer": "B",
+            "hint": "Ký tự 'r' là viết tắt của 'read' (đọc văn bản).",
+            "explanation": "Chế độ \"r\" (read) dùng để mở tệp văn bản có sẵn chỉ để đọc dữ liệu."
+          },
+          {
+            "question_number": 3,
+            "it1108_block_code": "IT1108_KB05",
+            "topic": "Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự",
+            "difficulty": "easy",
+            "question_type": "code_trace",
+            "question": "Đoạn mã sau in ra giá trị bao nhiêu?",
+            "code_snippet": "int x = 10;\nint *ptr = &x;\n*ptr = 20;\nprintf(\"%d\", x);",
+            "options": {
+              "A": "10",
+              "B": "20",
+              "C": "Địa chỉ biến x",
+              "D": "Báo lỗi biên dịch"
+            },
+            "correct_answer": "B",
+            "hint": "Toán tử * đại diện cho giải tham chiếu, truy cập trực tiếp giá trị ô nhớ mà con trỏ lưu trữ.",
+            "explanation": "Con trỏ ptr trỏ tới x, nên câu lệnh *ptr = 20 làm thay đổi trực tiếp giá trị của x thành 20."
+          },
+          {
+            "question_number": 4,
+            "it1108_block_code": "IT1108_KB05",
+            "topic": "Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự",
+            "difficulty": "medium",
+            "question_type": "concept",
+            "question": "Hàm strlen trong thư viện <string.h> trả về kết quả gì cho chuỗi \"C_Program\"?",
+            "code_snippet": "char str[] = \"C_Program\";\nprintf(\"%d\", strlen(str));",
+            "options": {
+              "A": "9",
+              "B": "10",
+              "C": "8",
+              "D": "7"
+            },
+            "correct_answer": "A",
+            "hint": "Đếm từng ký tự bao gồm cả dấu gạch dưới '_', bỏ qua ký tự null kết thúc xâu.",
+            "explanation": "Hàm strlen đếm số ký tự trong xâu không tính ký tự kết thúc '\\0'. Chuỗi \"C_Program\" có đúng 9 ký tự."
+          },
+          {
+            "question_number": 5,
+            "it1108_block_code": "IT1108_KB04",
+            "topic": "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)",
+            "difficulty": "easy",
+            "question_type": "code_trace",
+            "question": "Giá trị nào sẽ được in ra màn hình sau khi thực hiện đoạn mã dưới đây?",
+            "code_snippet": "int a[4] = {1, 3, 5, 7};\nprintf(\"%d\", a[2]);",
+            "options": {
+              "A": "3",
+              "B": "4",
+              "C": "5",
+              "D": "6"
+            },
+            "correct_answer": "C",
+            "hint": "Lưu ý chỉ số phần tử đầu tiên của mảng trong C bắt đầu từ 0.",
+            "explanation": "Mảng a có chỉ số từ 0. Do đó a[0]=1, a[1]=3, a[2]=5. Giá trị a[2] là 5."
+          }
+        ],
+        "error_type": null,
+        "error_message": null
+      }
+    },
+    {
+      "case_name": "missing_block_detail_fallback_risk_level",
+      "result": {
+        "success": false,
+        "http_status": 503,
+        "step_failed": "genai_generation",
+        "simulated_student_code": "SIM_WEEK8_PARTIAL_02",
+        "data_source": "LIVE_GEMINI_API",
+        "is_simulated": false,
+        "mode_notice": "Đang gọi Google Gemini API thực tế.",
+        "can_retry": true,
+        "ml_prediction": {
+          "prediction": 1,
+          "risk_probability": 1.0,
+          "risk_level": "HIGH",
+          "decision_threshold": 0.35,
+          "model_name": "SmartLMS_AtRisk_RandomForest_Pipeline",
+          "model_version": "1.0.0",
+          "inference_backend": "best_model_joblib_tuple_tree_adapter"
+        },
+        "submission_behavior": {
+          "status_code": "PARTIAL_SUBMISSION_LOW_SCORE",
+          "status_label": "Nộp thiếu bài và điểm thấp",
+          "note": "Hoàn thành 42% số bài với điểm TB 45.8/100. Cần củng cố lại kiến thức cơ bản và nhắc hạn nộp bài."
+        },
+        "topic_mapping_summary": {
+          "block_data_source": "target_block_codes_only_no_metrics",
+          "has_detailed_block_data": false,
+          "has_class_percentile": false,
+          "mapped_blocks_count": 2,
+          "mapped_block_codes": [
+            "IT1108_KB03",
+            "IT1108_KB04"
+          ]
+        },
+        "personalized_profile": {
+          "simulated_student_code": "SIM_WEEK8_PARTIAL_02",
+          "risk_probability": 1.0,
+          "risk_level": "HIGH",
+          "decision_threshold": 0.35,
+          "submission_behavior": {
+            "status_code": "PARTIAL_SUBMISSION_LOW_SCORE",
+            "status_label": "Nộp thiếu bài và điểm thấp",
+            "note": "Hoàn thành 42% số bài với điểm TB 45.8/100. Cần củng cố lại kiến thức cơ bản và nhắc hạn nộp bài."
+          },
+          "weak_blocks": [
+            {
+              "it1108_block_code": "IT1108_KB03",
+              "it1108_block_name": "Khối 3: Cấu trúc điều khiển rẽ nhánh & Vòng lặp",
+              "it1108_lessons": "Bài 7: Cấu trúc điều khiển (7.1 Lệnh khối, 7.2 Lệnh rẽ nhánh if-else, 7.3 Lệnh lựa chọn switch-case, 7.4-7.7 Các lệnh lặp while, do...while, for)",
+              "it1108_weeks": "Tuần 8-9",
+              "it1108_cdr": "M1, M3, M3.1, M3.3",
+              "vle_resources_count": 67,
+              "total_mapped_assessments": null,
+              "submitted_assessments": null,
+              "completion_rate": null,
+              "avg_submitted_score": null,
+              "block_weighted_score": null,
+              "lower_than_class_pct": null,
+              "submission_vs_score_status": null,
+              "normalized_status": null
+            },
+            {
+              "it1108_block_code": "IT1108_KB04",
+              "it1108_block_name": "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)",
+              "it1108_lessons": "Bài 8: Hàm (khái niệm, khai báo, phạm vi biến, truyền tham số, hàm đệ quy); Bài 9 - Mục 9.1: Mảng (khai báo, thao tác tìm kiếm/sắp xếp trên mảng, mảng nhiều chiều)",
+              "it1108_weeks": "Tuần 10-11",
+              "it1108_cdr": "M3, M3.2, M3.3",
+              "vle_resources_count": 53,
+              "total_mapped_assessments": null,
+              "submitted_assessments": null,
+              "completion_rate": null,
+              "avg_submitted_score": null,
+              "block_weighted_score": null,
+              "lower_than_class_pct": null,
+              "submission_vs_score_status": null,
+              "normalized_status": null
+            }
+          ],
+          "has_detailed_block_data": false,
+          "has_class_percentile": false,
+          "block_data_source": "target_block_codes_only_no_metrics"
+        },
+        "prompt_selection": {
+          "requested_scenario": "auto",
+          "selected_scenario": "risk_level",
+          "reason": "Hồ sơ thiếu dữ liệu chi tiết theo từng khối (chỉ có chỉ số tổng hợp ML); tự động fallback sang kịch bản risk_level."
+        },
+        "genai_result": {
+          "model_used": "gemini-3.5-flash",
+          "api_provider": "ai_studio",
+          "transport": "gemini-api",
+          "latency_ms": 7612.89,
+          "within_timeout_nfr01": true,
+          "json_retries_used": 0,
+          "pii_report": {
+            "pii_safe": true,
+            "stripped_pii_keys": [],
+            "findings": []
+          },
+          "validation": {
+            "is_valid": false,
+            "json_valid": false,
+            "schema_valid": false,
+            "sql_isjson_compatible": false,
+            "errors": [
+              "Dịch vụ Gemini API đang quá tải (503 UNAVAILABLE). Vui lòng thử lại sau: HTTP 503 UNAVAILABLE từ Gemini API (ai_studio): {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n"
+            ],
+            "warnings": [],
+            "normalized_data": null,
+            "valid_questions": [],
+            "invalid_question_indices": []
+          }
+        },
+        "questions": [],
+        "error_type": "SERVICE_UNAVAILABLE",
+        "error_message": "Dịch vụ Gemini API đang quá tải (503 UNAVAILABLE). Vui lòng thử lại sau: HTTP 503 UNAVAILABLE từ Gemini API (ai_studio): {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n"
+      }
+    }
+  ]
+}

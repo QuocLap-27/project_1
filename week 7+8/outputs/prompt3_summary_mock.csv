@@ -1,0 +1,4 @@
+﻿scenario_type,data_source,is_simulated,total_cases,successful_cases,json_valid_pct,schema_valid_pct,nfr01_within_20s_pct,avg_latency_ms,avg_topic_relevance_pct,avg_four_options_pct,avg_single_answer_pct,avg_explanation_fit_pct,avg_difficulty_fit_pct,no_duplication_rate_pct,avg_max_similarity,avg_explanation_chars,avg_overall_quality_score
+baseline,MOCK_SIMULATED,True,3,3,100.0,100.0,100.0,3.34,100.0,100.0,100.0,66.67,76.0,100.0,0.35,89.07,90.2
+risk_level,MOCK_SIMULATED,True,3,3,100.0,100.0,100.0,3.38,100.0,100.0,100.0,100.0,90.67,100.0,0.26,128.13,98.13
+detailed_profile,MOCK_SIMULATED,True,3,3,100.0,100.0,100.0,3.65,100.0,100.0,100.0,100.0,90.67,100.0,0.33,141.2,98.13

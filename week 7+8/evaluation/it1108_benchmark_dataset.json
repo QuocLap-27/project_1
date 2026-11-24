@@ -1,0 +1,105 @@
+{
+  "dataset_name": "IT1108_Prompt_Engineering_Benchmark_Week7",
+  "description": "Bộ dữ liệu kiểm thử mô phỏng ẩn danh hoàn toàn phủ đủ 6 khối kiến thức Mapping IT1108 (IT1108_KB01..IT1108_KB06) để so sánh công bằng 3 kịch bản Prompt (baseline, risk_level, detailed_profile) trên cùng chủ đề và cùng số lượng câu hỏi.",
+  "course_code": "IT1108",
+  "course_name": "Nhập môn lập trình",
+  "is_simulated": true,
+  "cases": [
+    {
+      "case_id": "TC01_KB01_KB02_FOUNDATION",
+      "title": "Ca 1 (Khối 1 & Khối 2): Thuật toán, Sơ đồ khối & Ngôn ngữ C cơ bản",
+      "course_code": "IT1108",
+      "course_name": "Nhập môn lập trình",
+      "num_questions": 5,
+      "review_topics": [
+        "Giải quyết bài toán, sơ đồ khối và thuật toán",
+        "Kiểu dữ liệu chuẩn, vào/ra printf-scanf và biểu thức C"
+      ],
+      "profile": {
+        "simulated_profile_code": "BENCH_SIM_01",
+        "risk_level": "HIGH",
+        "risk_probability": 0.84,
+        "weak_blocks": [
+          {
+            "it1108_block_code": "IT1108_KB01",
+            "it1108_block_name": "Khối 1: Giải quyết bài toán, Thuật toán & Tổng quan lập trình",
+            "lower_than_class_pct": 90.0,
+            "avg_submitted_score": 0.0,
+            "submission_vs_score_status": "MISSING_SUBMISSION"
+          },
+          {
+            "it1108_block_code": "IT1108_KB02",
+            "it1108_block_name": "Khối 2: Ngôn ngữ C cơ bản, Hệ đếm, Kiểu dữ liệu, Vào/ra & Biểu thức",
+            "lower_than_class_pct": 76.0,
+            "avg_submitted_score": 40.0,
+            "submission_vs_score_status": "LOW_SCORE_DESPITE_SUBMISSION"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "TC02_KB03_KB04_CONTROL_FUNC",
+      "title": "Ca 2 (Khối 3 & Khối 4): Cấu trúc điều khiển, Vòng lặp, Hàm & Mảng",
+      "course_code": "IT1108",
+      "course_name": "Nhập môn lập trình",
+      "num_questions": 5,
+      "review_topics": [
+        "Cấu trúc điều khiển rẽ nhánh if-else, switch-case và vòng lặp",
+        "Hàm, truyền tham số, đệ quy và mảng 1-2 chiều"
+      ],
+      "profile": {
+        "simulated_profile_code": "BENCH_SIM_02",
+        "risk_level": "HIGH",
+        "risk_probability": 0.72,
+        "weak_blocks": [
+          {
+            "it1108_block_code": "IT1108_KB03",
+            "it1108_block_name": "Khối 3: Cấu trúc điều khiển rẽ nhánh & Vòng lặp",
+            "lower_than_class_pct": 85.0,
+            "avg_submitted_score": 0.0,
+            "submission_vs_score_status": "MISSING_SUBMISSION"
+          },
+          {
+            "it1108_block_code": "IT1108_KB04",
+            "it1108_block_name": "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)",
+            "lower_than_class_pct": 68.0,
+            "avg_submitted_score": 42.0,
+            "submission_vs_score_status": "LOW_SCORE_DESPITE_SUBMISSION"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "TC03_KB05_KB06_POINTER_STRUCT",
+      "title": "Ca 3 (Khối 5 & Khối 6): Con trỏ, Xâu ký tự, Cấu trúc & Tệp dữ liệu",
+      "course_code": "IT1108",
+      "course_name": "Nhập môn lập trình",
+      "num_questions": 5,
+      "review_topics": [
+        "Con trỏ, bộ nhớ động malloc/free và xâu ký tự",
+        "Cấu trúc struct và thao tác đọc/ghi tệp dữ liệu"
+      ],
+      "profile": {
+        "simulated_profile_code": "BENCH_SIM_03",
+        "risk_level": "MEDIUM",
+        "risk_probability": 0.52,
+        "weak_blocks": [
+          {
+            "it1108_block_code": "IT1108_KB05",
+            "it1108_block_name": "Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự",
+            "lower_than_class_pct": 64.0,
+            "avg_submitted_score": 46.0,
+            "submission_vs_score_status": "LOW_SCORE_DESPITE_SUBMISSION"
+          },
+          {
+            "it1108_block_code": "IT1108_KB06",
+            "it1108_block_name": "Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ",
+            "lower_than_class_pct": 60.0,
+            "avg_submitted_score": 48.0,
+            "submission_vs_score_status": "PARTIAL_SUBMISSION_AND_LOW_SCORE"
+          }
+        ]
+      }
+    }
+  ]
+}

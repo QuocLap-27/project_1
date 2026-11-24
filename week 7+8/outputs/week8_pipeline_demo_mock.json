@@ -1,0 +1,840 @@
+{
+  "generated_at": "2026-11-25 01:31:31",
+  "mode": "mock",
+  "data_source": "MOCK_SIMULATED",
+  "is_simulated": true,
+  "cases": [
+    {
+      "case_name": "full_oulad_profile_detailed_scenario",
+      "result": {
+        "success": true,
+        "http_status": 200,
+        "step_failed": null,
+        "simulated_student_code": "SIM_WEEK8_FULL_01",
+        "data_source": "MOCK_SIMULATED",
+        "is_simulated": true,
+        "mode_notice": "Đang chạy ở chế độ MOCK MÔ PHỎNG (không phải kết quả Gemini API thực tế).",
+        "can_retry": true,
+        "ml_prediction": {
+          "prediction": 1,
+          "risk_probability": 1.0,
+          "risk_level": "HIGH",
+          "decision_threshold": 0.35,
+          "model_name": "SmartLMS_AtRisk_RandomForest_Pipeline",
+          "model_version": "1.0.0",
+          "inference_backend": "best_model_joblib_tuple_tree_adapter"
+        },
+        "submission_behavior": {
+          "status_code": "PARTIAL_SUBMISSION_LOW_SCORE",
+          "status_label": "Nộp thiếu bài và điểm thấp",
+          "note": "Hoàn thành 42% số bài với điểm TB 45.8/100. Cần củng cố lại kiến thức cơ bản và nhắc hạn nộp bài."
+        },
+        "topic_mapping_summary": {
+          "block_data_source": "oulad_zip_assessments",
+          "has_detailed_block_data": true,
+          "has_class_percentile": true,
+          "mapped_blocks_count": 3,
+          "mapped_block_codes": [
+            "IT1108_KB06",
+            "IT1108_KB05",
+            "IT1108_KB04"
+          ]
+        },
+        "personalized_profile": {
+          "simulated_student_code": "SIM_WEEK8_FULL_01",
+          "risk_probability": 1.0,
+          "risk_level": "HIGH",
+          "decision_threshold": 0.35,
+          "submission_behavior": {
+            "status_code": "PARTIAL_SUBMISSION_LOW_SCORE",
+            "status_label": "Nộp thiếu bài và điểm thấp",
+            "note": "Hoàn thành 42% số bài với điểm TB 45.8/100. Cần củng cố lại kiến thức cơ bản và nhắc hạn nộp bài."
+          },
+          "weak_blocks": [
+            {
+              "it1108_block_code": "IT1108_KB06",
+              "it1108_block_name": "Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ",
+              "it1108_lessons": "Bài 10: Cấu trúc (khai báo, sử dụng và xử lý dữ liệu cấu trúc); Bài 11: Tệp dữ liệu (khái niệm, thao tác cơ bản, tệp văn bản, tệp nhị phân); Tuần 16: Ôn tập & Định hướng",
+              "it1108_weeks": "Tuần 14-16",
+              "it1108_cdr": "M1, M2, M3, M3.1, M3.2, M3.3",
+              "total_mapped_assessments": 3,
+              "submitted_assessments": 0,
+              "completion_rate": 0.0,
+              "avg_submitted_score": null,
+              "block_weighted_score": 0.0,
+              "lower_than_class_pct": 100.0,
+              "submission_vs_score_status": "NO_SUBMISSION",
+              "data_origin": "OULAD_FFF_2013J",
+              "vle_resources_count": 56,
+              "normalized_status": "MISSING_SUBMISSION"
+            },
+            {
+              "it1108_block_code": "IT1108_KB05",
+              "it1108_block_name": "Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự",
+              "it1108_lessons": "Bài 9 - Mục 9.2: Con trỏ (khái niệm, toán tử & và *, phép toán con trỏ, con trỏ & mảng, bộ nhớ động); Mục 9.3: Xâu ký tự (vào ra xâu, hàm xử lý ký tự/xâu, mảng các xâu)",
+              "it1108_weeks": "Tuần 12-13",
+              "it1108_cdr": "M3, M3.1, M3.2, M3.3",
+              "total_mapped_assessments": 2,
+              "submitted_assessments": 1,
+              "completion_rate": 0.5,
+              "avg_submitted_score": 5.0,
+              "block_weighted_score": 4.81,
+              "lower_than_class_pct": 50.4,
+              "submission_vs_score_status": "PARTIAL_SUBMISSION_LOW_SCORE",
+              "data_origin": "OULAD_FFF_2013J",
+              "vle_resources_count": 65,
+              "normalized_status": "PARTIAL_SUBMISSION_AND_LOW_SCORE"
+            },
+            {
+              "it1108_block_code": "IT1108_KB04",
+              "it1108_block_name": "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)",
+              "it1108_lessons": "Bài 8: Hàm (khái niệm, khai báo, phạm vi biến, truyền tham số, hàm đệ quy); Bài 9 - Mục 9.1: Mảng (khai báo, thao tác tìm kiếm/sắp xếp trên mảng, mảng nhiều chiều)",
+              "it1108_weeks": "Tuần 10-11",
+              "it1108_cdr": "M3, M3.2, M3.3",
+              "total_mapped_assessments": 2,
+              "submitted_assessments": 1,
+              "completion_rate": 0.5,
+              "avg_submitted_score": 29.0,
+              "block_weighted_score": 27.88,
+              "lower_than_class_pct": 55.9,
+              "submission_vs_score_status": "PARTIAL_SUBMISSION_LOW_SCORE",
+              "data_origin": "OULAD_FFF_2013J",
+              "vle_resources_count": 53,
+              "normalized_status": "PARTIAL_SUBMISSION_AND_LOW_SCORE"
+            }
+          ],
+          "has_detailed_block_data": true,
+          "has_class_percentile": true,
+          "block_data_source": "oulad_zip_assessments"
+        },
+        "prompt_selection": {
+          "requested_scenario": "auto",
+          "selected_scenario": "detailed_profile",
+          "reason": "Hồ sơ có đủ dữ liệu chi tiết theo từng khối kiến thức; sử dụng kịch bản chính detailed_profile."
+        },
+        "genai_result": {
+          "model_used": "gemini-3.5-flash (mock-offline)",
+          "api_provider": "mock",
+          "transport": "mock-offline",
+          "latency_ms": 4.1,
+          "within_timeout_nfr01": true,
+          "json_retries_used": 0,
+          "pii_report": {
+            "pii_safe": true,
+            "stripped_pii_keys": [],
+            "findings": []
+          },
+          "validation": {
+            "is_valid": true,
+            "json_valid": true,
+            "schema_valid": true,
+            "sql_isjson_compatible": true,
+            "errors": [],
+            "warnings": [],
+            "normalized_data": {
+              "course_code": "IT1108",
+              "course_name": "Nhập môn lập trình",
+              "scenario_type": "detailed_profile",
+              "target_blocks": [
+                "IT1108_KB06",
+                "IT1108_KB05",
+                "IT1108_KB04"
+              ],
+              "review_topics": [
+                "Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ",
+                "Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự",
+                "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)"
+              ],
+              "difficulty_strategy": "Cá nhân hóa tham khảo (rủi ro HIGH, p=1.00): ưu tiên câu easy dạng guided_basic kèm gợi ý từng bước cho chủ đề chưa có bài nộp.",
+              "study_advice": "Gợi ý lộ trình ôn tập: hoàn thành các câu hướng dẫn từng bước trước ở phần chưa nộp bài, sau đó tự lần vết trên giấy các đoạn code C để khắc phục lỗi sai thường gặp.",
+              "questions": [
+                {
+                  "question_number": 1,
+                  "it1108_block_code": "IT1108_KB06",
+                  "topic": "Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ",
+                  "difficulty": "easy",
+                  "question_type": "guided_basic",
+                  "question": "Để mở một tệp văn bản 'data.txt' chỉ phục vụ đọc dữ liệu trong C, ta truyền chế độ (mode) nào vào hàm fopen?",
+                  "code_snippet": "FILE *f = fopen(\"data.txt\", /* mode */);",
+                  "options": {
+                    "A": "\"r\"",
+                    "B": "\"w\"",
+                    "C": "\"wb\"",
+                    "D": "\"a\""
+                  },
+                  "correct_answer": "A",
+                  "hint": "Gợi ý từng bước: 'r' viết tắt của read (đọc), 'w' là write (ghi đè mới), 'a' là append (ghi nối thêm).",
+                  "explanation": "Chế độ \"r\" mở tệp văn bản để đọc (trả về NULL nếu tệp chưa tồn tại). Dùng \"w\" khi muốn đọc sẽ làm xóa trắng dữ liệu tệp cũ."
+                },
+                {
+                  "question_number": 2,
+                  "it1108_block_code": "IT1108_KB05",
+                  "topic": "Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự",
+                  "difficulty": "easy",
+                  "question_type": "guided_basic",
+                  "question": "Trong ngôn ngữ C, xâu ký tự (string) kết thúc bằng ký tự đặc biệt nào?",
+                  "code_snippet": "char s[] = \"IT1108\";",
+                  "options": {
+                    "A": "'\\0' (ký tự null)",
+                    "B": "'\\n' (xuống dòng)",
+                    "C": "' ' (dấu cách)",
+                    "D": "EOF"
+                  },
+                  "correct_answer": "A",
+                  "hint": "Gợi ý từng bước: Chuỗi 'IT1108' có 6 ký tự nhưng mảng char s[] chiếm 7 byte vì thêm ký tự '\\0' ở cuối.",
+                  "explanation": "Trong C, xâu ký tự là mảng char kết thúc bằng ký tự null '\\0' để các hàm như strlen(), printf(\"%s\") biết điểm kết thúc chuỗi."
+                },
+                {
+                  "question_number": 3,
+                  "it1108_block_code": "IT1108_KB04",
+                  "topic": "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)",
+                  "difficulty": "easy",
+                  "question_type": "guided_basic",
+                  "question": "Với khai báo mảng int a[5] = {10, 20, 30, 40, 50}; trong ngôn ngữ C, chỉ số hợp lệ của mảng nằm trong khoảng nào?",
+                  "code_snippet": "int a[5] = {10, 20, 30, 40, 50};",
+                  "options": {
+                    "A": "Từ 0 đến 4",
+                    "B": "Từ 1 đến 5",
+                    "C": "Từ 0 đến 5",
+                    "D": "Từ 1 đến 4"
+                  },
+                  "correct_answer": "A",
+                  "hint": "Gợi ý từng bước: Mảng trong C luôn đánh chỉ số bắt đầu từ 0, nên phần tử cuối của mảng n phần tử nằm ở vị trí n - 1.",
+                  "explanation": "Mảng 5 phần tử đánh chỉ số a[0]..a[4]. Truy cập a[5] là vượt quá giới hạn mảng (Out of bounds)."
+                },
+                {
+                  "question_number": 4,
+                  "it1108_block_code": "IT1108_KB06",
+                  "topic": "Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ",
+                  "difficulty": "easy",
+                  "question_type": "guided_basic",
+                  "question": "Sau khi đọc/ghi xong một tệp đã mở qua biến FILE *f, ta cần gọi hàm nào để đóng tệp an toàn?",
+                  "code_snippet": "FILE *f = fopen(\"out.txt\", \"w\");\n// thao tác ghi dữ liệu\n/* đóng tệp */",
+                  "options": {
+                    "A": "fclose(f);",
+                    "B": "free(f);",
+                    "C": "closefile(f);",
+                    "D": "end(f);"
+                  },
+                  "correct_answer": "A",
+                  "hint": "Gợi ý từng bước: Cặp hàm chuẩn trong <stdio.h> để mở và đóng tệp là fopen(...) và fclose(...).",
+                  "explanation": "Hàm fclose(f) đẩy toàn bộ dữ liệu từ bộ đệm xuống đĩa và giải phóng tài nguyên tệp đang mở."
+                },
+                {
+                  "question_number": 5,
+                  "it1108_block_code": "IT1108_KB05",
+                  "topic": "Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự",
+                  "difficulty": "easy",
+                  "question_type": "guided_basic",
+                  "question": "Toán tử nào dùng để lấy địa chỉ vùng nhớ của một biến trong ngôn ngữ C?",
+                  "code_snippet": "int n = 10;\nint *p = /* lấy địa chỉ của n */;",
+                  "options": {
+                    "A": "&n",
+                    "B": "*n",
+                    "C": "->n",
+                    "D": "addr(n)"
+                  },
+                  "correct_answer": "A",
+                  "hint": "Gợi ý từng bước: Toán tử & trả về địa chỉ của biến, còn toán tử * dùng để khai báo con trỏ hoặc truy xuất giá trị tại địa chỉ.",
+                  "explanation": "Toán tử & (address-of) trả về địa chỉ bộ nhớ của biến n để gán cho con trỏ int *p = &n."
+                }
+              ]
+            },
+            "valid_questions": [
+              {
+                "question_number": 1,
+                "it1108_block_code": "IT1108_KB06",
+                "topic": "Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ",
+                "difficulty": "easy",
+                "question_type": "guided_basic",
+                "question": "Để mở một tệp văn bản 'data.txt' chỉ phục vụ đọc dữ liệu trong C, ta truyền chế độ (mode) nào vào hàm fopen?",
+                "code_snippet": "FILE *f = fopen(\"data.txt\", /* mode */);",
+                "options": {
+                  "A": "\"r\"",
+                  "B": "\"w\"",
+                  "C": "\"wb\"",
+                  "D": "\"a\""
+                },
+                "correct_answer": "A",
+                "hint": "Gợi ý từng bước: 'r' viết tắt của read (đọc), 'w' là write (ghi đè mới), 'a' là append (ghi nối thêm).",
+                "explanation": "Chế độ \"r\" mở tệp văn bản để đọc (trả về NULL nếu tệp chưa tồn tại). Dùng \"w\" khi muốn đọc sẽ làm xóa trắng dữ liệu tệp cũ."
+              },
+              {
+                "question_number": 2,
+                "it1108_block_code": "IT1108_KB05",
+                "topic": "Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự",
+                "difficulty": "easy",
+                "question_type": "guided_basic",
+                "question": "Trong ngôn ngữ C, xâu ký tự (string) kết thúc bằng ký tự đặc biệt nào?",
+                "code_snippet": "char s[] = \"IT1108\";",
+                "options": {
+                  "A": "'\\0' (ký tự null)",
+                  "B": "'\\n' (xuống dòng)",
+                  "C": "' ' (dấu cách)",
+                  "D": "EOF"
+                },
+                "correct_answer": "A",
+                "hint": "Gợi ý từng bước: Chuỗi 'IT1108' có 6 ký tự nhưng mảng char s[] chiếm 7 byte vì thêm ký tự '\\0' ở cuối.",
+                "explanation": "Trong C, xâu ký tự là mảng char kết thúc bằng ký tự null '\\0' để các hàm như strlen(), printf(\"%s\") biết điểm kết thúc chuỗi."
+              },
+              {
+                "question_number": 3,
+                "it1108_block_code": "IT1108_KB04",
+                "topic": "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)",
+                "difficulty": "easy",
+                "question_type": "guided_basic",
+                "question": "Với khai báo mảng int a[5] = {10, 20, 30, 40, 50}; trong ngôn ngữ C, chỉ số hợp lệ của mảng nằm trong khoảng nào?",
+                "code_snippet": "int a[5] = {10, 20, 30, 40, 50};",
+                "options": {
+                  "A": "Từ 0 đến 4",
+                  "B": "Từ 1 đến 5",
+                  "C": "Từ 0 đến 5",
+                  "D": "Từ 1 đến 4"
+                },
+                "correct_answer": "A",
+                "hint": "Gợi ý từng bước: Mảng trong C luôn đánh chỉ số bắt đầu từ 0, nên phần tử cuối của mảng n phần tử nằm ở vị trí n - 1.",
+                "explanation": "Mảng 5 phần tử đánh chỉ số a[0]..a[4]. Truy cập a[5] là vượt quá giới hạn mảng (Out of bounds)."
+              },
+              {
+                "question_number": 4,
+                "it1108_block_code": "IT1108_KB06",
+                "topic": "Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ",
+                "difficulty": "easy",
+                "question_type": "guided_basic",
+                "question": "Sau khi đọc/ghi xong một tệp đã mở qua biến FILE *f, ta cần gọi hàm nào để đóng tệp an toàn?",
+                "code_snippet": "FILE *f = fopen(\"out.txt\", \"w\");\n// thao tác ghi dữ liệu\n/* đóng tệp */",
+                "options": {
+                  "A": "fclose(f);",
+                  "B": "free(f);",
+                  "C": "closefile(f);",
+                  "D": "end(f);"
+                },
+                "correct_answer": "A",
+                "hint": "Gợi ý từng bước: Cặp hàm chuẩn trong <stdio.h> để mở và đóng tệp là fopen(...) và fclose(...).",
+                "explanation": "Hàm fclose(f) đẩy toàn bộ dữ liệu từ bộ đệm xuống đĩa và giải phóng tài nguyên tệp đang mở."
+              },
+              {
+                "question_number": 5,
+                "it1108_block_code": "IT1108_KB05",
+                "topic": "Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự",
+                "difficulty": "easy",
+                "question_type": "guided_basic",
+                "question": "Toán tử nào dùng để lấy địa chỉ vùng nhớ của một biến trong ngôn ngữ C?",
+                "code_snippet": "int n = 10;\nint *p = /* lấy địa chỉ của n */;",
+                "options": {
+                  "A": "&n",
+                  "B": "*n",
+                  "C": "->n",
+                  "D": "addr(n)"
+                },
+                "correct_answer": "A",
+                "hint": "Gợi ý từng bước: Toán tử & trả về địa chỉ của biến, còn toán tử * dùng để khai báo con trỏ hoặc truy xuất giá trị tại địa chỉ.",
+                "explanation": "Toán tử & (address-of) trả về địa chỉ bộ nhớ của biến n để gán cho con trỏ int *p = &n."
+              }
+            ],
+            "invalid_question_indices": []
+          }
+        },
+        "questions": [
+          {
+            "question_number": 1,
+            "it1108_block_code": "IT1108_KB06",
+            "topic": "Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ",
+            "difficulty": "easy",
+            "question_type": "guided_basic",
+            "question": "Để mở một tệp văn bản 'data.txt' chỉ phục vụ đọc dữ liệu trong C, ta truyền chế độ (mode) nào vào hàm fopen?",
+            "code_snippet": "FILE *f = fopen(\"data.txt\", /* mode */);",
+            "options": {
+              "A": "\"r\"",
+              "B": "\"w\"",
+              "C": "\"wb\"",
+              "D": "\"a\""
+            },
+            "correct_answer": "A",
+            "hint": "Gợi ý từng bước: 'r' viết tắt của read (đọc), 'w' là write (ghi đè mới), 'a' là append (ghi nối thêm).",
+            "explanation": "Chế độ \"r\" mở tệp văn bản để đọc (trả về NULL nếu tệp chưa tồn tại). Dùng \"w\" khi muốn đọc sẽ làm xóa trắng dữ liệu tệp cũ."
+          },
+          {
+            "question_number": 2,
+            "it1108_block_code": "IT1108_KB05",
+            "topic": "Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự",
+            "difficulty": "easy",
+            "question_type": "guided_basic",
+            "question": "Trong ngôn ngữ C, xâu ký tự (string) kết thúc bằng ký tự đặc biệt nào?",
+            "code_snippet": "char s[] = \"IT1108\";",
+            "options": {
+              "A": "'\\0' (ký tự null)",
+              "B": "'\\n' (xuống dòng)",
+              "C": "' ' (dấu cách)",
+              "D": "EOF"
+            },
+            "correct_answer": "A",
+            "hint": "Gợi ý từng bước: Chuỗi 'IT1108' có 6 ký tự nhưng mảng char s[] chiếm 7 byte vì thêm ký tự '\\0' ở cuối.",
+            "explanation": "Trong C, xâu ký tự là mảng char kết thúc bằng ký tự null '\\0' để các hàm như strlen(), printf(\"%s\") biết điểm kết thúc chuỗi."
+          },
+          {
+            "question_number": 3,
+            "it1108_block_code": "IT1108_KB04",
+            "topic": "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)",
+            "difficulty": "easy",
+            "question_type": "guided_basic",
+            "question": "Với khai báo mảng int a[5] = {10, 20, 30, 40, 50}; trong ngôn ngữ C, chỉ số hợp lệ của mảng nằm trong khoảng nào?",
+            "code_snippet": "int a[5] = {10, 20, 30, 40, 50};",
+            "options": {
+              "A": "Từ 0 đến 4",
+              "B": "Từ 1 đến 5",
+              "C": "Từ 0 đến 5",
+              "D": "Từ 1 đến 4"
+            },
+            "correct_answer": "A",
+            "hint": "Gợi ý từng bước: Mảng trong C luôn đánh chỉ số bắt đầu từ 0, nên phần tử cuối của mảng n phần tử nằm ở vị trí n - 1.",
+            "explanation": "Mảng 5 phần tử đánh chỉ số a[0]..a[4]. Truy cập a[5] là vượt quá giới hạn mảng (Out of bounds)."
+          },
+          {
+            "question_number": 4,
+            "it1108_block_code": "IT1108_KB06",
+            "topic": "Khối 6: Cấu trúc (struct), Tệp dữ liệu & Ôn tập cuối kỳ",
+            "difficulty": "easy",
+            "question_type": "guided_basic",
+            "question": "Sau khi đọc/ghi xong một tệp đã mở qua biến FILE *f, ta cần gọi hàm nào để đóng tệp an toàn?",
+            "code_snippet": "FILE *f = fopen(\"out.txt\", \"w\");\n// thao tác ghi dữ liệu\n/* đóng tệp */",
+            "options": {
+              "A": "fclose(f);",
+              "B": "free(f);",
+              "C": "closefile(f);",
+              "D": "end(f);"
+            },
+            "correct_answer": "A",
+            "hint": "Gợi ý từng bước: Cặp hàm chuẩn trong <stdio.h> để mở và đóng tệp là fopen(...) và fclose(...).",
+            "explanation": "Hàm fclose(f) đẩy toàn bộ dữ liệu từ bộ đệm xuống đĩa và giải phóng tài nguyên tệp đang mở."
+          },
+          {
+            "question_number": 5,
+            "it1108_block_code": "IT1108_KB05",
+            "topic": "Khối 5: Con trỏ, Bộ nhớ động & Xâu ký tự",
+            "difficulty": "easy",
+            "question_type": "guided_basic",
+            "question": "Toán tử nào dùng để lấy địa chỉ vùng nhớ của một biến trong ngôn ngữ C?",
+            "code_snippet": "int n = 10;\nint *p = /* lấy địa chỉ của n */;",
+            "options": {
+              "A": "&n",
+              "B": "*n",
+              "C": "->n",
+              "D": "addr(n)"
+            },
+            "correct_answer": "A",
+            "hint": "Gợi ý từng bước: Toán tử & trả về địa chỉ của biến, còn toán tử * dùng để khai báo con trỏ hoặc truy xuất giá trị tại địa chỉ.",
+            "explanation": "Toán tử & (address-of) trả về địa chỉ bộ nhớ của biến n để gán cho con trỏ int *p = &n."
+          }
+        ],
+        "error_type": null,
+        "error_message": null
+      }
+    },
+    {
+      "case_name": "missing_block_detail_fallback_risk_level",
+      "result": {
+        "success": true,
+        "http_status": 200,
+        "step_failed": null,
+        "simulated_student_code": "SIM_WEEK8_PARTIAL_02",
+        "data_source": "MOCK_SIMULATED",
+        "is_simulated": true,
+        "mode_notice": "Đang chạy ở chế độ MOCK MÔ PHỎNG (không phải kết quả Gemini API thực tế).",
+        "can_retry": true,
+        "ml_prediction": {
+          "prediction": 1,
+          "risk_probability": 1.0,
+          "risk_level": "HIGH",
+          "decision_threshold": 0.35,
+          "model_name": "SmartLMS_AtRisk_RandomForest_Pipeline",
+          "model_version": "1.0.0",
+          "inference_backend": "best_model_joblib_tuple_tree_adapter"
+        },
+        "submission_behavior": {
+          "status_code": "PARTIAL_SUBMISSION_LOW_SCORE",
+          "status_label": "Nộp thiếu bài và điểm thấp",
+          "note": "Hoàn thành 42% số bài với điểm TB 45.8/100. Cần củng cố lại kiến thức cơ bản và nhắc hạn nộp bài."
+        },
+        "topic_mapping_summary": {
+          "block_data_source": "target_block_codes_only_no_metrics",
+          "has_detailed_block_data": false,
+          "has_class_percentile": false,
+          "mapped_blocks_count": 2,
+          "mapped_block_codes": [
+            "IT1108_KB03",
+            "IT1108_KB04"
+          ]
+        },
+        "personalized_profile": {
+          "simulated_student_code": "SIM_WEEK8_PARTIAL_02",
+          "risk_probability": 1.0,
+          "risk_level": "HIGH",
+          "decision_threshold": 0.35,
+          "submission_behavior": {
+            "status_code": "PARTIAL_SUBMISSION_LOW_SCORE",
+            "status_label": "Nộp thiếu bài và điểm thấp",
+            "note": "Hoàn thành 42% số bài với điểm TB 45.8/100. Cần củng cố lại kiến thức cơ bản và nhắc hạn nộp bài."
+          },
+          "weak_blocks": [
+            {
+              "it1108_block_code": "IT1108_KB03",
+              "it1108_block_name": "Khối 3: Cấu trúc điều khiển rẽ nhánh & Vòng lặp",
+              "it1108_lessons": "Bài 7: Cấu trúc điều khiển (7.1 Lệnh khối, 7.2 Lệnh rẽ nhánh if-else, 7.3 Lệnh lựa chọn switch-case, 7.4-7.7 Các lệnh lặp while, do...while, for)",
+              "it1108_weeks": "Tuần 8-9",
+              "it1108_cdr": "M1, M3, M3.1, M3.3",
+              "vle_resources_count": 67,
+              "total_mapped_assessments": null,
+              "submitted_assessments": null,
+              "completion_rate": null,
+              "avg_submitted_score": null,
+              "block_weighted_score": null,
+              "lower_than_class_pct": null,
+              "submission_vs_score_status": null,
+              "normalized_status": null
+            },
+            {
+              "it1108_block_code": "IT1108_KB04",
+              "it1108_block_name": "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)",
+              "it1108_lessons": "Bài 8: Hàm (khái niệm, khai báo, phạm vi biến, truyền tham số, hàm đệ quy); Bài 9 - Mục 9.1: Mảng (khai báo, thao tác tìm kiếm/sắp xếp trên mảng, mảng nhiều chiều)",
+              "it1108_weeks": "Tuần 10-11",
+              "it1108_cdr": "M3, M3.2, M3.3",
+              "vle_resources_count": 53,
+              "total_mapped_assessments": null,
+              "submitted_assessments": null,
+              "completion_rate": null,
+              "avg_submitted_score": null,
+              "block_weighted_score": null,
+              "lower_than_class_pct": null,
+              "submission_vs_score_status": null,
+              "normalized_status": null
+            }
+          ],
+          "has_detailed_block_data": false,
+          "has_class_percentile": false,
+          "block_data_source": "target_block_codes_only_no_metrics"
+        },
+        "prompt_selection": {
+          "requested_scenario": "auto",
+          "selected_scenario": "risk_level",
+          "reason": "Hồ sơ thiếu dữ liệu chi tiết theo từng khối (chỉ có chỉ số tổng hợp ML); tự động fallback sang kịch bản risk_level."
+        },
+        "genai_result": {
+          "model_used": "gemini-3.5-flash (mock-offline)",
+          "api_provider": "mock",
+          "transport": "mock-offline",
+          "latency_ms": 3.24,
+          "within_timeout_nfr01": true,
+          "json_retries_used": 0,
+          "pii_report": {
+            "pii_safe": true,
+            "stripped_pii_keys": [],
+            "findings": []
+          },
+          "validation": {
+            "is_valid": true,
+            "json_valid": true,
+            "schema_valid": true,
+            "sql_isjson_compatible": true,
+            "errors": [],
+            "warnings": [],
+            "normalized_data": {
+              "course_code": "IT1108",
+              "course_name": "Nhập môn lập trình",
+              "scenario_type": "risk_level",
+              "target_blocks": [
+                "IT1108_KB03",
+                "IT1108_KB04"
+              ],
+              "review_topics": [
+                "Khối 3: Cấu trúc điều khiển rẽ nhánh & Vòng lặp",
+                "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)"
+              ],
+              "difficulty_strategy": "Điều chỉnh độ khó tổng thể theo mức rủi ro tham khảo HIGH (xác suất tham khảo 1.00): ưu tiên củng cố kiến thức cốt lõi trước khi làm câu hỏi vận dụng.",
+              "study_advice": "Mức tham khảo hiện tại là HIGH. Bạn nên làm đủ 5 câu ôn tập và đọc kỹ phần giải thích để củng cố kiến thức.",
+              "questions": [
+                {
+                  "question_number": 1,
+                  "it1108_block_code": "IT1108_KB03",
+                  "topic": "Khối 3: Cấu trúc điều khiển rẽ nhánh & Vòng lặp",
+                  "difficulty": "easy",
+                  "question_type": "guided_basic",
+                  "question": "Điểm khác biệt quan trọng nhất giữa vòng lặp while và vòng lặp do...while trong C là gì?",
+                  "code_snippet": "",
+                  "options": {
+                    "A": "do...while luôn thực hiện thân vòng lặp ít nhất 1 lần trước khi kiểm tra điều kiện",
+                    "B": "while luôn chạy ít nhất 1 lần ngay cả khi điều kiện sai ngay từ đầu",
+                    "C": "do...while không cần dấu chấm phẩy (;) ở cuối lệnh while",
+                    "D": "while không thể dùng câu lệnh break bên trong"
+                  },
+                  "correct_answer": "A",
+                  "hint": "Gợi ý từng bước: Quan sát vị trí đặt điều kiện while(...): đặt ở đầu là kiểm tra trước; đặt ở cuối là làm trước rồi mới kiểm tra.",
+                  "explanation": "Vòng lặp while kiểm tra điều kiện trước khi vào thân nên có thể chạy 0 lần. Ngược lại, do...while thực hiện khối lệnh trước rồi mới xét điều kiện nên luôn chạy tối thiểu 1 lần và kết thúc bằng dấu chấm phẩy."
+                },
+                {
+                  "question_number": 2,
+                  "it1108_block_code": "IT1108_KB04",
+                  "topic": "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)",
+                  "difficulty": "easy",
+                  "question_type": "guided_basic",
+                  "question": "Với khai báo mảng int a[5] = {10, 20, 30, 40, 50}; trong ngôn ngữ C, chỉ số hợp lệ của mảng nằm trong khoảng nào?",
+                  "code_snippet": "int a[5] = {10, 20, 30, 40, 50};",
+                  "options": {
+                    "A": "Từ 0 đến 4",
+                    "B": "Từ 1 đến 5",
+                    "C": "Từ 0 đến 5",
+                    "D": "Từ 1 đến 4"
+                  },
+                  "correct_answer": "A",
+                  "hint": "Gợi ý từng bước: Mảng trong C luôn đánh chỉ số bắt đầu từ 0, nên phần tử cuối của mảng n phần tử nằm ở vị trí n - 1.",
+                  "explanation": "Mảng 5 phần tử đánh chỉ số a[0]..a[4]. Truy cập a[5] là vượt quá giới hạn mảng (Out of bounds)."
+                },
+                {
+                  "question_number": 3,
+                  "it1108_block_code": "IT1108_KB03",
+                  "topic": "Khối 3: Cấu trúc điều khiển rẽ nhánh & Vòng lặp",
+                  "difficulty": "easy",
+                  "question_type": "guided_basic",
+                  "question": "Để in ra các số nguyên từ 1 đến 5 bằng vòng lặp for, dòng khai báo nào sau đây viết đúng?",
+                  "code_snippet": "for (/* điền điều kiện */) {\n    printf(\"%d \", i);\n}",
+                  "options": {
+                    "A": "int i = 1; i <= 5; i++",
+                    "B": "int i = 1, i <= 5, i++",
+                    "C": "int i = 1; i < 5; i++",
+                    "D": "int i = 0; i <= 5; i++"
+                  },
+                  "correct_answer": "A",
+                  "hint": "Gợi ý từng bước: 3 thành phần trong for(...) phân tách bằng dấu chấm phẩy (;). Bắt đầu từ 1 và dừng khi i <= 5 sẽ lấy đủ 1..5.",
+                  "explanation": "Cú pháp chuẩn của for dùng dấu ';' để ngăn cách khởi tạo, điều kiện lặp và bước nhảy. Đáp án B sai vì dùng dấu phẩy, C chỉ in 1..4, D in 0..5."
+                },
+                {
+                  "question_number": 4,
+                  "it1108_block_code": "IT1108_KB04",
+                  "topic": "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)",
+                  "difficulty": "medium",
+                  "question_type": "concept",
+                  "question": "Trong hàm đệ quy, 'trường hợp cơ sở' (base case) dùng để làm gì?",
+                  "code_snippet": "",
+                  "options": {
+                    "A": "Dừng chuỗi gọi đệ quy để tránh tràn bộ nhớ ngăn xếp (Stack Overflow)",
+                    "B": "Tăng tốc độ biên dịch chương trình",
+                    "C": "Chuyển mảng 1 chiều thành 2 chiều",
+                    "D": "Khởi tạo biến toàn cục"
+                  },
+                  "correct_answer": "A",
+                  "hint": "Điều gì xảy ra nếu hàm tự gọi lại chính nó mà không có điểm dừng?",
+                  "explanation": "Mỗi hàm đệ quy bắt buộc có điều kiện dừng (base case); nếu thiếu, hàm gọi mãi cho đến khi hết bộ nhớ Stack."
+                },
+                {
+                  "question_number": 5,
+                  "it1108_block_code": "IT1108_KB03",
+                  "topic": "Khối 3: Cấu trúc điều khiển rẽ nhánh & Vòng lặp",
+                  "difficulty": "easy",
+                  "question_type": "guided_basic",
+                  "question": "Trong cấu trúc switch-case của C, lệnh break có tác dụng gì?",
+                  "code_snippet": "switch (chon) {\n    case 1: printf(\"Mot\"); break;\n    default: printf(\"Khac\");\n}",
+                  "options": {
+                    "A": "Thoát khỏi cấu trúc switch sau khi thực hiện xong nhánh case phù hợp",
+                    "B": "Kết thúc toàn bộ chương trình main() ngay lập tức",
+                    "C": "Quay lại kiểm tra từ case 1",
+                    "D": "Bỏ qua lỗi cú pháp nếu thiếu dấu hai chấm"
+                  },
+                  "correct_answer": "A",
+                  "hint": "Gợi ý từng bước: Nếu thiếu break, chương trình sẽ trôi thẳng xuống các nhánh case bên dưới (fall-through).",
+                  "explanation": "Lệnh break ngắt luồng chạy bên trong switch-case để không thực hiện nhầm các nhánh case kế tiếp."
+                }
+              ]
+            },
+            "valid_questions": [
+              {
+                "question_number": 1,
+                "it1108_block_code": "IT1108_KB03",
+                "topic": "Khối 3: Cấu trúc điều khiển rẽ nhánh & Vòng lặp",
+                "difficulty": "easy",
+                "question_type": "guided_basic",
+                "question": "Điểm khác biệt quan trọng nhất giữa vòng lặp while và vòng lặp do...while trong C là gì?",
+                "code_snippet": "",
+                "options": {
+                  "A": "do...while luôn thực hiện thân vòng lặp ít nhất 1 lần trước khi kiểm tra điều kiện",
+                  "B": "while luôn chạy ít nhất 1 lần ngay cả khi điều kiện sai ngay từ đầu",
+                  "C": "do...while không cần dấu chấm phẩy (;) ở cuối lệnh while",
+                  "D": "while không thể dùng câu lệnh break bên trong"
+                },
+                "correct_answer": "A",
+                "hint": "Gợi ý từng bước: Quan sát vị trí đặt điều kiện while(...): đặt ở đầu là kiểm tra trước; đặt ở cuối là làm trước rồi mới kiểm tra.",
+                "explanation": "Vòng lặp while kiểm tra điều kiện trước khi vào thân nên có thể chạy 0 lần. Ngược lại, do...while thực hiện khối lệnh trước rồi mới xét điều kiện nên luôn chạy tối thiểu 1 lần và kết thúc bằng dấu chấm phẩy."
+              },
+              {
+                "question_number": 2,
+                "it1108_block_code": "IT1108_KB04",
+                "topic": "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)",
+                "difficulty": "easy",
+                "question_type": "guided_basic",
+                "question": "Với khai báo mảng int a[5] = {10, 20, 30, 40, 50}; trong ngôn ngữ C, chỉ số hợp lệ của mảng nằm trong khoảng nào?",
+                "code_snippet": "int a[5] = {10, 20, 30, 40, 50};",
+                "options": {
+                  "A": "Từ 0 đến 4",
+                  "B": "Từ 1 đến 5",
+                  "C": "Từ 0 đến 5",
+                  "D": "Từ 1 đến 4"
+                },
+                "correct_answer": "A",
+                "hint": "Gợi ý từng bước: Mảng trong C luôn đánh chỉ số bắt đầu từ 0, nên phần tử cuối của mảng n phần tử nằm ở vị trí n - 1.",
+                "explanation": "Mảng 5 phần tử đánh chỉ số a[0]..a[4]. Truy cập a[5] là vượt quá giới hạn mảng (Out of bounds)."
+              },
+              {
+                "question_number": 3,
+                "it1108_block_code": "IT1108_KB03",
+                "topic": "Khối 3: Cấu trúc điều khiển rẽ nhánh & Vòng lặp",
+                "difficulty": "easy",
+                "question_type": "guided_basic",
+                "question": "Để in ra các số nguyên từ 1 đến 5 bằng vòng lặp for, dòng khai báo nào sau đây viết đúng?",
+                "code_snippet": "for (/* điền điều kiện */) {\n    printf(\"%d \", i);\n}",
+                "options": {
+                  "A": "int i = 1; i <= 5; i++",
+                  "B": "int i = 1, i <= 5, i++",
+                  "C": "int i = 1; i < 5; i++",
+                  "D": "int i = 0; i <= 5; i++"
+                },
+                "correct_answer": "A",
+                "hint": "Gợi ý từng bước: 3 thành phần trong for(...) phân tách bằng dấu chấm phẩy (;). Bắt đầu từ 1 và dừng khi i <= 5 sẽ lấy đủ 1..5.",
+                "explanation": "Cú pháp chuẩn của for dùng dấu ';' để ngăn cách khởi tạo, điều kiện lặp và bước nhảy. Đáp án B sai vì dùng dấu phẩy, C chỉ in 1..4, D in 0..5."
+              },
+              {
+                "question_number": 4,
+                "it1108_block_code": "IT1108_KB04",
+                "topic": "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)",
+                "difficulty": "medium",
+                "question_type": "concept",
+                "question": "Trong hàm đệ quy, 'trường hợp cơ sở' (base case) dùng để làm gì?",
+                "code_snippet": "",
+                "options": {
+                  "A": "Dừng chuỗi gọi đệ quy để tránh tràn bộ nhớ ngăn xếp (Stack Overflow)",
+                  "B": "Tăng tốc độ biên dịch chương trình",
+                  "C": "Chuyển mảng 1 chiều thành 2 chiều",
+                  "D": "Khởi tạo biến toàn cục"
+                },
+                "correct_answer": "A",
+                "hint": "Điều gì xảy ra nếu hàm tự gọi lại chính nó mà không có điểm dừng?",
+                "explanation": "Mỗi hàm đệ quy bắt buộc có điều kiện dừng (base case); nếu thiếu, hàm gọi mãi cho đến khi hết bộ nhớ Stack."
+              },
+              {
+                "question_number": 5,
+                "it1108_block_code": "IT1108_KB03",
+                "topic": "Khối 3: Cấu trúc điều khiển rẽ nhánh & Vòng lặp",
+                "difficulty": "easy",
+                "question_type": "guided_basic",
+                "question": "Trong cấu trúc switch-case của C, lệnh break có tác dụng gì?",
+                "code_snippet": "switch (chon) {\n    case 1: printf(\"Mot\"); break;\n    default: printf(\"Khac\");\n}",
+                "options": {
+                  "A": "Thoát khỏi cấu trúc switch sau khi thực hiện xong nhánh case phù hợp",
+                  "B": "Kết thúc toàn bộ chương trình main() ngay lập tức",
+                  "C": "Quay lại kiểm tra từ case 1",
+                  "D": "Bỏ qua lỗi cú pháp nếu thiếu dấu hai chấm"
+                },
+                "correct_answer": "A",
+                "hint": "Gợi ý từng bước: Nếu thiếu break, chương trình sẽ trôi thẳng xuống các nhánh case bên dưới (fall-through).",
+                "explanation": "Lệnh break ngắt luồng chạy bên trong switch-case để không thực hiện nhầm các nhánh case kế tiếp."
+              }
+            ],
+            "invalid_question_indices": []
+          }
+        },
+        "questions": [
+          {
+            "question_number": 1,
+            "it1108_block_code": "IT1108_KB03",
+            "topic": "Khối 3: Cấu trúc điều khiển rẽ nhánh & Vòng lặp",
+            "difficulty": "easy",
+            "question_type": "guided_basic",
+            "question": "Điểm khác biệt quan trọng nhất giữa vòng lặp while và vòng lặp do...while trong C là gì?",
+            "code_snippet": "",
+            "options": {
+              "A": "do...while luôn thực hiện thân vòng lặp ít nhất 1 lần trước khi kiểm tra điều kiện",
+              "B": "while luôn chạy ít nhất 1 lần ngay cả khi điều kiện sai ngay từ đầu",
+              "C": "do...while không cần dấu chấm phẩy (;) ở cuối lệnh while",
+              "D": "while không thể dùng câu lệnh break bên trong"
+            },
+            "correct_answer": "A",
+            "hint": "Gợi ý từng bước: Quan sát vị trí đặt điều kiện while(...): đặt ở đầu là kiểm tra trước; đặt ở cuối là làm trước rồi mới kiểm tra.",
+            "explanation": "Vòng lặp while kiểm tra điều kiện trước khi vào thân nên có thể chạy 0 lần. Ngược lại, do...while thực hiện khối lệnh trước rồi mới xét điều kiện nên luôn chạy tối thiểu 1 lần và kết thúc bằng dấu chấm phẩy."
+          },
+          {
+            "question_number": 2,
+            "it1108_block_code": "IT1108_KB04",
+            "topic": "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)",
+            "difficulty": "easy",
+            "question_type": "guided_basic",
+            "question": "Với khai báo mảng int a[5] = {10, 20, 30, 40, 50}; trong ngôn ngữ C, chỉ số hợp lệ của mảng nằm trong khoảng nào?",
+            "code_snippet": "int a[5] = {10, 20, 30, 40, 50};",
+            "options": {
+              "A": "Từ 0 đến 4",
+              "B": "Từ 1 đến 5",
+              "C": "Từ 0 đến 5",
+              "D": "Từ 1 đến 4"
+            },
+            "correct_answer": "A",
+            "hint": "Gợi ý từng bước: Mảng trong C luôn đánh chỉ số bắt đầu từ 0, nên phần tử cuối của mảng n phần tử nằm ở vị trí n - 1.",
+            "explanation": "Mảng 5 phần tử đánh chỉ số a[0]..a[4]. Truy cập a[5] là vượt quá giới hạn mảng (Out of bounds)."
+          },
+          {
+            "question_number": 3,
+            "it1108_block_code": "IT1108_KB03",
+            "topic": "Khối 3: Cấu trúc điều khiển rẽ nhánh & Vòng lặp",
+            "difficulty": "easy",
+            "question_type": "guided_basic",
+            "question": "Để in ra các số nguyên từ 1 đến 5 bằng vòng lặp for, dòng khai báo nào sau đây viết đúng?",
+            "code_snippet": "for (/* điền điều kiện */) {\n    printf(\"%d \", i);\n}",
+            "options": {
+              "A": "int i = 1; i <= 5; i++",
+              "B": "int i = 1, i <= 5, i++",
+              "C": "int i = 1; i < 5; i++",
+              "D": "int i = 0; i <= 5; i++"
+            },
+            "correct_answer": "A",
+            "hint": "Gợi ý từng bước: 3 thành phần trong for(...) phân tách bằng dấu chấm phẩy (;). Bắt đầu từ 1 và dừng khi i <= 5 sẽ lấy đủ 1..5.",
+            "explanation": "Cú pháp chuẩn của for dùng dấu ';' để ngăn cách khởi tạo, điều kiện lặp và bước nhảy. Đáp án B sai vì dùng dấu phẩy, C chỉ in 1..4, D in 0..5."
+          },
+          {
+            "question_number": 4,
+            "it1108_block_code": "IT1108_KB04",
+            "topic": "Khối 4: Hàm & Mảng (1 chiều, nhiều chiều)",
+            "difficulty": "medium",
+            "question_type": "concept",
+            "question": "Trong hàm đệ quy, 'trường hợp cơ sở' (base case) dùng để làm gì?",
+            "code_snippet": "",
+            "options": {
+              "A": "Dừng chuỗi gọi đệ quy để tránh tràn bộ nhớ ngăn xếp (Stack Overflow)",
+              "B": "Tăng tốc độ biên dịch chương trình",
+              "C": "Chuyển mảng 1 chiều thành 2 chiều",
+              "D": "Khởi tạo biến toàn cục"
+            },
+            "correct_answer": "A",
+            "hint": "Điều gì xảy ra nếu hàm tự gọi lại chính nó mà không có điểm dừng?",
+            "explanation": "Mỗi hàm đệ quy bắt buộc có điều kiện dừng (base case); nếu thiếu, hàm gọi mãi cho đến khi hết bộ nhớ Stack."
+          },
+          {
+            "question_number": 5,
+            "it1108_block_code": "IT1108_KB03",
+            "topic": "Khối 3: Cấu trúc điều khiển rẽ nhánh & Vòng lặp",
+            "difficulty": "easy",
+            "question_type": "guided_basic",
+            "question": "Trong cấu trúc switch-case của C, lệnh break có tác dụng gì?",
+            "code_snippet": "switch (chon) {\n    case 1: printf(\"Mot\"); break;\n    default: printf(\"Khac\");\n}",
+            "options": {
+              "A": "Thoát khỏi cấu trúc switch sau khi thực hiện xong nhánh case phù hợp",
+              "B": "Kết thúc toàn bộ chương trình main() ngay lập tức",
+              "C": "Quay lại kiểm tra từ case 1",
+              "D": "Bỏ qua lỗi cú pháp nếu thiếu dấu hai chấm"
+            },
+            "correct_answer": "A",
+            "hint": "Gợi ý từng bước: Nếu thiếu break, chương trình sẽ trôi thẳng xuống các nhánh case bên dưới (fall-through).",
+            "explanation": "Lệnh break ngắt luồng chạy bên trong switch-case để không thực hiện nhầm các nhánh case kế tiếp."
+          }
+        ],
+        "error_type": null,
+        "error_message": null
+      }
+    }
+  ]
+}
